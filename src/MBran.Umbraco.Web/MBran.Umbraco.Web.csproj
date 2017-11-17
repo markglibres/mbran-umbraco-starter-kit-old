@@ -311,6 +311,9 @@
     <Content Include="App_Plugins\DocTypeGridEditor\Render\DocTypeGridEditorPreviewer.cshtml" />
     <Content Include="App_Plugins\DocTypeGridEditor\Render\DocTypeGridEditor.cshtml" />
     <Content Include="App_Plugins\DocTypeGridEditor\package.manifest" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Components\MetaTagHeader.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -364,6 +367,10 @@
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MBran.Umbraco.Components\MBran.Umbraco.Components.csproj">
+      <Project>{083015b3-8ad6-4bba-ba3b-feca65eb9c8e}</Project>
+      <Name>MBran.Umbraco.Components</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MBran.Umbraco.Core\MBran.Umbraco.Core.csproj">
       <Project>{42a4a192-b173-48a7-8eef-e82d22abf53e}</Project>
       <Name>MBran.Umbraco.Core</Name>

@@ -22,7 +22,7 @@ namespace MBran.Umbraco
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, ISitemapSettings
+	public partial class Home : PublishedContentModel, IContentHeader, IContentImageFile, IMetaTagHeader, IMetaTagImage, ISitemapSettings
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -43,6 +43,60 @@ namespace MBran.Umbraco
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Summary
+		///</summary>
+		[ImplementPropertyType("contentSummary")]
+		public string ContentSummary
+		{
+			get { return MBran.Umbraco.ContentHeader.GetContentSummary(this); }
+		}
+
+		///<summary>
+		/// Title
+		///</summary>
+		[ImplementPropertyType("contentTitle")]
+		public string ContentTitle
+		{
+			get { return MBran.Umbraco.ContentHeader.GetContentTitle(this); }
+		}
+
+		///<summary>
+		/// Image
+		///</summary>
+		[ImplementPropertyType("contentImage")]
+		public IPublishedContent ContentImage
+		{
+			get { return MBran.Umbraco.ContentImageFile.GetContentImage(this); }
+		}
+
+		///<summary>
+		/// Description
+		///</summary>
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription
+		{
+			get { return MBran.Umbraco.MetaTagHeader.GetMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Title
+		///</summary>
+		[ImplementPropertyType("metaTitle")]
+		public string MetaTitle
+		{
+			get { return MBran.Umbraco.MetaTagHeader.GetMetaTitle(this); }
+		}
+
+		///<summary>
+		/// Image
+		///</summary>
+		[ImplementPropertyType("metaImage")]
+		public IPublishedContent MetaImage
+		{
+			get { return MBran.Umbraco.MetaTagImage.GetMetaImage(this); }
 		}
 
 		///<summary>
