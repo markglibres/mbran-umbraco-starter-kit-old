@@ -286,3 +286,6 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+[Aa]pp_[dD]ata/
+![Aa]pp_[dD]ata/Umbraco.sdf
