@@ -12,6 +12,6 @@ namespace MBran.Umbraco.Core
         [XmlElement("changefreq")]
         public SitemapChangeFrequency ChangeFrequency { get; set; }
         [XmlElement("priority")]
-        public double Priority { get; set; }
+        public decimal Priority { get; set; }
     }
 }

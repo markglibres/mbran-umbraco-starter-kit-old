@@ -46,6 +46,24 @@ namespace MBran.Umbraco
 		}
 
 		///<summary>
+		/// Change Frequency
+		///</summary>
+		[ImplementPropertyType("sitemapChangeFrequency")]
+		public decimal SitemapChangeFrequency
+		{
+			get { return MBran.Umbraco.SitemapSettings.GetSitemapChangeFrequency(this); }
+		}
+
+		///<summary>
+		/// Priority
+		///</summary>
+		[ImplementPropertyType("sitemapPriority")]
+		public decimal SitemapPriority
+		{
+			get { return MBran.Umbraco.SitemapSettings.GetSitemapPriority(this); }
+		}
+
+		///<summary>
 		/// Hide in sitemap
 		///</summary>
 		[ImplementPropertyType("umbracoNaviHide")]

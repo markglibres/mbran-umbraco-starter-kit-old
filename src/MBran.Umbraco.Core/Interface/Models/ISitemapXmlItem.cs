@@ -7,6 +7,6 @@ namespace MBran.Umbraco.Core
         string Location { get; set; }
         DateTime LastModified { get; set; }
         SitemapChangeFrequency ChangeFrequency { get; set; }
-        double Priority { get; set; }
+        decimal Priority { get; set; }
     }
 }

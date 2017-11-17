@@ -24,6 +24,12 @@ namespace MBran.Umbraco
 	/// <summary>_SitemapSettings</summary>
 	public partial interface ISitemapSettings : IPublishedContent
 	{
+		/// <summary>Change Frequency</summary>
+		decimal SitemapChangeFrequency { get; }
+
+		/// <summary>Priority</summary>
+		decimal SitemapPriority { get; }
+
 		/// <summary>Hide in sitemap</summary>
 		bool UmbracoNaviHide { get; }
 	}
@@ -52,6 +58,30 @@ namespace MBran.Umbraco
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Change Frequency
+		///</summary>
+		[ImplementPropertyType("sitemapChangeFrequency")]
+		public decimal SitemapChangeFrequency
+		{
+			get { return GetSitemapChangeFrequency(this); }
+		}
+
+		/// <summary>Static getter for Change Frequency</summary>
+		public static decimal GetSitemapChangeFrequency(ISitemapSettings that) { return that.GetPropertyValue<decimal>("sitemapChangeFrequency"); }
+
+		///<summary>
+		/// Priority
+		///</summary>
+		[ImplementPropertyType("sitemapPriority")]
+		public decimal SitemapPriority
+		{
+			get { return GetSitemapPriority(this); }
+		}
+
+		/// <summary>Static getter for Priority</summary>
+		public static decimal GetSitemapPriority(ISitemapSettings that) { return that.GetPropertyValue<decimal>("sitemapPriority"); }
 
 		///<summary>
 		/// Hide in sitemap

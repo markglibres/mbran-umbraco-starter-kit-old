@@ -26,8 +26,8 @@ namespace MBran.Umbraco.Core
                 .Select(page => new SiteMapXmlItem
                 {
                     Location = page.UrlAbsolute(),
-                    ChangeFrequency = SitemapChangeFrequency.daily,
-                    Priority = 0.5,
+                    ChangeFrequency = page.GetChangeFrequency(),
+                    Priority = page.SitemapPriority,
                     LastModified = page.UpdateDate
                 });
 
