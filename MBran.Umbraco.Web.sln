@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Umbraco.Web", "src\MB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Umbraco.Models", "src\MBran.Umbraco.Models\MBran.Umbraco.Models.csproj", "{DA3B09BF-2FDE-489C-A36D-C24F3B824216}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Umbraco.Core", "src\MBran.Umbraco.Core\MBran.Umbraco.Core.csproj", "{42A4A192-B173-48A7-8EEF-E82D22ABF53E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DA3B09BF-2FDE-489C-A36D-C24F3B824216}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA3B09BF-2FDE-489C-A36D-C24F3B824216}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA3B09BF-2FDE-489C-A36D-C24F3B824216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42A4A192-B173-48A7-8EEF-E82D22ABF53E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A4A192-B173-48A7-8EEF-E82D22ABF53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A4A192-B173-48A7-8EEF-E82D22ABF53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A4A192-B173-48A7-8EEF-E82D22ABF53E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
