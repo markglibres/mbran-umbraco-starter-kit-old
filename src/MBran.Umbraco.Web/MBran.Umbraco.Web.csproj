@@ -286,16 +286,7 @@
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
     <Content Include="Media\Web.config" />
     <Content Include="config\umbracoSettings.config" />
     <Content Include="config\trees.config" />
@@ -353,7 +344,15 @@
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="uSync\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\**\*.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="static\**" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handlers\AutofacBuilderExtensions.cs" />
@@ -364,7 +363,20 @@
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MBran.Umbraco.Core\MBran.Umbraco.Core.csproj">
+      <Project>{42a4a192-b173-48a7-8eef-e82d22abf53e}</Project>
+      <Name>MBran.Umbraco.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MBran.Umbraco.Models\MBran.Umbraco.Models.csproj">
+      <Project>{da3b09bf-2fde-489c-a36d-c24f3b824216}</Project>
+      <Name>MBran.Umbraco.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\MacroPartials\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -376,7 +388,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>63899</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
