@@ -111,6 +111,12 @@
     <Reference Include="MarkdownSharp, Version=1.14.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Markdown.1.14.7\lib\net45\MarkdownSharp.dll</HintPath>
     </Reference>
+    <Reference Include="MBran.DayOfWeekPicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MBran.DayOfWeekPicker.0.1\lib\net452\MBran.DayOfWeekPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="MBran.TimeRangePicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MBran.TimeRangePicker.0.1\lib\net452\MBran.TimeRangePicker.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ApplicationBlocks.Data, Version=1.0.1559.20655, Culture=neutral">
       <HintPath>..\..\packages\UmbracoCms.Core.7.7.6\lib\net45\Microsoft.ApplicationBlocks.Data.dll</HintPath>
     </Reference>
@@ -276,6 +282,11 @@
     <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.services.js" />
     <Content Include="App_Plugins\DocTypeGridEditor\Views\doctypegrideditor.dialog.html" />
     <Content Include="App_Plugins\DocTypeGridEditor\Views\doctypegrideditor.html" />
+    <Content Include="App_Plugins\MBran.DayOfWeekPicker\Controllers\dayOfWeekPicker.editor.js" />
+    <Content Include="App_Plugins\MBran.DayOfWeekPicker\Views\dayOfWeekPicker.editor.html" />
+    <Content Include="App_Plugins\MBran.TimeRangePicker\Controllers\timeRangePicker.editor.js" />
+    <Content Include="App_Plugins\MBran.TimeRangePicker\Css\timeRangePicker.css" />
+    <Content Include="App_Plugins\MBran.TimeRangePicker\Views\timeRangePicker.editor.html" />
     <Content Include="App_Plugins\uSync\uSyncDashboard.css" />
     <Content Include="App_Plugins\uSync\uSyncDashboard.html" />
     <Content Include="App_Plugins\uSync\uSyncDashboardController.js" />
@@ -314,6 +325,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Components\MetaTagHeader.cshtml" />
+    <Content Include="App_Plugins\MBran.DayOfWeekPicker\package.manifest" />
+    <Content Include="App_Plugins\MBran.TimeRangePicker\package.manifest" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
