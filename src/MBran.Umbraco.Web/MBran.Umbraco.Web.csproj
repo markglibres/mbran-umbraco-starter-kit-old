@@ -111,6 +111,9 @@
     <Reference Include="MarkdownSharp, Version=1.14.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Markdown.1.14.7\lib\net45\MarkdownSharp.dll</HintPath>
     </Reference>
+    <Reference Include="MBran.CountryPicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MBran.CountryPicker.0.2.2\lib\net452\MBran.CountryPicker.dll</HintPath>
+    </Reference>
     <Reference Include="MBran.DayOfWeekPicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MBran.DayOfWeekPicker.0.1\lib\net452\MBran.DayOfWeekPicker.dll</HintPath>
     </Reference>
@@ -282,6 +285,10 @@
     <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.services.js" />
     <Content Include="App_Plugins\DocTypeGridEditor\Views\doctypegrideditor.dialog.html" />
     <Content Include="App_Plugins\DocTypeGridEditor\Views\doctypegrideditor.html" />
+    <Content Include="App_Plugins\MBran.CountryPicker\Controller\countryPicker.editor.js" />
+    <Content Include="App_Plugins\MBran.CountryPicker\Css\countryPicker.css" />
+    <Content Include="App_Plugins\MBran.CountryPicker\Js\countryPicker.resource.js" />
+    <Content Include="App_Plugins\MBran.CountryPicker\Views\countryPicker.editor.html" />
     <Content Include="App_Plugins\MBran.DayOfWeekPicker\Controllers\dayOfWeekPicker.editor.js" />
     <Content Include="App_Plugins\MBran.DayOfWeekPicker\Views\dayOfWeekPicker.editor.html" />
     <Content Include="App_Plugins\MBran.TimeRangePicker\Controllers\timeRangePicker.editor.js" />
@@ -325,8 +332,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Components\MetaTagHeader.cshtml" />
-    <Content Include="App_Plugins\MBran.DayOfWeekPicker\package.manifest" />
     <Content Include="App_Plugins\MBran.TimeRangePicker\package.manifest" />
+    <Content Include="App_Plugins\MBran.DayOfWeekPicker\package.manifest" />
+    <Content Include="App_Plugins\MBran.CountryPicker\package.manifest" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

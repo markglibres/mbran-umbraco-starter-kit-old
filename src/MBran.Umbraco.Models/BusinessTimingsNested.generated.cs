@@ -20,16 +20,24 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Umbraco
 {
-	/// <summary>Site Config</summary>
-	[PublishedContentModel("siteConfig")]
-	public partial class SiteConfig : PublishedContentModel, IBusinessTimingsNested
+	// Mixin content Type 1094 with alias "businessTimingsNested"
+	/// <summary>_BusinessTimings (Nested)</summary>
+	public partial interface IBusinessTimingsNested : IPublishedContent
+	{
+		/// <summary>Timings</summary>
+		IEnumerable<IPublishedContent> BusinessTimings { get; }
+	}
+
+	/// <summary>_BusinessTimings (Nested)</summary>
+	[PublishedContentModel("businessTimingsNested")]
+	public partial class BusinessTimingsNested : PublishedContentModel, IBusinessTimingsNested
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "siteConfig";
+		public new const string ModelTypeAlias = "businessTimingsNested";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public SiteConfig(IPublishedContent content)
+		public BusinessTimingsNested(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,7 +48,7 @@ namespace MBran.Umbraco
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SiteConfig, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BusinessTimingsNested, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
@@ -51,7 +59,10 @@ namespace MBran.Umbraco
 		[ImplementPropertyType("businessTimings")]
 		public IEnumerable<IPublishedContent> BusinessTimings
 		{
-			get { return MBran.Umbraco.BusinessTimingsNested.GetBusinessTimings(this); }
+			get { return GetBusinessTimings(this); }
 		}
+
+		/// <summary>Static getter for Timings</summary>
+		public static IEnumerable<IPublishedContent> GetBusinessTimings(IBusinessTimingsNested that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("businessTimings"); }
 	}
 }

@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Umbraco
 {
-	/// <summary>Site Config</summary>
-	[PublishedContentModel("siteConfig")]
-	public partial class SiteConfig : PublishedContentModel, IBusinessTimingsNested
+	/// <summary>_BusinessTiming (Nested Item)</summary>
+	[PublishedContentModel("businessTimingNestedItem")]
+	public partial class BusinessTimingNestedItem : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "siteConfig";
+		public new const string ModelTypeAlias = "businessTimingNestedItem";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public SiteConfig(IPublishedContent content)
+		public BusinessTimingNestedItem(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,18 +40,27 @@ namespace MBran.Umbraco
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SiteConfig, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BusinessTimingNestedItem, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Timings
+		/// Days
 		///</summary>
-		[ImplementPropertyType("businessTimings")]
-		public IEnumerable<IPublishedContent> BusinessTimings
+		[ImplementPropertyType("businessTimingDays")]
+		public IEnumerable<DayOfWeek> BusinessTimingDays
 		{
-			get { return MBran.Umbraco.BusinessTimingsNested.GetBusinessTimings(this); }
+			get { return this.GetPropertyValue<IEnumerable<DayOfWeek>>("businessTimingDays"); }
+		}
+
+		///<summary>
+		/// Hours
+		///</summary>
+		[ImplementPropertyType("businessTimingHours")]
+		public MBran.TimeRangePicker.TimeRange BusinessTimingHours
+		{
+			get { return this.GetPropertyValue<MBran.TimeRangePicker.TimeRange>("businessTimingHours"); }
 		}
 	}
 }
