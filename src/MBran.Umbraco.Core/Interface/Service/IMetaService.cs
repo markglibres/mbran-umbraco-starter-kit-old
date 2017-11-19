@@ -1,9 +1,10 @@
-﻿namespace MBran.Umbraco.Core
+﻿using MBran.Umbraco.Models;
+
+namespace MBran.Umbraco.Core
 {
     public interface IMetaService
     {
-        string Title { get; }
-        string Description { get; }
+        MetaTagHeaderComponentModel Header { get; }
         Image Image { get; }
     }
 }

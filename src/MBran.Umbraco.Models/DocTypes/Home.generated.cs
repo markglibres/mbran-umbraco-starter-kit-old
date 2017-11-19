@@ -18,7 +18,7 @@ using Umbraco.Web;
 using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
-namespace MBran.Umbraco
+namespace MBran.Umbraco.Models
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
@@ -51,7 +51,7 @@ namespace MBran.Umbraco
 		[ImplementPropertyType("contentSummary")]
 		public string ContentSummary
 		{
-			get { return MBran.Umbraco.ContentHeader.GetContentSummary(this); }
+			get { return MBran.Umbraco.Models.ContentHeader.GetContentSummary(this); }
 		}
 
 		///<summary>
@@ -60,7 +60,7 @@ namespace MBran.Umbraco
 		[ImplementPropertyType("contentTitle")]
 		public string ContentTitle
 		{
-			get { return MBran.Umbraco.ContentHeader.GetContentTitle(this); }
+			get { return MBran.Umbraco.Models.ContentHeader.GetContentTitle(this); }
 		}
 
 		///<summary>
@@ -69,7 +69,7 @@ namespace MBran.Umbraco
 		[ImplementPropertyType("contentImage")]
 		public IPublishedContent ContentImage
 		{
-			get { return MBran.Umbraco.ContentImageFile.GetContentImage(this); }
+			get { return MBran.Umbraco.Models.ContentImageFile.GetContentImage(this); }
 		}
 
 		///<summary>
@@ -78,7 +78,7 @@ namespace MBran.Umbraco
 		[ImplementPropertyType("metaDescription")]
 		public string MetaDescription
 		{
-			get { return MBran.Umbraco.MetaTagHeader.GetMetaDescription(this); }
+			get { return MBran.Umbraco.Models.MetaTagHeader.GetMetaDescription(this); }
 		}
 
 		///<summary>
@@ -87,7 +87,7 @@ namespace MBran.Umbraco
 		[ImplementPropertyType("metaTitle")]
 		public string MetaTitle
 		{
-			get { return MBran.Umbraco.MetaTagHeader.GetMetaTitle(this); }
+			get { return MBran.Umbraco.Models.MetaTagHeader.GetMetaTitle(this); }
 		}
 
 		///<summary>
@@ -96,7 +96,7 @@ namespace MBran.Umbraco
 		[ImplementPropertyType("metaImage")]
 		public IPublishedContent MetaImage
 		{
-			get { return MBran.Umbraco.MetaTagImage.GetMetaImage(this); }
+			get { return MBran.Umbraco.Models.MetaTagImage.GetMetaImage(this); }
 		}
 
 		///<summary>
@@ -105,7 +105,7 @@ namespace MBran.Umbraco
 		[ImplementPropertyType("sitemapChangeFrequency")]
 		public decimal SitemapChangeFrequency
 		{
-			get { return MBran.Umbraco.SitemapSettings.GetSitemapChangeFrequency(this); }
+			get { return MBran.Umbraco.Models.SitemapSettings.GetSitemapChangeFrequency(this); }
 		}
 
 		///<summary>
@@ -114,7 +114,7 @@ namespace MBran.Umbraco
 		[ImplementPropertyType("sitemapPriority")]
 		public decimal SitemapPriority
 		{
-			get { return MBran.Umbraco.SitemapSettings.GetSitemapPriority(this); }
+			get { return MBran.Umbraco.Models.SitemapSettings.GetSitemapPriority(this); }
 		}
 
 		///<summary>
@@ -123,7 +123,7 @@ namespace MBran.Umbraco
 		[ImplementPropertyType("umbracoNaviHide")]
 		public bool UmbracoNaviHide
 		{
-			get { return MBran.Umbraco.SitemapSettings.GetUmbracoNaviHide(this); }
+			get { return MBran.Umbraco.Models.SitemapSettings.GetUmbracoNaviHide(this); }
 		}
 	}
 }

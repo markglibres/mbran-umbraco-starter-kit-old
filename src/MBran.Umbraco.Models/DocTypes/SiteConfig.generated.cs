@@ -18,11 +18,11 @@ using Umbraco.Web;
 using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
-namespace MBran.Umbraco
+namespace MBran.Umbraco.Models
 {
 	/// <summary>Site Config</summary>
 	[PublishedContentModel("siteConfig")]
-	public partial class SiteConfig : PublishedContentModel, IBusinessTimingsNested
+	public partial class SiteConfig : PublishedContentModel, IBusinessAddress, IBusinessTimingsNested
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "siteConfig";
@@ -46,12 +46,66 @@ namespace MBran.Umbraco
 		}
 
 		///<summary>
+		/// Address 1
+		///</summary>
+		[ImplementPropertyType("businessAddress1")]
+		public string BusinessAddress1
+		{
+			get { return MBran.Umbraco.Models.BusinessAddress.GetBusinessAddress1(this); }
+		}
+
+		///<summary>
+		/// Address 2
+		///</summary>
+		[ImplementPropertyType("businessAddress2")]
+		public string BusinessAddress2
+		{
+			get { return MBran.Umbraco.Models.BusinessAddress.GetBusinessAddress2(this); }
+		}
+
+		///<summary>
+		/// City
+		///</summary>
+		[ImplementPropertyType("businessAddressCity")]
+		public string BusinessAddressCity
+		{
+			get { return MBran.Umbraco.Models.BusinessAddress.GetBusinessAddressCity(this); }
+		}
+
+		///<summary>
+		/// Country
+		///</summary>
+		[ImplementPropertyType("businessAddressCountry")]
+		public object BusinessAddressCountry
+		{
+			get { return MBran.Umbraco.Models.BusinessAddress.GetBusinessAddressCountry(this); }
+		}
+
+		///<summary>
+		/// State
+		///</summary>
+		[ImplementPropertyType("businessAddressState")]
+		public string BusinessAddressState
+		{
+			get { return MBran.Umbraco.Models.BusinessAddress.GetBusinessAddressState(this); }
+		}
+
+		///<summary>
+		/// Zip
+		///</summary>
+		[ImplementPropertyType("businessAddressZip")]
+		public string BusinessAddressZip
+		{
+			get { return MBran.Umbraco.Models.BusinessAddress.GetBusinessAddressZip(this); }
+		}
+
+		///<summary>
 		/// Timings
 		///</summary>
 		[ImplementPropertyType("businessTimings")]
 		public IEnumerable<IPublishedContent> BusinessTimings
 		{
-			get { return MBran.Umbraco.BusinessTimingsNested.GetBusinessTimings(this); }
+			get { return MBran.Umbraco.Models.BusinessTimingsNested.GetBusinessTimings(this); }
 		}
 	}
 }

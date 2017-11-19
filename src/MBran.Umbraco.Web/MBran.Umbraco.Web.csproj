@@ -373,9 +373,6 @@
     <Content Include="uSync\**" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\**\*.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="static\**" />
   </ItemGroup>
   <ItemGroup>

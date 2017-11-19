@@ -18,18 +18,26 @@ using Umbraco.Web;
 using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
-namespace MBran.Umbraco
+namespace MBran.Umbraco.Models
 {
-	/// <summary>_BusinessTiming (Nested Item)</summary>
-	[PublishedContentModel("businessTimingNestedItem")]
-	public partial class BusinessTimingNestedItem : PublishedContentModel
+	// Mixin content Type 1083 with alias "metaTagImage"
+	/// <summary>_MetaTagImage</summary>
+	public partial interface IMetaTagImage : IPublishedContent
+	{
+		/// <summary>Image</summary>
+		IPublishedContent MetaImage { get; }
+	}
+
+	/// <summary>_MetaTagImage</summary>
+	[PublishedContentModel("metaTagImage")]
+	public partial class MetaTagImage : PublishedContentModel, IMetaTagImage
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "businessTimingNestedItem";
+		public new const string ModelTypeAlias = "metaTagImage";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public BusinessTimingNestedItem(IPublishedContent content)
+		public MetaTagImage(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,27 +48,21 @@ namespace MBran.Umbraco
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BusinessTimingNestedItem, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<MetaTagImage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Days
+		/// Image
 		///</summary>
-		[ImplementPropertyType("businessTimingDays")]
-		public IEnumerable<DayOfWeek> BusinessTimingDays
+		[ImplementPropertyType("metaImage")]
+		public IPublishedContent MetaImage
 		{
-			get { return this.GetPropertyValue<IEnumerable<DayOfWeek>>("businessTimingDays"); }
+			get { return GetMetaImage(this); }
 		}
 
-		///<summary>
-		/// Hours
-		///</summary>
-		[ImplementPropertyType("businessTimingHours")]
-		public MBran.TimeRangePicker.TimeRange BusinessTimingHours
-		{
-			get { return this.GetPropertyValue<MBran.TimeRangePicker.TimeRange>("businessTimingHours"); }
-		}
+		/// <summary>Static getter for Image</summary>
+		public static IPublishedContent GetMetaImage(IMetaTagImage that) { return that.GetPropertyValue<IPublishedContent>("metaImage"); }
 	}
 }

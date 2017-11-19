@@ -1,6 +1,6 @@
-﻿namespace MBran.Umbraco.Components
+﻿namespace MBran.Umbraco.Models
 {
-    public class MetaTagHeaderViewModel
+    public partial class MetaTagHeaderViewModel : IViewModel
     {
         public string Title { get; set; }
         public string Description { get; set; }

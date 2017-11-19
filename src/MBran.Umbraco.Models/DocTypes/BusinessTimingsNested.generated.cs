@@ -18,26 +18,26 @@ using Umbraco.Web;
 using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
-namespace MBran.Umbraco
+namespace MBran.Umbraco.Models
 {
-	// Mixin content Type 1083 with alias "metaTagImage"
-	/// <summary>_MetaTagImage</summary>
-	public partial interface IMetaTagImage : IPublishedContent
+	// Mixin content Type 1094 with alias "businessTimingsNested"
+	/// <summary>_BusinessTimings (Nested)</summary>
+	public partial interface IBusinessTimingsNested : IPublishedContent
 	{
-		/// <summary>Image</summary>
-		IPublishedContent MetaImage { get; }
+		/// <summary>Timings</summary>
+		IEnumerable<IPublishedContent> BusinessTimings { get; }
 	}
 
-	/// <summary>_MetaTagImage</summary>
-	[PublishedContentModel("metaTagImage")]
-	public partial class MetaTagImage : PublishedContentModel, IMetaTagImage
+	/// <summary>_BusinessTimings (Nested)</summary>
+	[PublishedContentModel("businessTimingsNested")]
+	public partial class BusinessTimingsNested : PublishedContentModel, IBusinessTimingsNested
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "metaTagImage";
+		public new const string ModelTypeAlias = "businessTimingsNested";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public MetaTagImage(IPublishedContent content)
+		public BusinessTimingsNested(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -48,21 +48,21 @@ namespace MBran.Umbraco
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<MetaTagImage, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BusinessTimingsNested, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Image
+		/// Timings
 		///</summary>
-		[ImplementPropertyType("metaImage")]
-		public IPublishedContent MetaImage
+		[ImplementPropertyType("businessTimings")]
+		public IEnumerable<IPublishedContent> BusinessTimings
 		{
-			get { return GetMetaImage(this); }
+			get { return GetBusinessTimings(this); }
 		}
 
-		/// <summary>Static getter for Image</summary>
-		public static IPublishedContent GetMetaImage(IMetaTagImage that) { return that.GetPropertyValue<IPublishedContent>("metaImage"); }
+		/// <summary>Static getter for Timings</summary>
+		public static IEnumerable<IPublishedContent> GetBusinessTimings(IBusinessTimingsNested that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("businessTimings"); }
 	}
 }

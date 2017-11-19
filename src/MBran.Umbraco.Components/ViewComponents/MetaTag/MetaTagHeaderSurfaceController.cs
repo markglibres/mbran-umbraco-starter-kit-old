@@ -1,4 +1,6 @@
-﻿using MBran.Umbraco.Core;
+﻿using AutoMapper;
+using MBran.Umbraco.Core;
+using MBran.Umbraco.Models;
 using System.Web.Mvc;
 
 namespace MBran.Umbraco.Components
@@ -16,10 +18,9 @@ namespace MBran.Umbraco.Components
         [ChildActionOnly]
         public ActionResult MetaTagHeader()
         {
-            var viewModel = new MetaTagHeaderViewModel {
-                Title = _metaService.Title,
-                Description = _metaService.Description
-            };
+            var model = _metaService.Header;
+            var viewModel = Mapper.Map<MetaTagHeaderViewModel>(model);
+
             return ComponentView(viewModel);
         }
     }

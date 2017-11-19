@@ -18,18 +18,18 @@ using Umbraco.Web;
 using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
-namespace MBran.Umbraco
+namespace MBran.Umbraco.Models
 {
-	/// <summary>Image</summary>
-	[PublishedContentModel("Image")]
-	public partial class Image : PublishedContentModel
+	/// <summary>File</summary>
+	[PublishedContentModel("File")]
+	public partial class File : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "Image";
+		public new const string ModelTypeAlias = "File";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
 #pragma warning restore 0109
 
-		public Image(IPublishedContent content)
+		public File(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,7 +40,7 @@ namespace MBran.Umbraco
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Image, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<File, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
@@ -64,30 +64,12 @@ namespace MBran.Umbraco
 		}
 
 		///<summary>
-		/// Upload image
+		/// Upload file
 		///</summary>
 		[ImplementPropertyType("umbracoFile")]
-		public global::Umbraco.Web.Models.ImageCropDataSet UmbracoFile
+		public string UmbracoFile
 		{
-			get { return this.GetPropertyValue<global::Umbraco.Web.Models.ImageCropDataSet>("umbracoFile"); }
-		}
-
-		///<summary>
-		/// Height
-		///</summary>
-		[ImplementPropertyType("umbracoHeight")]
-		public string UmbracoHeight
-		{
-			get { return this.GetPropertyValue<string>("umbracoHeight"); }
-		}
-
-		///<summary>
-		/// Width
-		///</summary>
-		[ImplementPropertyType("umbracoWidth")]
-		public string UmbracoWidth
-		{
-			get { return this.GetPropertyValue<string>("umbracoWidth"); }
+			get { return this.GetPropertyValue<string>("umbracoFile"); }
 		}
 	}
 }

@@ -2,6 +2,7 @@
 using Umbraco.Core;
 using Umbraco.Core.Models;
 using System;
+using MBran.Umbraco.Models;
 
 namespace MBran.Umbraco.Core
 {

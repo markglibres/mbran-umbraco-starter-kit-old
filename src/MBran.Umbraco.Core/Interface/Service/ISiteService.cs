@@ -1,4 +1,6 @@
-﻿namespace MBran.Umbraco.Core
+﻿using MBran.Umbraco.Models;
+
+namespace MBran.Umbraco.Core
 {
     public interface ISiteService
     {

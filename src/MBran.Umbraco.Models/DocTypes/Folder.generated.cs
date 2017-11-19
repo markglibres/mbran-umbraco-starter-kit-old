@@ -18,18 +18,18 @@ using Umbraco.Web;
 using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
-namespace MBran.Umbraco
+namespace MBran.Umbraco.Models
 {
-	/// <summary>Error 404</summary>
-	[PublishedContentModel("error404")]
-	public partial class Error404 : PublishedContentModel
+	/// <summary>Folder</summary>
+	[PublishedContentModel("Folder")]
+	public partial class Folder : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "error404";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		public new const string ModelTypeAlias = "Folder";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
 #pragma warning restore 0109
 
-		public Error404(IPublishedContent content)
+		public Folder(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,9 +40,18 @@ namespace MBran.Umbraco
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Error404, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Folder, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Contents:
+		///</summary>
+		[ImplementPropertyType("contents")]
+		public object Contents
+		{
+			get { return this.GetPropertyValue("contents"); }
 		}
 	}
 }

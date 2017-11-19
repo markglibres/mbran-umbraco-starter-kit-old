@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Umbraco.Core.Models;
+﻿using MBran.Umbraco.Models;
+using System.Collections.Generic;
 
 namespace MBran.Umbraco.Core
 {

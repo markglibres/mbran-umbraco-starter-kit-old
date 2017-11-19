@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MBran.Umbraco.Models;
+using System;
 
 namespace MBran.Umbraco.Core
 {

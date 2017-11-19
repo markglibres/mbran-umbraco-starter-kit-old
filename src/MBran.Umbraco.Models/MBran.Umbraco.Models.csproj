@@ -236,8 +236,24 @@
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="*.generated.cs" />
+    <Compile Include="DocTypes\BusinessAddress.generated.cs" />
+    <Compile Include="DocTypes\BusinessTiming.generated.cs" />
+    <Compile Include="DocTypes\BusinessTimingsNested.generated.cs" />
+    <Compile Include="DocTypes\ContentHeader.generated.cs" />
+    <Compile Include="DocTypes\ContentImageFile.generated.cs" />
+    <Compile Include="DocTypes\Error404.generated.cs" />
+    <Compile Include="DocTypes\File.generated.cs" />
+    <Compile Include="DocTypes\Folder.generated.cs" />
+    <Compile Include="DocTypes\Home.generated.cs" />
+    <Compile Include="DocTypes\Image.generated.cs" />
+    <Compile Include="DocTypes\Member.generated.cs" />
+    <Compile Include="DocTypes\MetaTagHeader.generated.cs" />
+    <Compile Include="DocTypes\MetaTagImage.generated.cs" />
+    <Compile Include="DocTypes\SiteConfig.generated.cs" />
+    <Compile Include="DocTypes\SitemapSettings.generated.cs" />
+    <Compile Include="Interface\IViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\MetaTagHeaderViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

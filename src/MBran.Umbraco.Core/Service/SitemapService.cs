@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MBran.Umbraco.Models;
+using System.Collections.Generic;
 using System.Linq;
 using Umbraco.Web;
 

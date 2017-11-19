@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MBran.Umbraco.Models;
+using System;
 
 namespace MBran.Umbraco.Core
 {
@@ -12,11 +13,20 @@ namespace MBran.Umbraco.Core
             _pageHelper = pageHelper;
             _pageService = pageService;
         }
-        public string Title => GetTitle();
-
-        public string Description => GetDescription();
-
+        public MetaTagHeaderComponentModel Header => GetHeader();
         public Image Image => GetImage();
+
+        private MetaTagHeaderComponentModel GetHeader()
+        {
+            var model = new MetaTagHeaderComponentModel
+            {
+                Title = GetTitle(),
+                Description = GetDescription()
+                
+            };
+
+            return model;
+        }
 
         private string GetTitle()
         {

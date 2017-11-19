@@ -218,12 +218,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\HtmlHelperComponentExtensions.cs" />
+    <Compile Include="Handler\AutoMapperEventHandler.cs" />
+    <Compile Include="Handler\AutoMapperEvents.cs" />
     <Compile Include="Helpers\ComponentViewHelper.cs" />
     <Compile Include="MBranComponentsModule.cs" />
     <Compile Include="ViewComponents\MetaTag\MetaTagComponent.cs" />
     <Compile Include="ViewComponents\MetaTag\MetaTagHeaderSurfaceController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewComponents\MetaTag\MetaTagHeaderViewModel.cs" />
     <Compile Include="ViewComponents\ViewComponentSurfaceController.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -237,6 +238,10 @@
     <ProjectReference Include="..\MBran.Umbraco.Core\MBran.Umbraco.Core.csproj">
       <Project>{42A4A192-B173-48A7-8EEF-E82D22ABF53E}</Project>
       <Name>MBran.Umbraco.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MBran.Umbraco.Models\MBran.Umbraco.Models.csproj">
+      <Project>{da3b09bf-2fde-489c-a36d-c24f3b824216}</Project>
+      <Name>MBran.Umbraco.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

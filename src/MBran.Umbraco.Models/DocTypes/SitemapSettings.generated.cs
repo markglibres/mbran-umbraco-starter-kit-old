@@ -18,7 +18,7 @@ using Umbraco.Web;
 using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
-namespace MBran.Umbraco
+namespace MBran.Umbraco.Models
 {
 	// Mixin content Type 1062 with alias "sitemapSettings"
 	/// <summary>_SitemapSettings</summary>

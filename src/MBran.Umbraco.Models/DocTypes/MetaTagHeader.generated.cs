@@ -18,29 +18,29 @@ using Umbraco.Web;
 using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
-namespace MBran.Umbraco
+namespace MBran.Umbraco.Models
 {
-	// Mixin content Type 1085 with alias "contentHeader"
-	/// <summary>_ContentHeader</summary>
-	public partial interface IContentHeader : IPublishedContent
+	// Mixin content Type 1082 with alias "metaTagHeader"
+	/// <summary>_MetaTagHeader</summary>
+	public partial interface IMetaTagHeader : IPublishedContent
 	{
-		/// <summary>Summary</summary>
-		string ContentSummary { get; }
+		/// <summary>Description</summary>
+		string MetaDescription { get; }
 
 		/// <summary>Title</summary>
-		string ContentTitle { get; }
+		string MetaTitle { get; }
 	}
 
-	/// <summary>_ContentHeader</summary>
-	[PublishedContentModel("contentHeader")]
-	public partial class ContentHeader : PublishedContentModel, IContentHeader
+	/// <summary>_MetaTagHeader</summary>
+	[PublishedContentModel("metaTagHeader")]
+	public partial class MetaTagHeader : PublishedContentModel, IMetaTagHeader
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "contentHeader";
+		public new const string ModelTypeAlias = "metaTagHeader";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public ContentHeader(IPublishedContent content)
+		public MetaTagHeader(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -51,33 +51,33 @@ namespace MBran.Umbraco
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentHeader, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<MetaTagHeader, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Summary
+		/// Description
 		///</summary>
-		[ImplementPropertyType("contentSummary")]
-		public string ContentSummary
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription
 		{
-			get { return GetContentSummary(this); }
+			get { return GetMetaDescription(this); }
 		}
 
-		/// <summary>Static getter for Summary</summary>
-		public static string GetContentSummary(IContentHeader that) { return that.GetPropertyValue<string>("contentSummary"); }
+		/// <summary>Static getter for Description</summary>
+		public static string GetMetaDescription(IMetaTagHeader that) { return that.GetPropertyValue<string>("metaDescription"); }
 
 		///<summary>
 		/// Title
 		///</summary>
-		[ImplementPropertyType("contentTitle")]
-		public string ContentTitle
+		[ImplementPropertyType("metaTitle")]
+		public string MetaTitle
 		{
-			get { return GetContentTitle(this); }
+			get { return GetMetaTitle(this); }
 		}
 
 		/// <summary>Static getter for Title</summary>
-		public static string GetContentTitle(IContentHeader that) { return that.GetPropertyValue<string>("contentTitle"); }
+		public static string GetMetaTitle(IMetaTagHeader that) { return that.GetPropertyValue<string>("metaTitle"); }
 	}
 }
