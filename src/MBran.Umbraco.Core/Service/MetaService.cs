@@ -18,36 +18,20 @@ namespace MBran.Umbraco.Core
 
         private MetaTagHeaderComponentModel GetHeader()
         {
+            MetaTagHeader page = _pageHelper.CurrentPage<MetaTagHeader>();
+            
             var model = new MetaTagHeaderComponentModel
             {
-                Title = GetTitle(),
-                Description = GetDescription()
-                
+                Title = !String.IsNullOrEmpty(page.MetaTitle) ? 
+                    page.MetaTitle : _pageService.Title,
+                Description = !String.IsNullOrEmpty(page.MetaDescription) ? 
+                    page.MetaDescription : _pageService.Summary
+
             };
 
             return model;
         }
-
-        private string GetTitle()
-        {
-            var title = _pageHelper.CurrentPage<MetaTagHeader>().MetaTitle;
-            if(String.IsNullOrEmpty(title))
-            {
-                title = _pageService.Title;
-            }
-            return title;
-        }
-
-        private string GetDescription()
-        {
-            var desc = _pageHelper.CurrentPage<MetaTagHeader>().MetaDescription;
-            if(String.IsNullOrEmpty(desc))
-            {
-                desc = _pageService.Summary;
-            }
-            return desc;
-        }
-
+        
         private Image GetImage()
         {
             var image = _pageHelper.CurrentPage<MetaTagImage>()?.MetaImage?.As<Image>();
