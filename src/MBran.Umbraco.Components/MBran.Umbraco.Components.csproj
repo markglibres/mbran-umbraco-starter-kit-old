@@ -222,7 +222,6 @@
     <Compile Include="Handler\AutoMapperEvents.cs" />
     <Compile Include="Helpers\ComponentViewHelper.cs" />
     <Compile Include="MBranComponentsModule.cs" />
-    <Compile Include="ViewComponents\MetaTag\MetaTagComponent.cs" />
     <Compile Include="ViewComponents\MetaTag\MetaTagHeaderSurfaceController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewComponents\ViewComponentSurfaceController.cs" />
