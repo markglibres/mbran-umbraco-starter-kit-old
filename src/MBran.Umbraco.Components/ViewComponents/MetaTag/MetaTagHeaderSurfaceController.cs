@@ -18,8 +18,8 @@ namespace MBran.Umbraco.Components
         [ChildActionOnly]
         public ActionResult MetaTagHeader()
         {
-            var model = _metaService.Header;
-            var viewModel = Mapper.Map<MetaTagHeaderViewModel>(model);
+            MetaTagHeaderComponentModel model = _metaService.Header;
+            MetaTagHeaderViewModel viewModel = Mapper.Map<MetaTagHeaderViewModel>(model);
 
             return ComponentView(viewModel);
         }
