@@ -245,7 +245,6 @@
     <Compile Include="Interface\Service\IXmlSerializerService.cs" />
     <Compile Include="MBranHelperModule.cs" />
     <Compile Include="MBranServiceModule.cs" />
-    <Compile Include="Models\MetaTagHeaderComponentModel.cs" />
     <Compile Include="Models\Sitemap\SitemapXml.cs" />
     <Compile Include="Models\Sitemap\SitemapXmlItem.cs" />
     <Compile Include="MBranCoreModule.cs" />

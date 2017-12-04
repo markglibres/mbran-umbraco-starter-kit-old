@@ -1,10 +1,11 @@
 ﻿using MBran.Umbraco.Models;
+using Umbraco.Core.Models;
 
 namespace MBran.Umbraco.Core
 {
     public interface IMetaService
     {
-        MetaTagHeaderComponentModel Header { get; }
-        Image Image { get; }
+        MetaTitle GetHeader(IPublishedContent node = null);
+        Image GetImage(IPublishedContent node = null);
     }
 }

@@ -12,12 +12,14 @@ namespace MBran.Umbraco.Components
         public static MvcHtmlString Component<T>(this HtmlHelper helper,
             object model = null,
             RouteValueDictionary options = null)
-            where T: SurfaceController
+            where T : IComponent
         {
-            string componentName = typeof(T).Name;
+            T component = Activator.CreateInstance<T>();
+            string componentName = component.Controller.Name;
             componentName = Regex.Replace(componentName, "Controller$", String.Empty);
             return helper.Component(componentName, model, options);
         }
+
         public static MvcHtmlString Component(this HtmlHelper helper, string componentName,
             object model = null,
             RouteValueDictionary options = null)
@@ -26,7 +28,7 @@ namespace MBran.Umbraco.Components
             actionName = Regex.Replace(actionName, "Surface", String.Empty);
             if (model != null)
             {
-                actionName = "Render" + actionName;
+                actionName = "RenderModel";
             }
             return helper.RenderComponent(componentName, actionName, model, options);
         }

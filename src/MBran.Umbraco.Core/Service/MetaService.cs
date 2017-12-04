@@ -1,5 +1,6 @@
 ﻿using MBran.Umbraco.Models;
 using System;
+using Umbraco.Core.Models;
 
 namespace MBran.Umbraco.Core
 {
@@ -13,14 +14,20 @@ namespace MBran.Umbraco.Core
             _pageHelper = pageHelper;
             _pageService = pageService;
         }
-        public MetaTagHeaderComponentModel Header => GetHeader();
-        public Image Image => GetImage();
-
-        private MetaTagHeaderComponentModel GetHeader()
+       
+        public MetaTitle GetHeader(IPublishedContent node = null)
         {
-            MetaTagHeader page = _pageHelper.CurrentPage<MetaTagHeader>();
+            MetaTagHeader page;
+            if (node == null)
+            {
+                page = _pageHelper.CurrentPage<MetaTagHeader>();
+            }
+            else
+            {
+                page = node.As<MetaTagHeader>();
+            }
             
-            var model = new MetaTagHeaderComponentModel
+            var model = new MetaTitle
             {
                 Title = !String.IsNullOrEmpty(page.MetaTitle) ? 
                     page.MetaTitle : _pageService.Title,
@@ -31,15 +38,26 @@ namespace MBran.Umbraco.Core
 
             return model;
         }
-        
-        private Image GetImage()
+
+        public Image GetImage(IPublishedContent node = null)
         {
-            var image = _pageHelper.CurrentPage<MetaTagImage>()?.MetaImage?.As<Image>();
+            Image image;
+            if (node == null)
+            {
+                image = _pageHelper.CurrentPage<MetaTagImage>()?.MetaImage?.As<Image>();
+            }
+            else
+            {
+                image = node.As<MetaTagImage>()?.MetaImage?.As<Image>();
+            }
+            
             if(image == null)
             {
                 image = _pageService.Image;
             }
             return image;
+
+           
         }
     }
 }

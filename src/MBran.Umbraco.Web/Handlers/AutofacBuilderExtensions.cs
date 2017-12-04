@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
+using MBran.Umbraco.Components;
 using System.Linq;
 using System.Reflection;
 using System.Web.Compilation;
@@ -35,7 +36,9 @@ namespace MBran.Umbraco.Web
             builder.RegisterAssemblyTypes(executingAssembly)
                 .Where(c => c.Name.EndsWith("Controller"))
                 .AsImplementedInterfaces();
-
+            builder.RegisterAssemblyTypes(executingAssembly)
+                .Where(t => t.BaseType == typeof(ComponentSurfaceController))
+                .As<ComponentSurfaceController>();
             return builder;
         }
 

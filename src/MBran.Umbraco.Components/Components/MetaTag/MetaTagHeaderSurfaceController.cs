@@ -1,13 +1,14 @@
-﻿using AutoMapper;
-using MBran.Umbraco.Core;
+﻿using MBran.Umbraco.Core;
 using MBran.Umbraco.Models;
 using System.Web.Mvc;
+using Umbraco.Core.Models;
 
 namespace MBran.Umbraco.Components
 {
-    public class MetaTagHeaderSurfaceController : ViewComponentSurfaceController
+    public class MetaTagHeaderSurfaceController : ComponentSurfaceController
     {
         private readonly IMetaService _metaService;
+
         public MetaTagHeaderSurfaceController(IPageHelper pageHelper,
             IMetaService metaService) 
             : base(pageHelper)
@@ -18,8 +19,13 @@ namespace MBran.Umbraco.Components
         [ChildActionOnly]
         public ActionResult MetaTagHeader()
         {
-            MetaTagHeaderComponentModel model = _metaService.Header;
-            MetaTagHeaderViewModel viewModel = Mapper.Map<MetaTagHeaderViewModel>(model);
+            return RenderModel();
+        }
+
+        public override PartialViewResult RenderModel(IPublishedContent model = null)
+        {
+            MetaTitle dataModel = _metaService.GetHeader(model);
+            MetaTitleViewModel viewModel = dataModel.Map<MetaTitleViewModel>();
 
             return ComponentView(viewModel);
         }
