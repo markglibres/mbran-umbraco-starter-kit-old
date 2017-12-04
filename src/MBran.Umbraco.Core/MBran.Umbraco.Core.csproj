@@ -142,6 +142,7 @@
       <HintPath>..\..\packages\UmbracoCms.Core.7.7.6\lib\net45\SQLCE4Umbraco.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\..\packages\UmbracoCms.Core.7.7.6\lib\net45\System.Data.SqlServerCe.dll</HintPath>
@@ -219,6 +220,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\UmbracoConstants.cs" />
     <Compile Include="Controller\SitemapController.cs" />
     <Compile Include="Enums\SitemapChangeFrequency.cs" />
     <Compile Include="Extensions\HttpContextExtensions.cs" />
@@ -227,6 +229,7 @@
     <Compile Include="Extensions\SitemapExtensions.cs" />
     <Compile Include="Handlers\Error404Handler.cs" />
     <Compile Include="Handlers\MBranApplicationEventHandler.cs" />
+    <Compile Include="Helpers\ConfigurationHelper.cs" />
     <Compile Include="Helpers\ContentHelper.cs" />
     <Compile Include="Helpers\PageHelper.cs" />
     <Compile Include="Helpers\StringWriterUTF8.cs" />
