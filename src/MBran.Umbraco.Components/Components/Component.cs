@@ -32,12 +32,7 @@ namespace MBran.Umbraco.Components
             return actionName;
         }
 
-        public MvcHtmlString Render(object model)
-        {
-            return Render(model, null);
-        }
-
-        public MvcHtmlString Render(object model, RouteValueDictionary options)
+        public virtual MvcHtmlString Render(object model, RouteValueDictionary options)
         {
             string actionName = GetActionName();
             if (model != null)
