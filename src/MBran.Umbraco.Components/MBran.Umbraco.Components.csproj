@@ -223,6 +223,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\IComponentRender.cs" />
     <Compile Include="Controllers\ComponentSurfaceController.cs" />
     <Compile Include="Extensions\HtmlHelperComponentExtensions.cs" />
     <Compile Include="Helpers\ComponentViewHelper.cs" />

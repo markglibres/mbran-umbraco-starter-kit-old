@@ -1,10 +1,7 @@
-﻿using System;
-
-namespace MBran.Umbraco.Components
+﻿namespace MBran.Umbraco.Components
 {
     public interface IComponent
     {
         string Name { get; }
-        Type Controller { get; }
     }
 }
