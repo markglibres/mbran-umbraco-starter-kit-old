@@ -1,6 +1,5 @@
-﻿using System;
+﻿using MBran.Umbraco.Components;
 using System.Web.Mvc;
-using MBran.Umbraco.Components;
 
 namespace MBran.Umbraco
 {
@@ -11,6 +10,14 @@ namespace MBran.Umbraco
         {
 
         }
-        
+
+        public override string RenderAction
+        {
+            get
+            {
+                return nameof(MetaTagHeaderSurfaceController.RenderTitle);
+            }
+        }
+
     }
 }

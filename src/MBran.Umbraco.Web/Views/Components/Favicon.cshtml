@@ -1,2 +1,5 @@
 ﻿@model Image
-<link rel="icon" type="@Model.GetMimeType()" href="@Model.Url">
+@if (Model != null)
+{
+    <link rel="icon" type="@Model.GetMimeType()" href="@Model.Url">
+}

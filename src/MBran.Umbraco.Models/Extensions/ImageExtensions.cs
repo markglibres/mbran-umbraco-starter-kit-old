@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System;
+using System.Web;
 
 namespace MBran.Umbraco.Models
 {
@@ -6,6 +7,10 @@ namespace MBran.Umbraco.Models
     {
         public static string GetMimeType(this Image image)
         {
+            if(image == null)
+            {
+                return String.Empty;
+            }
             return MimeMapping.GetMimeMapping(image.Path);
         }
     }

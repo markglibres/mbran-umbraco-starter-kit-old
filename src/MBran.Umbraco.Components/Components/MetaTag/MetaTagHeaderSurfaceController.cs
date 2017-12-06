@@ -1,5 +1,6 @@
 ﻿using MBran.Umbraco.Core;
 using MBran.Umbraco.Models;
+using System;
 using System.Web.Mvc;
 using Umbraco.Core.Models;
 
@@ -15,20 +16,20 @@ namespace MBran.Umbraco.Components
         {
             _metaService = metaService;
         }
-
+        
         [ChildActionOnly]
-        public ActionResult MetaTagHeader()
-        {
-            return RenderModel();
-        }
-
-        [ChildActionOnly]
-        public override PartialViewResult RenderModel(IPublishedContent model = null)
+        public PartialViewResult RenderTitle(IPublishedContent model = null)
         {
             MetaTitle dataModel = _metaService.GetHeader(model);
             MetaTitleViewModel viewModel = dataModel.Map<MetaTitleViewModel>();
 
             return ComponentView(viewModel);
+        }
+
+        [ChildActionOnly]
+        public override PartialViewResult RenderModel(IPublishedContent model = null)
+        {
+            throw new NotImplementedException();
         }
     }
 }

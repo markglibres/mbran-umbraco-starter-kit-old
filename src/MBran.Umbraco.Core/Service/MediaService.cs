@@ -6,17 +6,17 @@ namespace MBran.Umbraco.Core
     public class MediaService : IMediaService
     {
         private readonly IMediaHelper _mediaHelper;
-        private readonly IPageHelper _pageHelper;
-        public MediaService(IMediaHelper mediaHelper, IPageHelper pageHelper)
+        private readonly ISiteService _siteService;
+        public MediaService(IMediaHelper mediaHelper, ISiteService siteService)
         {
             _mediaHelper = mediaHelper;
-            _pageHelper = pageHelper;
+            _siteService = siteService;
         }
         public Image GetFavicon(IPublishedContent node = null)
         {
             if(node == null)
             {
-                node = _pageHelper.CurrentPage();
+                node = _siteService.GetSite();
             }
 
             ImageFavicon favicon = node.As<ImageFavicon>();
@@ -32,7 +32,7 @@ namespace MBran.Umbraco.Core
         {
             if (node == null)
             {
-                node = _pageHelper.CurrentPage();
+                node = _siteService.GetSite();
             }
 
             ImageLogo logo = node.As<ImageLogo>();

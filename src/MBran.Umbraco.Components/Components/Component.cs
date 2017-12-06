@@ -13,7 +13,8 @@ namespace MBran.Umbraco.Components
         private readonly string _componentName;
         private readonly HtmlHelper _htmlHelper;
         public virtual string Name => _componentName.Humanize();
-        
+        public virtual string RenderAction => nameof(IComponentController.RenderModel);
+
         public Component(HtmlHelper htmlHelper)
         {
             _htmlHelper = htmlHelper;
@@ -25,21 +26,11 @@ namespace MBran.Umbraco.Components
             controllerName = Regex.Replace(controllerName, "Controller$", String.Empty);
             return controllerName;
         }
-        private string GetActionName()
-        {
-            string actionName = GetControllerName();
-            actionName = Regex.Replace(actionName, "Surface$", String.Empty);
-            return actionName;
-        }
+        
 
         public virtual MvcHtmlString Render(object model, RouteValueDictionary options)
         {
-            string actionName = GetActionName();
-            if (model != null)
-            {
-                actionName = nameof(ComponentSurfaceController.RenderModel);
-            }
-            return Render(actionName, model, options);
+            return Render(RenderAction, model, options);
         }
 
         public MvcHtmlString Render(string actionName, object model, RouteValueDictionary options)
