@@ -231,13 +231,16 @@
     <Compile Include="Handlers\MBranApplicationEventHandler.cs" />
     <Compile Include="Helpers\ConfigurationHelper.cs" />
     <Compile Include="Helpers\ContentHelper.cs" />
+    <Compile Include="Helpers\MediaHelper.cs" />
     <Compile Include="Helpers\PageHelper.cs" />
     <Compile Include="Helpers\StringWriterUTF8.cs" />
     <Compile Include="Interface\Helpers\IContentHelper.cs" />
+    <Compile Include="Interface\Helpers\IMediaHelper.cs" />
     <Compile Include="Interface\Helpers\IPageHelper.cs" />
     <Compile Include="Interface\Models\ISitemapXml.cs" />
     <Compile Include="Interface\Models\ISitemapXmlItem.cs" />
     <Compile Include="Interface\Service\IBusinessService.cs" />
+    <Compile Include="Interface\Service\IMediaService.cs" />
     <Compile Include="Interface\Service\IMetaService.cs" />
     <Compile Include="Interface\Service\IPageService.cs" />
     <Compile Include="Interface\Service\ISitemapService.cs" />
@@ -249,6 +252,7 @@
     <Compile Include="Models\Sitemap\SitemapXmlItem.cs" />
     <Compile Include="MBranCoreModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\MediaService.cs" />
     <Compile Include="Service\MetaService.cs" />
     <Compile Include="Service\PageService.cs" />
     <Compile Include="Service\SitemapService.cs" />

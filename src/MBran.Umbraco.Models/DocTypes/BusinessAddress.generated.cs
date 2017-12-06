@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Umbraco.Models
 {
-	// Mixin content Type 1101 with alias "businessAddress"
+	// Mixin content Type 1074 with alias "businessAddress"
 	/// <summary>_BusinessAddress</summary>
 	public partial interface IBusinessAddress : IPublishedContent
 	{

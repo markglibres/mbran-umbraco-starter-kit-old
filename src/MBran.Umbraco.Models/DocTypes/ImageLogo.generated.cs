@@ -20,24 +20,24 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Umbraco.Models
 {
-	// Mixin content Type 1083 with alias "businessTimingsNested"
-	/// <summary>_BusinessTimings (Nested)</summary>
-	public partial interface IBusinessTimingsNested : IPublishedContent
+	// Mixin content Type 1094 with alias "imageLogo"
+	/// <summary>_ImageLogo</summary>
+	public partial interface IImageLogo : IPublishedContent
 	{
-		/// <summary>Timings</summary>
-		IEnumerable<IPublishedContent> BusinessTimings { get; }
+		/// <summary>Logo</summary>
+		IPublishedContent Logo { get; }
 	}
 
-	/// <summary>_BusinessTimings (Nested)</summary>
-	[PublishedContentModel("businessTimingsNested")]
-	public partial class BusinessTimingsNested : PublishedContentModel, IBusinessTimingsNested
+	/// <summary>_ImageLogo</summary>
+	[PublishedContentModel("imageLogo")]
+	public partial class ImageLogo : PublishedContentModel, IImageLogo
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "businessTimingsNested";
+		public new const string ModelTypeAlias = "imageLogo";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public BusinessTimingsNested(IPublishedContent content)
+		public ImageLogo(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -48,21 +48,21 @@ namespace MBran.Umbraco.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BusinessTimingsNested, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ImageLogo, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Timings
+		/// Logo
 		///</summary>
-		[ImplementPropertyType("businessTimings")]
-		public IEnumerable<IPublishedContent> BusinessTimings
+		[ImplementPropertyType("logo")]
+		public IPublishedContent Logo
 		{
-			get { return GetBusinessTimings(this); }
+			get { return GetLogo(this); }
 		}
 
-		/// <summary>Static getter for Timings</summary>
-		public static IEnumerable<IPublishedContent> GetBusinessTimings(IBusinessTimingsNested that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("businessTimings"); }
+		/// <summary>Static getter for Logo</summary>
+		public static IPublishedContent GetLogo(IImageLogo that) { return that.GetPropertyValue<IPublishedContent>("logo"); }
 	}
 }

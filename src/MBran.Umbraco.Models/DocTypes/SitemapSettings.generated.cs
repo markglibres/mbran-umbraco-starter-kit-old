@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Umbraco.Models
 {
-	// Mixin content Type 1062 with alias "sitemapSettings"
+	// Mixin content Type 1085 with alias "sitemapSettings"
 	/// <summary>_SitemapSettings</summary>
 	public partial interface ISitemapSettings : IPublishedContent
 	{

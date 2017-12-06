@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Umbraco.Models
 {
-	// Mixin content Type 1085 with alias "contentHeader"
+	// Mixin content Type 1077 with alias "contentHeader"
 	/// <summary>_ContentHeader</summary>
 	public partial interface IContentHeader : IPublishedContent
 	{

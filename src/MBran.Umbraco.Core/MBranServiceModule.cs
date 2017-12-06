@@ -11,6 +11,7 @@ namespace MBran.Umbraco.Core
             builder.RegisterType<SiteMapService>().As<ISitemapService>();
             builder.RegisterType<PageService>().As<IPageService>();
             builder.RegisterType<MetaService>().As<IMetaService>();
+            builder.RegisterType<MediaService>().As<IMediaService>();
         }
     }
 }

@@ -114,12 +114,7 @@ namespace MBran.Umbraco.Core
             var ancestor = startNode.Ancestor<T>();
             return ancestor;
         }
-        
-        public IPublishedContent GetMedia(int? nodeId)
-        {
-            return _umbracoHelper.TypedMedia(nodeId);
-        }
-
+       
         public T GetContent<T>(int nodeId) where T : PublishedContentModel
         {
             T node = _umbracoHelper.TypedContent(nodeId)?.As<T>();

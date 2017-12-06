@@ -12,7 +12,9 @@ namespace MBran.Umbraco.Core
             builder.RegisterType<PageHelper>()
                 .As<IPageHelper>()
                 .SingleInstance();
-            
+            builder.RegisterType<MediaHelper>()
+                .As<IMediaHelper>()
+                .SingleInstance();
         }
     }
 }

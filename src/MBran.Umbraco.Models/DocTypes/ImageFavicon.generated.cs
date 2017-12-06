@@ -20,24 +20,24 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Umbraco.Models
 {
-	// Mixin content Type 1083 with alias "businessTimingsNested"
-	/// <summary>_BusinessTimings (Nested)</summary>
-	public partial interface IBusinessTimingsNested : IPublishedContent
+	// Mixin content Type 1096 with alias "imageFavicon"
+	/// <summary>_ImageFavicon</summary>
+	public partial interface IImageFavicon : IPublishedContent
 	{
-		/// <summary>Timings</summary>
-		IEnumerable<IPublishedContent> BusinessTimings { get; }
+		/// <summary>Favicon</summary>
+		IPublishedContent Favicon { get; }
 	}
 
-	/// <summary>_BusinessTimings (Nested)</summary>
-	[PublishedContentModel("businessTimingsNested")]
-	public partial class BusinessTimingsNested : PublishedContentModel, IBusinessTimingsNested
+	/// <summary>_ImageFavicon</summary>
+	[PublishedContentModel("imageFavicon")]
+	public partial class ImageFavicon : PublishedContentModel, IImageFavicon
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "businessTimingsNested";
+		public new const string ModelTypeAlias = "imageFavicon";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public BusinessTimingsNested(IPublishedContent content)
+		public ImageFavicon(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -48,21 +48,21 @@ namespace MBran.Umbraco.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BusinessTimingsNested, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ImageFavicon, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Timings
+		/// Favicon
 		///</summary>
-		[ImplementPropertyType("businessTimings")]
-		public IEnumerable<IPublishedContent> BusinessTimings
+		[ImplementPropertyType("favicon")]
+		public IPublishedContent Favicon
 		{
-			get { return GetBusinessTimings(this); }
+			get { return GetFavicon(this); }
 		}
 
-		/// <summary>Static getter for Timings</summary>
-		public static IEnumerable<IPublishedContent> GetBusinessTimings(IBusinessTimingsNested that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("businessTimings"); }
+		/// <summary>Static getter for Favicon</summary>
+		public static IPublishedContent GetFavicon(IImageFavicon that) { return that.GetPropertyValue<IPublishedContent>("favicon"); }
 	}
 }

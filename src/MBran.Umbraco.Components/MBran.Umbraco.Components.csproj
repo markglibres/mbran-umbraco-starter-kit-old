@@ -223,6 +223,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Favicon\FaviconComponent.cs" />
+    <Compile Include="Components\Favicon\FaviconSurfaceController.cs" />
     <Compile Include="Components\IComponentRender.cs" />
     <Compile Include="Controllers\ComponentSurfaceController.cs" />
     <Compile Include="Extensions\HtmlHelperComponentExtensions.cs" />

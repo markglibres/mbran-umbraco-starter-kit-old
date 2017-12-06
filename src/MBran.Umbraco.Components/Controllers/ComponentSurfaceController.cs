@@ -12,7 +12,6 @@ namespace MBran.Umbraco.Components
 
         public int PageId { get { return _pageHelper.CurrentPageId(); } }
 
-        public ComponentSurfaceController() { }
         public ComponentSurfaceController(IPageHelper pageHelper)
         {
             _pageHelper = pageHelper;

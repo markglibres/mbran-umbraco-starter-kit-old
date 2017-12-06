@@ -14,7 +14,6 @@ namespace MBran.Umbraco.Core
         IEnumerable<T> GetAncestorsOrSelf<T>(int startId) where T : class, IPublishedContent;
         T GetAncestor<T>(int startId) where T : class, IPublishedContent;
         T GetAncestorOrSelf<T>(int startId) where T : class, IPublishedContent;
-        IPublishedContent GetMedia(int? nodeId);
         T GetContent<T>(int nodeId) where T : PublishedContentModel;
         IPublishedContent GetRoot();
     }

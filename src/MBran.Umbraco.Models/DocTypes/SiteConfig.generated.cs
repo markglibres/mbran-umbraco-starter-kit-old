@@ -22,7 +22,7 @@ namespace MBran.Umbraco.Models
 {
 	/// <summary>Site Config</summary>
 	[PublishedContentModel("siteConfig")]
-	public partial class SiteConfig : PublishedContentModel, IBusinessAddress, IBusinessTimingsNested
+	public partial class SiteConfig : PublishedContentModel, IBusinessAddress, IBusinessTimingsNested, IImageFavicon, IImageLogo
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "siteConfig";
@@ -106,6 +106,24 @@ namespace MBran.Umbraco.Models
 		public IEnumerable<IPublishedContent> BusinessTimings
 		{
 			get { return MBran.Umbraco.Models.BusinessTimingsNested.GetBusinessTimings(this); }
+		}
+
+		///<summary>
+		/// Favicon
+		///</summary>
+		[ImplementPropertyType("favicon")]
+		public IPublishedContent Favicon
+		{
+			get { return MBran.Umbraco.Models.ImageFavicon.GetFavicon(this); }
+		}
+
+		///<summary>
+		/// Logo
+		///</summary>
+		[ImplementPropertyType("logo")]
+		public IPublishedContent Logo
+		{
+			get { return MBran.Umbraco.Models.ImageLogo.GetLogo(this); }
 		}
 	}
 }

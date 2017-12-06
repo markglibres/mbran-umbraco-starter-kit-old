@@ -22,6 +22,7 @@ namespace MBran.Umbraco.Components
             return RenderModel();
         }
 
+        [ChildActionOnly]
         public override PartialViewResult RenderModel(IPublishedContent model = null)
         {
             MetaTitle dataModel = _metaService.GetHeader(model);
