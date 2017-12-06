@@ -10,7 +10,7 @@ namespace MBran.Umbraco.Components
         PartialViewResult ComponentView(string viewName);
         PartialViewResult ComponentView(object model);
         PartialViewResult ComponentView(string viewName, object model);
-        string GetViewName();
+        string GetViewPath();
         PartialViewResult RenderModel(IPublishedContent model = null);
     }
 }

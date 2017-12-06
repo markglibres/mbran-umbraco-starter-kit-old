@@ -332,11 +332,11 @@
     <Content Include="App_Plugins\DocTypeGridEditor\package.manifest" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Components\MetaTagHeader.cshtml" />
+    <Content Include="Views\Components\MetaTagHeader\RenderTitle.cshtml" />
     <Content Include="App_Plugins\MBran.TimeRangePicker\package.manifest" />
     <Content Include="App_Plugins\MBran.DayOfWeekPicker\package.manifest" />
     <Content Include="App_Plugins\MBran.CountryPicker\package.manifest" />
-    <Content Include="Views\Components\Favicon.cshtml" />
+    <Content Include="Views\Components\Favicon\RenderModel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,6 +1,7 @@
 ﻿using MBran.Umbraco.Core;
 using Our.Umbraco.DocTypeGridEditor.Web.Controllers;
 using System;
+using System.Diagnostics;
 using System.Web.Mvc;
 using Umbraco.Core.Models;
 
@@ -19,7 +20,7 @@ namespace MBran.Umbraco.Components
 
         public virtual PartialViewResult ComponentView()
         {
-            return ComponentView(GetViewName());
+            return ComponentView(GetViewPath());
         }
 
         public virtual PartialViewResult ComponentView(string viewName)
@@ -29,7 +30,7 @@ namespace MBran.Umbraco.Components
 
         public virtual PartialViewResult ComponentView(object model)
         {
-            return ComponentView(GetViewName(), model);
+            return ComponentView(GetViewPath(), model);
         }
 
         public virtual PartialViewResult ComponentView(string viewName, object model)
@@ -37,12 +38,15 @@ namespace MBran.Umbraco.Components
             return PartialView(viewName, model);
         }
 
-        public string GetViewName()
+        public string GetViewPath()
         {
-            string viewName = this.GetType().Name.Replace("SurfaceController", String.Empty);
-            return ComponentViewHelper.GetFullPath(viewName);
-        }
+            string componentFolder = this.GetType().Name.Replace("SurfaceController", String.Empty);
+            StackTrace stackTrace = new StackTrace();
+            string actionMethod = stackTrace.GetFrame(2).GetMethod().Name;
 
+            return ComponentViewHelper.GetFullPath(componentFolder, actionMethod);
+        }
+        
         public abstract PartialViewResult RenderModel(IPublishedContent model = null);
     }
 }
