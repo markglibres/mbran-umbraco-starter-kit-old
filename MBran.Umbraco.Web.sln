@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Umbraco.Web", "src\MBran.Umbraco.Web\MBran.Umbraco.Web.csproj", "{254BE836-008C-4C56-BD8F-D80E4D228D00}"
 EndProject
@@ -10,6 +10,17 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Umbraco.Core", "src\MBran.Umbraco.Core\MBran.Umbraco.Core.csproj", "{42A4A192-B173-48A7-8EEF-E82D22ABF53E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Umbraco.Components", "src\MBran.Umbraco.Components\MBran.Umbraco.Components.csproj", "{083015B3-8AD6-4BBA-BA3B-FECA65EB9C8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Configurations", "0. Configurations", "{7818C4BA-83CC-480A-A582-900C29A915DE}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Project", "1. Project", "{4569035A-6DBB-494D-99ED-E7935692DF9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Feature", "2. Feature", "{D2B21739-8A41-4F46-9A69-C6B055B44BCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Foundation", "3. Foundation", "{07AD1199-4563-41C5-A842-1CD83C851A9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +47,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{254BE836-008C-4C56-BD8F-D80E4D228D00} = {4569035A-6DBB-494D-99ED-E7935692DF9B}
+		{DA3B09BF-2FDE-489C-A36D-C24F3B824216} = {07AD1199-4563-41C5-A842-1CD83C851A9E}
+		{42A4A192-B173-48A7-8EEF-E82D22ABF53E} = {07AD1199-4563-41C5-A842-1CD83C851A9E}
+		{083015B3-8AD6-4BBA-BA3B-FECA65EB9C8E} = {D2B21739-8A41-4F46-9A69-C6B055B44BCA}
 	EndGlobalSection
 EndGlobal
