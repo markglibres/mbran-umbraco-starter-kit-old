@@ -227,7 +227,9 @@
     <Compile Include="Extensions\PublishedContentExtensions.cs" />
     <Compile Include="Extensions\SitemapChangeFrequencyExtensions.cs" />
     <Compile Include="Extensions\SitemapExtensions.cs" />
+    <Compile Include="Dependency Injection\AutofacBuilderExtensions.cs" />
     <Compile Include="Handlers\Error404Handler.cs" />
+    <Compile Include="Dependency Injection\IoCBuilder.cs" />
     <Compile Include="Handlers\MBranApplicationEventHandler.cs" />
     <Compile Include="Helpers\ConfigurationHelper.cs" />
     <Compile Include="Helpers\ContentHelper.cs" />
@@ -269,5 +271,6 @@
       <Name>MBran.Umbraco.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

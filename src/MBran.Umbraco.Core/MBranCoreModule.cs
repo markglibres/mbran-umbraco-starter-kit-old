@@ -11,7 +11,6 @@ namespace MBran.Umbraco.Core
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterControllers(this.ThisAssembly);
             builder.RegisterModule(new AutofacWebTypesModule());
             if (!String.IsNullOrEmpty(ConfigurationHelper.ConnectionString))
             {

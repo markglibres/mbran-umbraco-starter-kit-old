@@ -7,7 +7,7 @@ namespace MBran.Umbraco.Components
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterControllers(this.ThisAssembly);
+            
         }
     }
 }

@@ -1,44 +1,41 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
-using MBran.Umbraco.Components;
 using System.Linq;
 using System.Reflection;
 using System.Web.Compilation;
 using System.Web.Mvc;
 using Umbraco.Web;
 
-namespace MBran.Umbraco.Web
+namespace MBran.Umbraco.Core
 {
     public static class AutofacBuilderExtensions
     {
-        public static ContainerBuilder RegisterUmbraco(this ContainerBuilder builder)
-        {
-            builder.RegisterCustomControllers(typeof(UmbracoApplication).Assembly);
-            builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
-
-
-            return builder;
-        }
-
-        public static ContainerBuilder RegisterModules(this ContainerBuilder builder)
+        
+        public static ContainerBuilder RegisterAssemblies(this ContainerBuilder builder)
         {
             var assemblies = BuildManager.GetReferencedAssemblies().Cast<Assembly>();
             foreach (var assembly in assemblies)
             {
+                builder.RegisterControllers(assembly);
+                builder.RegisterApiControllers(assembly);
                 builder.RegisterAssemblyModules(assembly);
+                builder.RegisterCustomControllers(assembly)
+                    .RegisterServices(assembly)
+                    .RegisterRepositories(assembly);
+                
             }
             return builder;
         }
 
         public static ContainerBuilder RegisterCustomControllers(this ContainerBuilder builder, Assembly executingAssembly)
         {
+            builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
+            builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
+
             builder.RegisterAssemblyTypes(executingAssembly)
                 .Where(c => c.Name.EndsWith("Controller"))
                 .AsImplementedInterfaces();
-            builder.RegisterAssemblyTypes(executingAssembly)
-                .Where(t => t.BaseType == typeof(ComponentSurfaceController))
-                .As<ComponentSurfaceController>();
             return builder;
         }
 

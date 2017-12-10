@@ -1,19 +1,19 @@
 ﻿using MBran.Umbraco.Core;
+using Our.Umbraco.DocTypeGridEditor.Web.Controllers;
 using System;
 using System.Diagnostics;
 using System.Web.Mvc;
 using Umbraco.Core.Models;
-using Umbraco.Web.Mvc;
 
 namespace MBran.Umbraco.Components
 {
-    public abstract class ComponentSurfaceController : SurfaceController, IComponentController
+    public abstract class ComponentGridSurfaceController : DocTypeGridEditorSurfaceController, IComponentController
     {
         private readonly IPageHelper _pageHelper;
 
         public int PageId { get { return _pageHelper.CurrentPageId(); } }
 
-        public ComponentSurfaceController(IPageHelper pageHelper)
+        public ComponentGridSurfaceController(IPageHelper pageHelper)
         {
             _pageHelper = pageHelper;
         }

@@ -304,7 +304,9 @@
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
     <Content Include="Media\Web.config" />
     <Content Include="config\umbracoSettings.config" />
@@ -378,7 +380,6 @@
     <Content Include="static\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Handlers\AutofacBuilderExtensions.cs" />
     <Compile Include="Handlers\AutofacEventHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -387,6 +388,14 @@
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MBran.Umbraco.Component.Favicon\MBran.Umbraco.Component.Favicon.csproj">
+      <Project>{d01dc5e0-9222-43f9-ad76-bd220a3f2fb1}</Project>
+      <Name>MBran.Umbraco.Component.Favicon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MBran.Umbraco.Component.Meta\MBran.Umbraco.Component.Meta.csproj">
+      <Project>{15385b0d-ea5f-4d1a-95a1-b655712badaa}</Project>
+      <Name>MBran.Umbraco.Component.Meta</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MBran.Umbraco.Components\MBran.Umbraco.Components.csproj">
       <Project>{083015b3-8ad6-4bba-ba3b-feca65eb9c8e}</Project>
       <Name>MBran.Umbraco.Components</Name>
