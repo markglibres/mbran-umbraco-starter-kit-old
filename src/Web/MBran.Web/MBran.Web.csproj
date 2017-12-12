@@ -394,18 +394,6 @@
       <Project>{d01dc5e0-9222-43f9-ad76-bd220a3f2fb1}</Project>
       <Name>MBran.Component.Favicon</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Core\MBran.Core.Components\MBran.Core.Components.csproj">
-      <Project>{083015b3-8ad6-4bba-ba3b-feca65eb9c8e}</Project>
-      <Name>MBran.Core.Components</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Core\MBran.Core.Models\MBran.Core.Models.csproj">
-      <Project>{da3b09bf-2fde-489c-a36d-c24f3b824216}</Project>
-      <Name>MBran.Core.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Core\MBran.Core\MBran.Core.csproj">
-      <Project>{42a4a192-b173-48a7-8eef-e82d22abf53e}</Project>
-      <Name>MBran.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Home\" />
