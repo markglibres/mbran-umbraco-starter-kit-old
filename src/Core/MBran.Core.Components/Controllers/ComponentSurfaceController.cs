@@ -1,7 +1,4 @@
-﻿using MBran.Core;
-using System;
-using System.Diagnostics;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Umbraco.Core.Models;
 using Umbraco.Web.Mvc;
 
@@ -20,37 +17,44 @@ namespace MBran.Core.Components
 
         public virtual PartialViewResult ComponentView()
         {
-            return ComponentView(GetViewPath());
+            return ComponentView(null);
         }
 
         public virtual PartialViewResult ComponentView(string viewName)
         {
-            return ComponentView(viewName, null);
+            return PartialView(viewName);
         }
 
         public virtual PartialViewResult ComponentView(object model)
         {
-            return ComponentView(GetViewPath(), model);
-        }
+            string view = GetViewName();
+            string controller = GetControllerName();
 
-        public virtual PartialViewResult ComponentView(string viewName, object model)
-        {
             //TODO: fix mvc search location beause Umbraco does not support custom locations
-            var partialView = this.ViewEngineCollection.FindPartialView(this.ControllerContext, "RenderModel");
+            var partialView = this.ViewEngineCollection.FindPartialView(this.ControllerContext, view);
+
             if (partialView != null && partialView.View != null)
             {
-                return PartialView(model);
+                return PartialView(view, model);
             }
-            return PartialView(viewName, model);
+
+            string viewPath = ComponentViewHelper.GetFullPath(controller, view);
+            return PartialView(viewPath, model);
         }
 
-        public string GetViewPath()
+        public virtual PartialViewResult ComponentView(string viewPath, object model)
         {
-            string componentFolder = this.GetType().Name.Replace("SurfaceController", String.Empty);
-            StackTrace stackTrace = new StackTrace();
-            string actionMethod = stackTrace.GetFrame(2).GetMethod().Name;
+            return PartialView(viewPath, model);
+        }
 
-            return ComponentViewHelper.GetFullPath(componentFolder, actionMethod);
+        private string GetViewName()
+        {
+            return this.ControllerContext.RouteData.Values["action"].ToString();
+        }
+
+        private string GetControllerName()
+        {
+            return this.ControllerContext.RouteData.Values["controller"].ToString();
         }
         
         public abstract PartialViewResult RenderModel(IPublishedContent model = null);

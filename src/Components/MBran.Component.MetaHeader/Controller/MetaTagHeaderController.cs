@@ -1,16 +1,17 @@
 ﻿using MBran.Core;
 using MBran.Core.Components;
+using MBran.Core.Models;
 using System;
 using System.Web.Mvc;
 using Umbraco.Core.Models;
 
-namespace MBran.Component.Meta 
+namespace MBran.Component.MetaHeader
 {
-    public class MetaTagHeaderSurfaceController : ComponentSurfaceController
+    public class MetaTagHeaderController : ComponentSurfaceController
     {
         private readonly IMetaService _metaService;
 
-        public MetaTagHeaderSurfaceController(IPageHelper pageHelper,
+        public MetaTagHeaderController(IPageHelper pageHelper,
             IMetaService metaService) 
             : base(pageHelper)
         {

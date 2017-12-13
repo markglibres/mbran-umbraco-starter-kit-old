@@ -4,10 +4,10 @@ using Umbraco.Core.Models;
 
 namespace MBran.Core.Components
 {
-    public class FaviconSurfaceController : ComponentSurfaceController
+    public class FaviconController : ComponentSurfaceController
     {
         private readonly IFaviconService _faviconService;
-        public FaviconSurfaceController(IPageHelper pageHelper, 
+        public FaviconController(IPageHelper pageHelper, 
             IFaviconService faviconService) 
             : base(pageHelper)
         {

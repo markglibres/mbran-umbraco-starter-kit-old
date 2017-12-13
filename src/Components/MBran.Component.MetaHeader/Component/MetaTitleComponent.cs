@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 namespace MBran.Component.MetaHeader
 {
-    public class MetaTitleComponent : Component<MetaTagHeaderSurfaceController>
+    public class MetaTitleComponent : Component<MetaTagHeaderController>
     {
         public MetaTitleComponent(HtmlHelper htmlHelper) 
             : base(htmlHelper)
@@ -15,7 +15,7 @@ namespace MBran.Component.MetaHeader
         {
             get
             {
-                return nameof(MetaTagHeaderSurfaceController.RenderTitle);
+                return nameof(MetaTagHeaderController.RenderTitle);
             }
         }
 

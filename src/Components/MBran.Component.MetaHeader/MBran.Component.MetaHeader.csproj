@@ -262,7 +262,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component\MetaTitleComponent.cs" />
-    <Compile Include="Controller\MetaTagHeaderSurfaceController.cs" />
+    <Compile Include="Controller\MetaTagHeaderController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

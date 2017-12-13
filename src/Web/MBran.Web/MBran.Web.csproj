@@ -456,8 +456,6 @@
     <Content Include="uSync\**" />
     <Content Include="static\**" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Favicon\RenderModel.cshtml" />
-    <Content Include="Views\FaviconSurface\RenderModel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

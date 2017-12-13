@@ -24,15 +24,7 @@ namespace MBran.Core
                     action = "Index"
                 });
 
-            var razorEngine = ViewEngines.Engines.OfType<RazorViewEngine>().FirstOrDefault();
-
-            //razorEngine.ViewLocationFormats = razorEngine.ViewLocationFormats.Concat(new string[] {
-            //    "~/Views/Components/{1}/{0}.cshtml"
-            //}).ToArray();
-
-            razorEngine.PartialViewLocationFormats = razorEngine.PartialViewLocationFormats.Concat(new string[] {
-                "~/Views/Components/{0}.cshtml"
-            }).ToArray();
+            
         }
 
         public void OnApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)

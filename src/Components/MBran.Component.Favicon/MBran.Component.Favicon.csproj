@@ -274,7 +274,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component\FaviconComponent.cs" />
-    <Compile Include="Controller\FaviconSurfaceController.cs" />
+    <Compile Include="Controller\FaviconController.cs" />
     <Compile Include="MBranComponentsModule.cs" />
     <Compile Include="Models\Favicon.cs" />
     <Compile Include="Models\FaviconViewModel.cs" />
