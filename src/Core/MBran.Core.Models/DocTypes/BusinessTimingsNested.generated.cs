@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Core.Models
 {
-	// Mixin content Type 1083 with alias "businessTimingsNested"
+	// Mixin content Type 1086 with alias "businessTimingsNested"
 	/// <summary>_BusinessTimings (Nested)</summary>
 	public partial interface IBusinessTimingsNested : IPublishedContent
 	{

@@ -21,7 +21,7 @@ namespace MBran.Core
         }
                
 
-        public ContainerBuilder GetBuilder(ApplicationContext applicationContext, IApplicationEventHandler eventHandler)
+        public ContainerBuilder GetBuilder(ApplicationContext applicationContext)
         {
             if(_builder != null)
             {
@@ -32,8 +32,7 @@ namespace MBran.Core
             var executingAssembly = Assembly.GetExecutingAssembly();
 
             _builder.RegisterInstance(applicationContext.Services.ContentService).As<IContentService>();
-            _builder.RegisterControllers(eventHandler.GetType().Assembly);
-
+            
             _builder
                 .RegisterCustomControllers(executingAssembly)
                 .RegisterServices(executingAssembly)

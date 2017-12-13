@@ -123,7 +123,8 @@ namespace MBran.Core
 
         public IPublishedContent GetRoot()
         {
-            return _umbracoHelper.TypedContentAtRoot().First();
+            IPublishedContent root = _umbracoHelper.TypedContentAtRoot().First();
+            return root;
         }
     }
 }

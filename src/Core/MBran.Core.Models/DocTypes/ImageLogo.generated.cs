@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Core.Models
 {
-	// Mixin content Type 1094 with alias "imageLogo"
+	// Mixin content Type 1081 with alias "imageLogo"
 	/// <summary>_ImageLogo</summary>
 	public partial interface IImageLogo : IPublishedContent
 	{

@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Core.Models
 {
-	// Mixin content Type 1080 with alias "metaTagHeader"
+	// Mixin content Type 1083 with alias "metaTagHeader"
 	/// <summary>_MetaTagHeader</summary>
 	public partial interface IMetaTagHeader : IPublishedContent
 	{

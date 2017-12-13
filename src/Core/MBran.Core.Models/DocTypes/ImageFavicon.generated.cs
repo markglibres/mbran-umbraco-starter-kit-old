@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Core.Models
 {
-	// Mixin content Type 1096 with alias "imageFavicon"
+	// Mixin content Type 1080 with alias "imageFavicon"
 	/// <summary>_ImageFavicon</summary>
 	public partial interface IImageFavicon : IPublishedContent
 	{
