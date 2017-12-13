@@ -8,7 +8,8 @@ namespace MBran.Core.Components
         private const string ViewExtension = ".cshtml";
         public static string GetFullPath(string component, string viewName)
         {
-            return Path.Combine(ViewPath,component,viewName).Replace('\\', '/') + ViewExtension;
+            //return Path.Combine(ViewPath,component,viewName).Replace('\\', '/') + ViewExtension;
+            return viewName;
         }
     }
 }

@@ -35,6 +35,12 @@ namespace MBran.Core.Components
 
         public virtual PartialViewResult ComponentView(string viewName, object model)
         {
+            //TODO: fix mvc search location beause Umbraco does not support custom locations
+            var partialView = this.ViewEngineCollection.FindPartialView(this.ControllerContext, "RenderModel");
+            if (partialView != null && partialView.View != null)
+            {
+                return PartialView(model);
+            }
             return PartialView(viewName, model);
         }
 
