@@ -1,5 +1,6 @@
-﻿@model Image
+﻿@using MBran.Component.Favicon.Models
+@model FaviconViewModel
 @if (Model != null)
 {
-    <link rel="icon" type="@Model.GetMimeType()" href="@Model.Url">
+    <link rel="icon" type="@Model.MimeType" href="@Model.Url">
 }

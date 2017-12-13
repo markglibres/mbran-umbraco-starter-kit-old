@@ -275,7 +275,12 @@
   <ItemGroup>
     <Compile Include="Component\FaviconComponent.cs" />
     <Compile Include="Controller\FaviconSurfaceController.cs" />
+    <Compile Include="MBranComponentsModule.cs" />
+    <Compile Include="Models\Favicon.cs" />
+    <Compile Include="Models\FaviconViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\FaviconService.cs" />
+    <Compile Include="Service\IFaviconService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

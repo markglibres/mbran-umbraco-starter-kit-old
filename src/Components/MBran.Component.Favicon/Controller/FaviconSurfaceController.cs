@@ -1,5 +1,4 @@
-﻿using MBran.Core;
-using MBran.Core.Models;
+﻿using MBran.Component.Favicon.Service;
 using System.Web.Mvc;
 using Umbraco.Core.Models;
 
@@ -7,18 +6,19 @@ namespace MBran.Core.Components
 {
     public class FaviconSurfaceController : ComponentSurfaceController
     {
-        private readonly IMediaService _mediaService;
-        public FaviconSurfaceController(IPageHelper pageHelper, IMediaService mediaService)
+        private readonly IFaviconService _faviconService;
+        public FaviconSurfaceController(IPageHelper pageHelper, 
+            IFaviconService faviconService) 
             : base(pageHelper)
         {
-            _mediaService = mediaService;
+            _faviconService = faviconService;
         }
 
         [ChildActionOnly]
         public override PartialViewResult RenderModel(IPublishedContent model = null)
         {
-            Image favicon = _mediaService.GetFavicon(model);
-            return ComponentView(favicon);
+            var viewModel = _faviconService.GetFavicon(model);
+            return ComponentView(viewModel);
         }
     }
 }
