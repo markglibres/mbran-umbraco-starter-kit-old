@@ -283,6 +283,8 @@
     <Compile Include="Dependency Injection\AutofacBuilderExtensions.cs" />
     <Compile Include="Dependency Injection\IoCBuilder.cs" />
     <Compile Include="Enums\SitemapChangeFrequency.cs" />
+    <Compile Include="Extensions\ControllerContextExtensions.cs" />
+    <Compile Include="Extensions\ControllerExtensions.cs" />
     <Compile Include="Extensions\HttpContextExtensions.cs" />
     <Compile Include="Extensions\PublishedContentExtensions.cs" />
     <Compile Include="Extensions\SitemapChangeFrequencyExtensions.cs" />

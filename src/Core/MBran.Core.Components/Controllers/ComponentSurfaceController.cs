@@ -1,10 +1,12 @@
-﻿using System.Web.Mvc;
+﻿using System.IO;
+using System.Web.Mvc;
 using Umbraco.Core.Models;
 using Umbraco.Web.Mvc;
 
 namespace MBran.Core.Components
 {
-    public abstract class ComponentSurfaceController : SurfaceController, IComponentController
+    public abstract class ComponentSurfaceController : SurfaceController, 
+        IComponentController, IComponentRenderString
     {
         private readonly IPageHelper _pageHelper;
 
@@ -31,9 +33,9 @@ namespace MBran.Core.Components
             string controller = GetControllerName();
 
             //TODO: fix mvc search location beause Umbraco does not support custom locations
-            var partialView = this.ViewEngineCollection.FindPartialView(this.ControllerContext, view);
+            var viewEngine = GetViewEngine(view);
 
-            if (partialView != null && partialView.View != null)
+            if (viewEngine != null && viewEngine.View != null)
             {
                 return PartialView(view, model);
             }
@@ -47,16 +49,14 @@ namespace MBran.Core.Components
             return PartialView(viewPath, model);
         }
 
-        private string GetViewName()
-        {
-            return this.ControllerContext.RouteData.Values["action"].ToString();
-        }
-
-        private string GetControllerName()
-        {
-            return this.ControllerContext.RouteData.Values["controller"].ToString();
-        }
+        
         
         public abstract PartialViewResult RenderModel(IPublishedContent model = null);
+
+        public string RenderViewToString(string viewPath, object model = null)
+        {
+            return this.RenderViewToString(viewPath, model, true);
+        }
+        
     }
 }

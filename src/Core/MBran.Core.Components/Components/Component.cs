@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
+using Umbraco.Core.Models;
 
 namespace MBran.Core.Components
 {
@@ -39,6 +40,9 @@ namespace MBran.Core.Components
             _options.Remove("model");
             _options.Add("model", model);
 
+
+            var controller = DependencyResolver.Current.GetService<T>();
+            controller.RenderModel((IPublishedContent)model);
             return _htmlHelper.Action(actionName, GetControllerName(), _options);
         }
     }
