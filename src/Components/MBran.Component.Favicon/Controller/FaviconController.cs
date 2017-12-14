@@ -1,8 +1,10 @@
 ﻿using MBran.Component.Favicon.Service;
+using MBran.Core;
+using MBran.Core.Components;
 using System.Web.Mvc;
 using Umbraco.Core.Models;
 
-namespace MBran.Core.Components
+namespace MBran.Component.Favicon
 {
     public class FaviconController : ComponentSurfaceController
     {

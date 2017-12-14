@@ -1,6 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using MBran.Core.Components;
+using System.Web.Mvc;
 
-namespace MBran.Core.Components
+namespace MBran.Component.Favicon
 {
     public class FaviconComponent : Component<FaviconController>
     {

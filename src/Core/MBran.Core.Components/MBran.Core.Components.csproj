@@ -277,6 +277,7 @@
     <Compile Include="Components\Component.cs" />
     <Compile Include="Components\IComponent.cs" />
     <Compile Include="Components\IComponentRender.cs" />
+    <Compile Include="Constants\ComponentConstants.cs" />
     <Compile Include="Controllers\ComponentSurfaceController.cs" />
     <Compile Include="Controllers\Interface\IComponentController.cs" />
     <Compile Include="Extensions\HtmlHelperComponentExtensions.cs" />

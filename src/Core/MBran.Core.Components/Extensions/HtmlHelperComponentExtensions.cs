@@ -14,5 +14,15 @@ namespace MBran.Core.Components
             T component = (T)Activator.CreateInstance(typeof(T), helper);
             return component.Render(model, options);
         }
+
+        public static MvcHtmlString Component<T>(this HtmlHelper helper,
+            string viewPath,
+            object model = null,
+            RouteValueDictionary options = null)
+            where T : IComponent, IComponentRender
+        {
+            T component = (T)Activator.CreateInstance(typeof(T), helper);
+            return component.Render(viewPath, model, options);
+        }
     }
 }

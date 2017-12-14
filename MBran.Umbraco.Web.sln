@@ -14,8 +14,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Component", "2. Componen
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Core", "3. Core", "{07AD1199-4563-41C5-A842-1CD83C851A9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Component.Favicon", "src\Components\MBran.Component.Favicon\MBran.Component.Favicon.csproj", "{D01DC5E0-9222-43F9-AD76-BD220A3F2FB1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Core", "src\Core\MBran.Core\MBran.Core.csproj", "{D57CAEC8-913C-42DD-AAB7-543013859FEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Core.Components", "src\Core\MBran.Core.Components\MBran.Core.Components.csproj", "{2A327F31-6A57-40A0-B27D-D175C16496B5}"
@@ -26,16 +24,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Web", "src\Web\MBran.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Core.Models", "src\Core\MBran.Core.Models\MBran.Core.Models.csproj", "{E7424A33-1E39-45FD-8320-1D85EE80A67F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Component.Favicon", "src\Components\MBran.Component.Favicon\MBran.Component.Favicon.csproj", "{8309C9C1-45E8-4CC1-A38C-B43245D98DC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D01DC5E0-9222-43F9-AD76-BD220A3F2FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D01DC5E0-9222-43F9-AD76-BD220A3F2FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D01DC5E0-9222-43F9-AD76-BD220A3F2FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D01DC5E0-9222-43F9-AD76-BD220A3F2FB1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D57CAEC8-913C-42DD-AAB7-543013859FEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D57CAEC8-913C-42DD-AAB7-543013859FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D57CAEC8-913C-42DD-AAB7-543013859FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -56,16 +52,20 @@ Global
 		{E7424A33-1E39-45FD-8320-1D85EE80A67F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7424A33-1E39-45FD-8320-1D85EE80A67F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7424A33-1E39-45FD-8320-1D85EE80A67F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8309C9C1-45E8-4CC1-A38C-B43245D98DC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8309C9C1-45E8-4CC1-A38C-B43245D98DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8309C9C1-45E8-4CC1-A38C-B43245D98DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8309C9C1-45E8-4CC1-A38C-B43245D98DC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{D01DC5E0-9222-43F9-AD76-BD220A3F2FB1} = {D2B21739-8A41-4F46-9A69-C6B055B44BCA}
 		{D57CAEC8-913C-42DD-AAB7-543013859FEF} = {07AD1199-4563-41C5-A842-1CD83C851A9E}
 		{2A327F31-6A57-40A0-B27D-D175C16496B5} = {07AD1199-4563-41C5-A842-1CD83C851A9E}
 		{314176FB-578A-464B-B7D0-4DC8871181B2} = {D2B21739-8A41-4F46-9A69-C6B055B44BCA}
 		{96CF9AD9-6503-47A5-8164-47AE1E125D19} = {4569035A-6DBB-494D-99ED-E7935692DF9B}
 		{E7424A33-1E39-45FD-8320-1D85EE80A67F} = {07AD1199-4563-41C5-A842-1CD83C851A9E}
+		{8309C9C1-45E8-4CC1-A38C-B43245D98DC8} = {D2B21739-8A41-4F46-9A69-C6B055B44BCA}
 	EndGlobalSection
 EndGlobal

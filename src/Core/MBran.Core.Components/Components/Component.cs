@@ -4,12 +4,11 @@ using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
-using Umbraco.Core.Models;
 
 namespace MBran.Core.Components
 {
     public abstract class Component<T> : IComponent, IComponentRender
-        where T: Controller, IComponentController
+        where T: IComponentController
     {
         private readonly string _componentName;
         private readonly HtmlHelper _htmlHelper;
@@ -28,19 +27,19 @@ namespace MBran.Core.Components
             return controllerName;
         }
         
-
         public virtual MvcHtmlString Render(object model, RouteValueDictionary options)
         {
-            return Render(RenderAction, model, options);
+            return Render(String.Empty, model, options);
         }
 
-        public MvcHtmlString Render(string actionName, object model, RouteValueDictionary options)
+        public MvcHtmlString Render(string viewPath, object model, RouteValueDictionary options)
         {
             var _options = options ?? new RouteValueDictionary();
             _options.Remove("model");
             _options.Add("model", model);
+            _options[ComponentConstants.VIEW_PATH_KEY] = viewPath;
             
-            return _htmlHelper.Action(actionName, GetControllerName(), _options);
+            return _htmlHelper.Action(RenderAction, GetControllerName(), _options);
         }
     }
 }

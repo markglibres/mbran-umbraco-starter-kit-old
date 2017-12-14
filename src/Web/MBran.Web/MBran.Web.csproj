@@ -464,7 +464,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handlers\AutofacEventHandler.cs" />
@@ -476,7 +478,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Components\MBran.Component.Favicon\MBran.Component.Favicon.csproj">
-      <Project>{d01dc5e0-9222-43f9-ad76-bd220a3f2fb1}</Project>
+      <Project>{8309c9c1-45e8-4cc1-a38c-b43245d98dc8}</Project>
       <Name>MBran.Component.Favicon</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Components\MBran.Component.MetaHeader\MBran.Component.MetaHeader.csproj">
