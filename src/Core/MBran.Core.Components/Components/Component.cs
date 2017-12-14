@@ -9,7 +9,7 @@ using Umbraco.Core.Models;
 namespace MBran.Core.Components
 {
     public abstract class Component<T> : IComponent, IComponentRender
-        where T: IComponentController
+        where T: Controller, IComponentController
     {
         private readonly string _componentName;
         private readonly HtmlHelper _htmlHelper;
@@ -39,10 +39,7 @@ namespace MBran.Core.Components
             var _options = options ?? new RouteValueDictionary();
             _options.Remove("model");
             _options.Add("model", model);
-
-
-            var controller = DependencyResolver.Current.GetService<T>();
-            controller.RenderModel((IPublishedContent)model);
+            
             return _htmlHelper.Action(actionName, GetControllerName(), _options);
         }
     }

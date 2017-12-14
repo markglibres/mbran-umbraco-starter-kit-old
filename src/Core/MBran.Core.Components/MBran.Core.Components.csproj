@@ -279,7 +279,6 @@
     <Compile Include="Components\IComponentRender.cs" />
     <Compile Include="Controllers\ComponentSurfaceController.cs" />
     <Compile Include="Controllers\Interface\IComponentController.cs" />
-    <Compile Include="Controllers\Interface\IComponentRenderString.cs" />
     <Compile Include="Extensions\HtmlHelperComponentExtensions.cs" />
     <Compile Include="Helpers\ComponentViewHelper.cs" />
     <Compile Include="MBranComponentsModule.cs" />

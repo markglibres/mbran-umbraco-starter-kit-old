@@ -36,7 +36,8 @@ namespace MBran.Core
 
         }
 
-        public static ViewEngineResult GetViewEngine(this ControllerContext context, string viewPath, bool partial = false)
+        public static ViewEngineResult GetViewEngine(this ControllerContext context, 
+            string viewPath, bool partial = false)
         {
             if(partial)
             {
@@ -51,6 +52,16 @@ namespace MBran.Core
             return context;
         }
 
-        
+        public static string ExecutingViewName(this ControllerContext context)
+        {
+            return context.RouteData.Values["action"].ToString();
+        }
+
+        public static string ExecutingControllerName(this ControllerContext context)
+        {
+            return context.RouteData.Values["controller"].ToString();
+        }
+
+
     }
 }

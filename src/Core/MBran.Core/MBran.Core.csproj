@@ -289,6 +289,7 @@
     <Compile Include="Extensions\PublishedContentExtensions.cs" />
     <Compile Include="Extensions\SitemapChangeFrequencyExtensions.cs" />
     <Compile Include="Extensions\SitemapExtensions.cs" />
+    <Compile Include="Extensions\ViewEngineResultExtensions.cs" />
     <Compile Include="Handlers\Error404Handler.cs" />
     <Compile Include="Handlers\MBranApplicationEventHandler.cs" />
     <Compile Include="Helpers\ConfigurationHelper.cs" />

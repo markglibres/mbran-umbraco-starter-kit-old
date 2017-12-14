@@ -16,13 +16,19 @@ namespace MBran.Core
 
         public static string ExecutingViewName(this Controller controller)
         {
-            return controller.ControllerContext.RouteData.Values["action"].ToString();
+            return controller.ControllerContext.ExecutingViewName();
         }
 
         public static string ExecutingControllerName(this Controller controller)
         {
-            return controller.ControllerContext.RouteData.Values["controller"].ToString();
+            return controller.ControllerContext.ExecutingControllerName();
         }
-        
+
+        public static ViewEngineResult GetViewEngine(this Controller controller,
+            string viewPath, bool partial = false)
+        {
+            return controller.ControllerContext.GetViewEngine(viewPath, partial);
+        }
+
     }
 }
