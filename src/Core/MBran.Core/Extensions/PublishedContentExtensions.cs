@@ -1,16 +1,15 @@
-﻿using System;
+﻿using MBran.Core.Models;
+using Our.Umbraco.Ditto;
 using Umbraco.Core.Models;
-using Umbraco.Core.Models.PublishedContent;
 
 namespace MBran.Core
 {
     public static class PublishedContentExtensions
     {
-        public static T As<T>(this IPublishedContent content)
-            where T : PublishedContentModel
+        public static T As<T>(this IBasePoco content)
+            where T : class, IBasePoco
         {
-            T newObject = (T)Activator.CreateInstance(typeof(T), content);
-            return newObject;
+            return content.PublishedContent.As<T>();
         }
     }
 }

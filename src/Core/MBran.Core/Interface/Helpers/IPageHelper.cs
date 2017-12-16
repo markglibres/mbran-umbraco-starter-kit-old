@@ -1,5 +1,4 @@
 ﻿using Umbraco.Core.Models;
-using Umbraco.Core.Models.PublishedContent;
 
 namespace MBran.Core
 {
@@ -7,6 +6,6 @@ namespace MBran.Core
     {
         int CurrentPageId();
         IPublishedContent CurrentPage();
-        T CurrentPage<T>() where T: PublishedContentModel;
+        T CurrentPage<T>() where T: class;
     }
 }

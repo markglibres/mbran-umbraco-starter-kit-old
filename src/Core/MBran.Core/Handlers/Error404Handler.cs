@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using MBran.Core.Models;
+using System.Web.Mvc;
 using Umbraco.Core.Models;
 using Umbraco.Web.Routing;
 
@@ -11,9 +12,9 @@ namespace MBran.Core
             if (contentRequest.Is404)
             {
                 ISiteService _siteService = DependencyResolver.Current.GetService<ISiteService>();
-                IPublishedContent notFoundNode = _siteService.GetErrorPage();
+                Error404 notFoundNode = _siteService.GetErrorPage();
                 contentRequest.SetResponseStatus(404, "404 Page Not Found");
-                contentRequest.PublishedContent = notFoundNode;
+                contentRequest.PublishedContent = notFoundNode.PublishedContent;
             }
 
             return contentRequest.PublishedContent != null;

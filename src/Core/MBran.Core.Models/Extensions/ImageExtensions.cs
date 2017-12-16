@@ -11,7 +11,7 @@ namespace MBran.Core.Models
             {
                 return String.Empty;
             }
-            return MimeMapping.GetMimeMapping(image.Path);
+            return MimeMapping.GetMimeMapping(image.PublishedContent.Path);
         }
     }
 }

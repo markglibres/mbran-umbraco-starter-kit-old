@@ -20,7 +20,7 @@ namespace MBran.Component.Favicon.Service
             if (favicon != null)
             {
                 viewModel.MimeType = favicon.GetMimeType();
-                viewModel.Url = favicon.Url;
+                viewModel.Url = favicon.PublishedContent.Url;
             }
             
             return viewModel;

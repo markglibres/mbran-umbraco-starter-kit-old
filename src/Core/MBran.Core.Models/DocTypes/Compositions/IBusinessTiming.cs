@@ -1,5 +1,5 @@
-﻿using System;
-using MBran.TimeRangePicker;
+﻿using MBran.TimeRangePicker;
+using System;
 using System.Collections.Generic;
 
 namespace MBran.Core.Models

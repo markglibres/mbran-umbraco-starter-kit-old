@@ -6,15 +6,16 @@ namespace MBran.Core
 {
     public interface IContentHelper
     {
-        IEnumerable<T> GetDescendants<T>(int startId) where T : class, IPublishedContent;
-        IEnumerable<T> GetDescendantsOrSelf<T>(int startId) where T : class, IPublishedContent;
-        T GetDescendant<T>(int startId) where T : class, IPublishedContent;
-        T GetDescendantOrSelf<T>(int startId) where T : class, IPublishedContent;
-        IEnumerable<T> GetAncestors<T>(int startId) where T : class, IPublishedContent;
-        IEnumerable<T> GetAncestorsOrSelf<T>(int startId) where T : class, IPublishedContent;
-        T GetAncestor<T>(int startId) where T : class, IPublishedContent;
-        T GetAncestorOrSelf<T>(int startId) where T : class, IPublishedContent;
-        T GetContent<T>(int nodeId) where T : PublishedContentModel;
+        IEnumerable<T> GetDescendants<T>(int startId) where T : class;
+        IEnumerable<T> GetDescendantsOrSelf<T>(int startId) where T : class;
+        T GetDescendant<T>(int startId) where T : class;
+        T GetDescendantOrSelf<T>(int startId) where T : class;
+        IEnumerable<T> GetAncestors<T>(int startId) where T : class;
+        IEnumerable<T> GetAncestorsOrSelf<T>(int startId) where T : class;
+        T GetAncestor<T>(int startId) where T : class;
+        T GetAncestorOrSelf<T>(int startId) where T : class;
+        T GetContent<T>(int nodeId) where T : class;
         IPublishedContent GetRoot();
+        T GetRoot<T>() where T: class;
     }
 }
