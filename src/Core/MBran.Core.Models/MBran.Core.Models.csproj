@@ -289,23 +289,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocTypes\BusinessAddress.generated.cs" />
-    <Compile Include="DocTypes\BusinessTiming.generated.cs" />
-    <Compile Include="DocTypes\BusinessTimingsNested.generated.cs" />
-    <Compile Include="DocTypes\ContentHeader.generated.cs" />
-    <Compile Include="DocTypes\ContentImageFile.generated.cs" />
-    <Compile Include="DocTypes\Error404.generated.cs" />
-    <Compile Include="DocTypes\File.generated.cs" />
-    <Compile Include="DocTypes\Folder.generated.cs" />
-    <Compile Include="DocTypes\Home.generated.cs" />
-    <Compile Include="DocTypes\Image.generated.cs" />
-    <Compile Include="DocTypes\ImageFavicon.generated.cs" />
-    <Compile Include="DocTypes\ImageLogo.generated.cs" />
-    <Compile Include="DocTypes\Member.generated.cs" />
-    <Compile Include="DocTypes\MetaTagHeader.generated.cs" />
-    <Compile Include="DocTypes\MetaTagImage.generated.cs" />
-    <Compile Include="DocTypes\SiteConfig.generated.cs" />
-    <Compile Include="DocTypes\SitemapSettings.generated.cs" />
     <Compile Include="Extensions\AutoMapperExtensions.cs" />
     <Compile Include="Extensions\ImageExtensions.cs" />
     <Compile Include="Interface\IMetaTitle.cs" />
@@ -321,7 +304,6 @@
     <None Include="App_Plugins\MBran.DayOfWeekPicker\package.manifest" />
     <None Include="App_Plugins\MBran.TimeRangePicker\package.manifest" />
     <None Include="App_Plugins\ModelsBuilder\package.manifest" />
-    <None Include="DocTypes\ood.flag" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -337,6 +319,12 @@
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Models\MBran.Models\MBran.Models.csproj">
+      <Project>{bd011d1f-eb0e-4594-b3a9-b5f7f2d91dd8}</Project>
+      <Name>MBran.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\..\..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />

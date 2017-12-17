@@ -1,13 +1,11 @@
-﻿using MBran.Core.Models;
+﻿using Umbraco.Core.Models;
 
 namespace MBran.Core
 {
-    public interface ISiteService
+    public interface ISiteService<T>
+        where T: class, IPublishedContent
     {
-        SiteConfig GetSite();
-        Home GetHome();
-        Error404 GetErrorPage();
-        int GetDomainNodeId();
-        string GetDomain();
+        T GetSite();
+        
     }
 }

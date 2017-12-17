@@ -1,6 +1,7 @@
 ﻿using MBran.Component.Favicon.Models;
 using MBran.Core;
 using MBran.Core.Models;
+using MBran.Models;
 using Umbraco.Core.Models;
 
 namespace MBran.Component.Favicon.Service

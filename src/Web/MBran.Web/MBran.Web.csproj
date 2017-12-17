@@ -497,6 +497,10 @@
       <Project>{d57caec8-913c-42dd-aab7-543013859fef}</Project>
       <Name>MBran.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Models\MBran.Models\MBran.Models.csproj">
+      <Project>{bd011d1f-eb0e-4594-b3a9-b5f7f2d91dd8}</Project>
+      <Name>MBran.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,4 +1,4 @@
-﻿using MBran.Core.Models;
+﻿using MBran.Models;
 using System.Collections.Generic;
 
 namespace MBran.Core

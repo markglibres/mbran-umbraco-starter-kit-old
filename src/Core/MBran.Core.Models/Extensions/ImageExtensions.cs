@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MBran.Models;
+using System;
 using System.Web;
 
 namespace MBran.Core.Models

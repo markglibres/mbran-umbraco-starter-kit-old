@@ -1,8 +1,8 @@
-﻿using System.Web;
+﻿using MBran.Models;
+using System;
+using System.Web;
 using Umbraco.Core;
 using Umbraco.Core.Models;
-using System;
-using MBran.Core.Models;
 
 namespace MBran.Core
 {

@@ -1,4 +1,5 @@
 ﻿using MBran.Core.Models;
+using MBran.Models;
 using System;
 using Umbraco.Core.Models;
 

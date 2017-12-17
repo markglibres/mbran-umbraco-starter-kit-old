@@ -290,6 +290,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Models\MBran.Models\MBran.Models.csproj">
+      <Project>{bd011d1f-eb0e-4594-b3a9-b5f7f2d91dd8}</Project>
+      <Name>MBran.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MBran.Core.Models\MBran.Core.Models.csproj">
       <Project>{e7424a33-1e39-45fd-8320-1d85ee80a67f}</Project>
       <Name>MBran.Core.Models</Name>
