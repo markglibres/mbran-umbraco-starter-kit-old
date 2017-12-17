@@ -6,7 +6,7 @@ namespace MBran.Core.Components
     {
         protected override void Load(ContainerBuilder builder)
         {
-            
+            builder.RegisterType<ComponentsController>().InstancePerDependency();
         }
     }
 }

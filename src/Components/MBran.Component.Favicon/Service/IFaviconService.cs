@@ -1,7 +1,6 @@
-﻿using MBran.Component.Favicon.Models;
-using Umbraco.Core.Models;
+﻿using Umbraco.Core.Models;
 
-namespace MBran.Component.Favicon.Service
+namespace MBran.Components.Favicon
 {
     public interface IFaviconService
     {

@@ -267,13 +267,13 @@
   <ItemGroup>
     <Compile Include="Mapper\AutoMapperEventHandler.cs" />
     <Compile Include="Mapper\AutoMapperEvents.cs" />
-    <Compile Include="MetaTitleComponent.cs" />
+    <Compile Include="Component\MetaTitleComponent.cs" />
     <Compile Include="Models\IMetaTitle.cs" />
     <Compile Include="Models\MetaTitle.cs" />
     <Compile Include="Models\MetaTitleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IMetaService.cs" />
-    <Compile Include="Services\MetaService.cs" />
+    <Compile Include="Service\IMetaService.cs" />
+    <Compile Include="Service\MetaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

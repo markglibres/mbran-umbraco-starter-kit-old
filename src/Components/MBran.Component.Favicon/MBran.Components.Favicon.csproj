@@ -7,8 +7,8 @@
     <ProjectGuid>{8309C9C1-45E8-4CC1-A38C-B43245D98DC8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MBran.Component.Favicon</RootNamespace>
-    <AssemblyName>MBran.Component.Favicon</AssemblyName>
+    <RootNamespace>MBran.Components.Favicon</RootNamespace>
+    <AssemblyName>MBran.Components.Favicon</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -214,8 +214,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component\FaviconComponent.cs" />
-    <Compile Include="Controller\FaviconController.cs" />
-    <Compile Include="MBranComponentsModule.cs" />
     <Compile Include="Models\Favicon.cs" />
     <Compile Include="Models\FaviconViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

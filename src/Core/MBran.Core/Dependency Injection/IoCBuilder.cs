@@ -29,16 +29,10 @@ namespace MBran.Core
             }
 
             _builder = new ContainerBuilder();
-            var executingAssembly = Assembly.GetExecutingAssembly();
-
+            
             _builder.RegisterInstance(applicationContext.Services.ContentService).As<IContentService>();
             
-            _builder
-                .RegisterCustomControllers(executingAssembly)
-                .RegisterComponents(executingAssembly)
-                .RegisterServices(executingAssembly)
-                .RegisterRepositories(executingAssembly)
-                .RegisterAssemblies();
+            _builder.RegisterAssemblies();
 
             return _builder;
         }

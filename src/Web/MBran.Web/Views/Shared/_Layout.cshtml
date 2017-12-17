@@ -1,8 +1,10 @@
 ﻿@using MBran.Components.MetaHeader
+@using MBran.Components.Favicon
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    @(Html.Component<FaviconComponent>())
     @(Html.Component<MetaTitleComponent>())
 </head>
 <body>

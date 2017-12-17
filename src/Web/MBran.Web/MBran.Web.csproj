@@ -450,7 +450,7 @@
     <Content Include="App_Plugins\MBran.CountryPicker\package.manifest" />
     <Content Include="App_Plugins\MBran.DayOfWeekPicker\package.manifest" />
     <Content Include="App_Plugins\MBran.TimeRangePicker\package.manifest" />
-    <Content Include="Views\Components\Favicon\RenderModel.cshtml" />
+    <Content Include="Views\Components\Defaults\Favicon.cshtml" />
     <Content Include="Views\GenericPage.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="uSync\**" />
@@ -479,6 +479,10 @@
     <Analyzer Include="..\..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Components\MBran.Component.Favicon\MBran.Components.Favicon.csproj">
+      <Project>{8309c9c1-45e8-4cc1-a38c-b43245d98dc8}</Project>
+      <Name>MBran.Components.Favicon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Components\MBran.Component.MetaHeader\MBran.Components.MetaHeader.csproj">
       <Project>{314176fb-578a-464b-b7d0-4dc8871181b2}</Project>
       <Name>MBran.Components.MetaHeader</Name>

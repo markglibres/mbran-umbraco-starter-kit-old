@@ -13,22 +13,7 @@ namespace MBran.Core
             _mediaHelper = mediaHelper;
             _siteService = siteService;
         }
-        public Image GetFavicon(IPublishedContent node = null)
-        {
-            if(node == null)
-            {
-                node = _siteService.GetSite();
-            }
-
-            ImageFavicon favicon = node.As<ImageFavicon>();
-            if(favicon.Favicon == null)
-            {
-                return null;
-            }
-
-            return _mediaHelper.GetMedia(favicon.Favicon.Id);
-        }
-
+        
         public Image GetLogo(IPublishedContent node = null)
         {
             if (node == null)

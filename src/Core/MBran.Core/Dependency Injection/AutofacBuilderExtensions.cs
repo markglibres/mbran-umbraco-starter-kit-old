@@ -20,13 +20,13 @@ namespace MBran.Core
             {
                 builder.RegisterControllers(assembly);
                 builder.RegisterApiControllers(assembly);
-                builder.RegisterAssemblyModules(assembly);
                 builder.RegisterCustomControllers(assembly)
                     .RegisterComponents(assembly)
                     .RegisterServices(assembly)
                     .RegisterRepositories(assembly);
-                
+                builder.RegisterAssemblyModules(assembly);
             }
+            
             return builder;
         }
 

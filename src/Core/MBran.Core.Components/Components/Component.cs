@@ -47,7 +47,7 @@ namespace MBran.Core.Components
 
         public virtual MvcHtmlString Render()
         {
-            return Render(String.Empty, GetModel(), GetOptions());
+            return Render(String.Empty, GetViewModel(), GetOptions());
         }
 
         public virtual RouteValueDictionary GetOptions()
@@ -55,7 +55,7 @@ namespace MBran.Core.Components
             return new RouteValueDictionary();
         }
         
-        public abstract object GetModel();
+        public abstract object GetViewModel();
 
         public void SetHtmlHelper(HtmlHelper helper)
         {

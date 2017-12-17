@@ -6,6 +6,5 @@ namespace MBran.Core
     public interface IMediaService
     {
         Image GetLogo(IPublishedContent node = null);
-        Image GetFavicon(IPublishedContent node = null);
     }
 }
