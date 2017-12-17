@@ -7,6 +7,7 @@ namespace MBran.Core.Components
     {
         MvcHtmlString Render(object model, RouteValueDictionary options);
         MvcHtmlString Render(string viewPath, object model, RouteValueDictionary options);
-        string RenderAction { get; }
+        MvcHtmlString Render();
+        void SetHtmlHelper(HtmlHelper helper);
     }
 }

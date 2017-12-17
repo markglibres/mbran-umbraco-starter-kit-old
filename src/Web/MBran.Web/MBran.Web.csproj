@@ -450,12 +450,13 @@
     <Content Include="App_Plugins\MBran.DayOfWeekPicker\package.manifest" />
     <Content Include="App_Plugins\MBran.TimeRangePicker\package.manifest" />
     <Content Include="Views\Components\Favicon\RenderModel.cshtml" />
-    <Content Include="Views\Components\MetaTagHeader\RenderTitle.cshtml" />
     <Content Include="Views\GenericPage.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="uSync\**" />
     <Content Include="static\**" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\MetaTitle\MetaTitle.cshtml" />
+    <Content Include="Views\Components\Defaults\MetaTitle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -477,13 +478,9 @@
     <Analyzer Include="..\..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Components\MBran.Component.Favicon\MBran.Component.Favicon.csproj">
-      <Project>{8309c9c1-45e8-4cc1-a38c-b43245d98dc8}</Project>
-      <Name>MBran.Component.Favicon</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Components\MBran.Component.MetaHeader\MBran.Component.MetaHeader.csproj">
+    <ProjectReference Include="..\..\Components\MBran.Component.MetaHeader\MBran.Components.MetaHeader.csproj">
       <Project>{314176fb-578a-464b-b7d0-4dc8871181b2}</Project>
-      <Name>MBran.Component.MetaHeader</Name>
+      <Name>MBran.Components.MetaHeader</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Core\MBran.Core.Components\MBran.Core.Components.csproj">
       <Project>{2a327f31-6a57-40a0-b27d-d175c16496b5}</Project>

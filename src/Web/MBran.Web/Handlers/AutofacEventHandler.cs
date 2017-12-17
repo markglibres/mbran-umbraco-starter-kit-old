@@ -13,6 +13,7 @@ namespace MBran.Umbraco.Web
         {
             var builder = IoCBuilder.Instance.GetBuilder(applicationContext);
             builder.RegisterControllers(typeof(AutofacEventHandler).Assembly);
+            
             builder.BuildContainer();
         }
 

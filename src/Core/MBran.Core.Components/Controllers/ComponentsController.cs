@@ -1,33 +1,23 @@
-﻿using System.IO;
+﻿using System;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
-using Umbraco.Core.Models;
 using Umbraco.Web.Mvc;
 
 namespace MBran.Core.Components
 {
-    public abstract class ComponentSurfaceController : SurfaceController, 
+    public class ComponentsController : SurfaceController,
         IComponentController
     {
         private readonly IPageHelper _pageHelper;
 
         public int PageId { get { return _pageHelper.CurrentPageId(); } }
 
-        public ComponentSurfaceController(IPageHelper pageHelper)
+        public ComponentsController(IPageHelper pageHelper)
         {
             _pageHelper = pageHelper;
         }
 
-        public virtual PartialViewResult ComponentView()
-        {
-            return ComponentView(null);
-        }
-
-        public virtual PartialViewResult ComponentView(string viewName)
-        {
-            return PartialView(viewName);
-        }
-
-        public virtual PartialViewResult ComponentView(object model)
+        public virtual PartialViewResult RenderModel(object model)
         {
             string customViewPath = GetCustomViewPath();
             PartialViewResult partialView = null;
@@ -36,8 +26,8 @@ namespace MBran.Core.Components
             {
                 partialView = GetMvcView(model);
             }
-            
-            if(partialView == null)
+
+            if (partialView == null)
             {
                 partialView = GetDefaultView(model, customViewPath);
             }
@@ -45,7 +35,7 @@ namespace MBran.Core.Components
             return partialView;
         }
 
-        public virtual PartialViewResult ComponentView(string viewPath, object model)
+        public virtual PartialViewResult Render(string viewPath, object model)
         {
             return PartialView(viewPath, model);
         }
@@ -57,12 +47,22 @@ namespace MBran.Core.Components
                 ?.ToString();
         }
 
+        private string GetComponentViewName()
+        {
+            string component = this.ControllerContext.RequestContext.RouteData
+                ?.Values[ComponentConstants.COMPONENT_KEY]
+                ?.ToString();
+
+            return Regex.Replace(component, "component$", String.Empty, RegexOptions.IgnoreCase);
+        }
+
         private PartialViewResult GetMvcView(object model)
         {
-            var viewEngine = this.GetViewEngine(this.ExecutingViewName(), true);
+            var viewEngine = this.GetViewEngine(this.GetComponentViewName(), true);
 
             if (viewEngine != null && viewEngine.View != null)
             {
+                this.ControllerContext.RouteData.Values["action"] = GetComponentViewName();
                 return viewEngine.GetPartialView(this.ControllerContext, model);
             }
 
@@ -71,14 +71,12 @@ namespace MBran.Core.Components
 
         private PartialViewResult GetDefaultView(object model, string viewPath = "")
         {
-            string controller = this.ExecutingControllerName();
+            string component = this.GetComponentViewName();
             string view = string.IsNullOrEmpty(viewPath)
-                ? ComponentViewHelper.GetFullPath(controller, this.ExecutingViewName())
+                ? ComponentViewHelper.GetFullPath(ComponentConstants.Folders.Views.DEFAULT, component)
                 : viewPath;
             return PartialView(view, model);
         }
-
-        public abstract PartialViewResult RenderModel(IPublishedContent model = null);
-
+        
     }
 }

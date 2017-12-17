@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
+using System;
 using System.Linq;
 using System.Reflection;
 using System.Web.Compilation;
@@ -21,6 +22,7 @@ namespace MBran.Core
                 builder.RegisterApiControllers(assembly);
                 builder.RegisterAssemblyModules(assembly);
                 builder.RegisterCustomControllers(assembly)
+                    .RegisterComponents(assembly)
                     .RegisterServices(assembly)
                     .RegisterRepositories(assembly);
                 
@@ -34,16 +36,25 @@ namespace MBran.Core
             builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
 
             builder.RegisterAssemblyTypes(executingAssembly)
-                .Where(c => c.Name.EndsWith("Controller"))
-                .AsImplementedInterfaces();
+                .Where(c => c.Name.EndsWith("Controller", StringComparison.CurrentCultureIgnoreCase))
+                .InstancePerRequest();
+            return builder;
+        }
+
+        public static ContainerBuilder RegisterComponents(this ContainerBuilder builder, Assembly executingAssembly)
+        {
+            builder.RegisterAssemblyTypes(executingAssembly)
+                .Where(c => c.Name.EndsWith("Component",StringComparison.CurrentCultureIgnoreCase))
+                .InstancePerRequest();
             return builder;
         }
 
         public static ContainerBuilder RegisterServices(this ContainerBuilder builder, Assembly executingAssembly)
         {
             builder.RegisterAssemblyTypes(executingAssembly)
-                .Where(c => c.Name.EndsWith("Service"))
-                .AsImplementedInterfaces();
+                .Where(c => c.Name.EndsWith("Service", StringComparison.CurrentCultureIgnoreCase))
+                .AsImplementedInterfaces()
+                .InstancePerRequest();
 
             return builder;
         }
@@ -51,7 +62,8 @@ namespace MBran.Core
         {
             builder.RegisterAssemblyTypes(executingAssembly)
                 .Where(c => c.Name.EndsWith("Repository"))
-                .AsImplementedInterfaces();
+                .AsImplementedInterfaces()
+                .InstancePerRequest();
 
             return builder;
         }

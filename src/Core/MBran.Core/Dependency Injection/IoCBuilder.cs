@@ -35,6 +35,7 @@ namespace MBran.Core
             
             _builder
                 .RegisterCustomControllers(executingAssembly)
+                .RegisterComponents(executingAssembly)
                 .RegisterServices(executingAssembly)
                 .RegisterRepositories(executingAssembly)
                 .RegisterAssemblies();
