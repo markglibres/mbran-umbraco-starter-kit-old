@@ -1,6 +1,6 @@
-﻿namespace MBran.Core.Models
+﻿namespace MBran.Components.MetaHeader
 {
-    public partial class MetaTitleViewModel : IViewModel
+    public class MetaTitle : IMetaTitle
     {
         public string Title { get; set; }
         public string Description { get; set; }

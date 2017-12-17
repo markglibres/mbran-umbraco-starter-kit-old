@@ -265,8 +265,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mapper\AutoMapperEventHandler.cs" />
+    <Compile Include="Mapper\AutoMapperEvents.cs" />
     <Compile Include="MetaTitleComponent.cs" />
+    <Compile Include="Models\IMetaTitle.cs" />
+    <Compile Include="Models\MetaTitle.cs" />
+    <Compile Include="Models\MetaTitleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IMetaService.cs" />
+    <Compile Include="Services\MetaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -290,6 +297,7 @@
       <Name>MBran.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\..\..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

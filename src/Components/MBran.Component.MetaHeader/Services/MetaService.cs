@@ -1,9 +1,9 @@
-﻿using MBran.Core.Models;
+﻿using MBran.Core;
 using MBran.Models;
 using System;
 using Umbraco.Core.Models;
 
-namespace MBran.Core
+namespace MBran.Components.MetaHeader
 {
     public class MetaService : IMetaService
     {

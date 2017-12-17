@@ -1,6 +1,6 @@
 ﻿using Umbraco.Core;
 
-namespace MBran.Core.Models
+namespace MBran.Components.MetaHeader
 {
     public class AutoMapperEventHandler : IApplicationEventHandler
     {
