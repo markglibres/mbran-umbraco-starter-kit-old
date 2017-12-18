@@ -46,16 +46,6 @@ namespace MBran.Core
             return _home;
         }
 
-        public Error404 GetErrorPage()
-        {
-            if (_errorPage == null)
-            {
-                _errorPage = _contentHelper
-                    .GetDescendantOrSelf<Error404>(GetDomainNodeId());
-            }
-
-            return _errorPage;
-        }
         public int GetDomainNodeId()
         {
             if (_domainNodeId == 0)

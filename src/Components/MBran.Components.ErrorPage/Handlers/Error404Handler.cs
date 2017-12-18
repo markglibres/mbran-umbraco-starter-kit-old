@@ -2,7 +2,7 @@
 using Umbraco.Core.Models;
 using Umbraco.Web.Routing;
 
-namespace MBran.Core
+namespace MBran.Components.ErrorPage
 {
     public class Error404Handler : IContentFinder
     {
@@ -10,8 +10,8 @@ namespace MBran.Core
         {
             if (contentRequest.Is404)
             {
-                ISiteService _siteService = DependencyResolver.Current.GetService<ISiteService>();
-                IPublishedContent notFoundNode = _siteService.GetErrorPage();
+                IErrorPageService _errorPageService = DependencyResolver.Current.GetService<IErrorPageService>();
+                IPublishedContent notFoundNode = _errorPageService.GetErrorPage();
                 contentRequest.SetResponseStatus(404, "404 Page Not Found");
                 contentRequest.PublishedContent = notFoundNode;
             }

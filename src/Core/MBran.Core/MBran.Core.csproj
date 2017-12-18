@@ -286,8 +286,6 @@
     <Compile Include="Extensions\HttpContextExtensions.cs" />
     <Compile Include="Extensions\PublishedContentExtensions.cs" />
     <Compile Include="Extensions\ViewEngineResultExtensions.cs" />
-    <Compile Include="Handlers\Error404Handler.cs" />
-    <Compile Include="Handlers\MBranApplicationEventHandler.cs" />
     <Compile Include="Helpers\ConfigurationHelper.cs" />
     <Compile Include="Helpers\ContentHelper.cs" />
     <Compile Include="Helpers\MediaHelper.cs" />
@@ -297,12 +295,10 @@
     <Compile Include="Interface\Helpers\IMediaHelper.cs" />
     <Compile Include="Interface\Helpers\IPageHelper.cs" />
     <Compile Include="Interface\Service\IBusinessService.cs" />
-    <Compile Include="Interface\Service\IErrorService.cs" />
     <Compile Include="Interface\Service\IHomeService.cs" />
     <Compile Include="Interface\Service\IMediaService.cs" />
     <Compile Include="Interface\Service\IPageService.cs" />
     <Compile Include="Interface\Service\ISiteService.cs" />
-    <Compile Include="Interface\Service\ISystemSiteService.cs" />
     <Compile Include="Interface\Service\IXmlSerializerService.cs" />
     <Compile Include="MBranCoreModule.cs" />
     <Compile Include="MBranHelperModule.cs" />
@@ -327,9 +323,7 @@
       <Name>MBran.Core.Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\..\..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
