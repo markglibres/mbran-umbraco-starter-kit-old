@@ -1,9 +1,10 @@
-﻿using MBran.Models;
+﻿using MBran.Core;
+using MBran.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Umbraco.Web;
 
-namespace MBran.Core
+namespace MBran.Components.Sitemap
 {
     public class SiteMapService : ISitemapService
     {

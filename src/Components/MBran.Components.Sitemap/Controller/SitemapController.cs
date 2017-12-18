@@ -1,7 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using MBran.Core;
+using System.Web.Mvc;
 using Umbraco.Web.Mvc;
 
-namespace MBran.Core
+namespace MBran.Components.Sitemap
 {
     [RoutePrefix("")]
     public class SiteMapController : RenderMvcController

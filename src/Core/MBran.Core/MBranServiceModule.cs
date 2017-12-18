@@ -8,7 +8,6 @@ namespace MBran.Core
         {
             builder.RegisterType<SiteService>().As<ISiteService>();
             builder.RegisterType<XmlSerializerService>().As<IXmlSerializerService>();
-            builder.RegisterType<SiteMapService>().As<ISitemapService>();
             builder.RegisterType<PageService>().As<IPageService>();
             builder.RegisterType<MediaService>().As<IMediaService>();
         }

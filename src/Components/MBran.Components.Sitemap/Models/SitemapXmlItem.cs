@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Serialization;
 
-namespace MBran.Core
+namespace MBran.Components.Sitemap
 {
     public class SiteMapXmlItem : ISitemapXmlItem
     {

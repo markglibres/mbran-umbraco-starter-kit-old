@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MBran.Core
+namespace MBran.Components.Sitemap
 {
     public interface ISitemapXmlItem
     {

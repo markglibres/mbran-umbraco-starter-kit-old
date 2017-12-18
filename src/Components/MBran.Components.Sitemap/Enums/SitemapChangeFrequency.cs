@@ -1,4 +1,4 @@
-﻿namespace MBran.Core
+﻿namespace MBran.Components.Sitemap
 {
     public enum SitemapChangeFrequency
     {

@@ -487,6 +487,10 @@
       <Project>{314176fb-578a-464b-b7d0-4dc8871181b2}</Project>
       <Name>MBran.Components.MetaHeader</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Components\MBran.Components.Sitemap\MBran.Components.Sitemap.csproj">
+      <Project>{fd5eca2f-70d0-4f88-bcbd-c0aba9868699}</Project>
+      <Name>MBran.Components.Sitemap</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Core\MBran.Core.Components\MBran.Core.Components.csproj">
       <Project>{2a327f31-6a57-40a0-b27d-d175c16496b5}</Project>
       <Name>MBran.Core.Components</Name>

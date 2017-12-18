@@ -1,7 +1,7 @@
 ﻿using MBran.Models;
 using System.Collections.Generic;
 
-namespace MBran.Core
+namespace MBran.Components.Sitemap
 {
     public interface ISitemapService
     {
