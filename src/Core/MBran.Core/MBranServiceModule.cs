@@ -6,10 +6,7 @@ namespace MBran.Core
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<SiteService>().As<ISiteService>();
-            builder.RegisterType<XmlSerializerService>().As<IXmlSerializerService>();
-            builder.RegisterType<PageService>().As<IPageService>();
-            builder.RegisterType<MediaService>().As<IMediaService>();
+           
         }
     }
 }
