@@ -2,12 +2,12 @@
 
 @if (Model != null && Model.Any())
 {
-    <ul class="nav-header">
+    <ul class="nav-footer">
     @foreach (var nav in Model)
     {
         <li>
             <span>@nav.NavigationListTitle</span>
-            <ul class="nav-header-sub">
+            <ul class="nav-footer-sub">
                 @foreach (var item in nav.NavigationListItems)
                 {
                     <li><a href="@item.Url" target="@item.Target">@item.Name</a></li>

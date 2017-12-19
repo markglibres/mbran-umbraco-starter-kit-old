@@ -209,6 +209,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NavigationFooterUtilityComponent.cs" />
+    <Compile Include="NavigationFooterComponent.cs" />
+    <Compile Include="NavigationHeaderUtilityComponent.cs" />
     <Compile Include="NavigationHeaderComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

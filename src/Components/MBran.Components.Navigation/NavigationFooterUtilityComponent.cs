@@ -4,11 +4,11 @@ using MBran.Models;
 
 namespace MBran.Components.Navigation
 {
-    public class NavigationHeaderComponent : Component
+    public class NavigationFooterUtilityComponent : Component
     {
         private readonly ISiteService _siteService;
 
-        public NavigationHeaderComponent(IContentHelper contentHelper, 
+        public NavigationFooterUtilityComponent(IContentHelper contentHelper, 
             ISiteService siteService)
             : base(contentHelper)
         {
@@ -17,8 +17,8 @@ namespace MBran.Components.Navigation
 
         public override object GetViewModel()
         {
-            var siteNav = _siteService.GetSite().As<NavigationHeader>();
-            var listNav = siteNav?.NavigationListHeader?.ConvertTo<NavigationListNested>();
+            var siteNav = _siteService.GetSite().As<NavigationFooterUtility>();
+            var listNav = siteNav?.NavigationListFooterUtility?.ConvertTo<NavigationListNested>();
 
             return listNav;
         }
