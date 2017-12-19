@@ -1,26 +1,23 @@
-﻿using MBran.Core;
+﻿using MBran.Components.Navigation.Service;
+using MBran.Core;
 using MBran.Core.Components;
-using MBran.Models;
 
 namespace MBran.Components.Navigation
 {
     public class NavigationHeaderUtilityComponent : Component
     {
-        private readonly ISiteService _siteService;
+        private readonly INavigationService _navigationService;
 
-        public NavigationHeaderUtilityComponent(IContentHelper contentHelper, 
-            ISiteService siteService)
+        public NavigationHeaderUtilityComponent(IContentHelper contentHelper,
+            INavigationService navigationService)
             : base(contentHelper)
         {
-            _siteService = siteService;
+            _navigationService = navigationService;
         }
 
         public override object GetViewModel()
         {
-            var siteNav = _siteService.GetSite().As<NavigationHeaderUtility>();
-            var listNav = siteNav?.NavigationListHeaderUtility?.ConvertTo<NavigationListNested>();
-
-            return listNav;
+            return _navigationService.GetHeaderUtility();
         }
     }
 }

@@ -214,6 +214,8 @@
     <Compile Include="NavigationHeaderUtilityComponent.cs" />
     <Compile Include="NavigationHeaderComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\INavigationService.cs" />
+    <Compile Include="Service\NavigationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
