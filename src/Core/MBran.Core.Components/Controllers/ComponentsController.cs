@@ -7,13 +7,13 @@ namespace MBran.Core.Components
     public class ComponentsController : SurfaceController,
         IComponentController
     {
-        private readonly IPageHelper _pageHelper;
+        private readonly IContentHelper _contentHelper;
 
-        public int PageId => _pageHelper.CurrentPageId();
+        public int PageId => _contentHelper.CurrentPageId();
 
-        public ComponentsController(IPageHelper pageHelper)
+        public ComponentsController(IContentHelper contentHelper)
         {
-            _pageHelper = pageHelper;
+            _contentHelper = contentHelper;
         }
 
         public virtual PartialViewResult RenderModel(object model)

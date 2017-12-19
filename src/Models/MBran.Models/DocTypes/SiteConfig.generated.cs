@@ -22,7 +22,7 @@ namespace MBran.Models
 {
 	/// <summary>Site Config</summary>
 	[PublishedContentModel("siteConfig")]
-	public partial class SiteConfig : PublishedContentModel, IBusinessAddress, IBusinessTimingsNested, IImageFavicon, IImageLogo
+	public partial class SiteConfig : PublishedContentModel, IBusinessAddress, IBusinessTimingsNested, IImageFavicon, IImageLogo, INavigationFooter, INavigationFooterUtility, INavigationHeader, INavigationHeaderUtility
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "siteConfig";
@@ -124,6 +124,42 @@ namespace MBran.Models
 		public IPublishedContent Logo
 		{
 			get { return MBran.Models.ImageLogo.GetLogo(this); }
+		}
+
+		///<summary>
+		/// Footer
+		///</summary>
+		[ImplementPropertyType("navigationListFooter")]
+		public IEnumerable<IPublishedContent> NavigationListFooter
+		{
+			get { return MBran.Models.NavigationFooter.GetNavigationListFooter(this); }
+		}
+
+		///<summary>
+		/// Footer Utility
+		///</summary>
+		[ImplementPropertyType("navigationListFooterUtility")]
+		public IEnumerable<IPublishedContent> NavigationListFooterUtility
+		{
+			get { return MBran.Models.NavigationFooterUtility.GetNavigationListFooterUtility(this); }
+		}
+
+		///<summary>
+		/// Header
+		///</summary>
+		[ImplementPropertyType("navigationListHeader")]
+		public IEnumerable<IPublishedContent> NavigationListHeader
+		{
+			get { return MBran.Models.NavigationHeader.GetNavigationListHeader(this); }
+		}
+
+		///<summary>
+		/// Header Utility
+		///</summary>
+		[ImplementPropertyType("navigationListHeaderUtility")]
+		public IEnumerable<IPublishedContent> NavigationListHeaderUtility
+		{
+			get { return MBran.Models.NavigationHeaderUtility.GetNavigationListHeaderUtility(this); }
 		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿@using MBran.Components.MetaHeader
 @using MBran.Components.Favicon
+@using MBran.Components.Navigation
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,7 @@
     @(Html.Component<MetaTitleComponent>())
 </head>
 <body>
+    <div>@(Html.Component<NavigationHeaderComponent>())</div>
     <div>
         @RenderBody()
     </div>

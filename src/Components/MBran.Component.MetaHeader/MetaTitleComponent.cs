@@ -10,9 +10,9 @@ namespace MBran.Components.MetaHeader
     {
         private readonly IMetaService _metaService;
         
-        public MetaTitleComponent(IPageHelper pageHelper,
+        public MetaTitleComponent(IContentHelper contentHelper,
             IMetaService metaService) 
-            : base(pageHelper)
+            : base(contentHelper)
         {
             _metaService = metaService;
         }

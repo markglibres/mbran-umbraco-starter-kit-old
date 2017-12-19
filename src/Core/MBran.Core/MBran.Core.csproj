@@ -289,11 +289,9 @@
     <Compile Include="Helpers\ConfigurationHelper.cs" />
     <Compile Include="Helpers\ContentHelper.cs" />
     <Compile Include="Helpers\MediaHelper.cs" />
-    <Compile Include="Helpers\PageHelper.cs" />
     <Compile Include="Helpers\StringWriterUTF8.cs" />
     <Compile Include="Interface\Helpers\IContentHelper.cs" />
     <Compile Include="Interface\Helpers\IMediaHelper.cs" />
-    <Compile Include="Interface\Helpers\IPageHelper.cs" />
     <Compile Include="Interface\Service\IBusinessService.cs" />
     <Compile Include="Interface\Service\IHomeService.cs" />
     <Compile Include="Interface\Service\IMediaService.cs" />

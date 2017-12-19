@@ -22,7 +22,7 @@ namespace MBran.Models
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, IContentHeader, IContentImageFile, IMetaTagHeader, IMetaTagImage, ISitemapSettings
+	public partial class Home : PublishedContentModel, IContentHeader, IContentImageFile, IMetaTagHeader, IMetaTagImage, IPage, ISitemapSettings
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";

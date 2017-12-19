@@ -9,9 +9,6 @@ namespace MBran.Core
             builder.RegisterType<ContentHelper>()
                 .As<IContentHelper>()
                 .SingleInstance();
-            builder.RegisterType<PageHelper>()
-                .As<IPageHelper>()
-                .SingleInstance();
             builder.RegisterType<MediaHelper>()
                 .As<IMediaHelper>()
                 .SingleInstance();

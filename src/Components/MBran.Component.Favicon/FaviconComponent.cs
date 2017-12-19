@@ -7,8 +7,8 @@ namespace MBran.Components.Favicon
     public class FaviconComponent : Component
     {
         private readonly IFaviconService _faviconService;
-        public FaviconComponent(IPageHelper pageHelper, IFaviconService faviconService) :
-            base(pageHelper)
+        public FaviconComponent(IContentHelper contentHelper, IFaviconService faviconService) :
+            base(contentHelper)
         {
             _faviconService = faviconService;
         }

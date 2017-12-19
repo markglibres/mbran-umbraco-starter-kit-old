@@ -14,13 +14,13 @@ namespace MBran.Core.Components
         private string RenderAction => nameof(IComponentController.RenderModel);
         private string ControllerName => nameof(ComponentsController);
         private HtmlHelper _htmlHelper;
-        public IPublishedContent PublishedContent => _pageHelper.CurrentPage();
+        public IPublishedContent PublishedContent => _contentHelper.CurrentPage();
         
-        private readonly IPageHelper _pageHelper;
+        private readonly IContentHelper _contentHelper;
 
-        protected Component(IPageHelper pageHelper)
+        protected Component(IContentHelper contentHelper)
         {
-            _pageHelper = pageHelper;
+            _contentHelper = contentHelper;
             _componentName = GetType().UnderlyingSystemType.Name;
         }
         private string GetControllerName()

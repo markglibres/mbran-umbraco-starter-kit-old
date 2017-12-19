@@ -126,5 +126,21 @@ namespace MBran.Core
             var root = _umbracoHelper.TypedContentAtRoot().First();
             return root;
         }
+
+        public IPublishedContent CurrentPage()
+        {
+            return _umbracoHelper.UmbracoContext.PublishedContentRequest.PublishedContent;
+        }
+
+        public T CurrentPage<T>() where T : PublishedContentModel
+        {
+            var currentPage = CurrentPage();
+            return currentPage.As<T>();
+        }
+
+        public int CurrentPageId()
+        {
+            return CurrentPage().Id;
+        }
     }
 }

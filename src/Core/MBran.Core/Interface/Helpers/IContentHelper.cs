@@ -16,5 +16,8 @@ namespace MBran.Core
         T GetAncestorOrSelf<T>(int startId) where T : class, IPublishedContent;
         T GetContent<T>(int nodeId) where T : PublishedContentModel;
         IPublishedContent GetRoot();
+        int CurrentPageId();
+        IPublishedContent CurrentPage();
+        T CurrentPage<T>() where T : PublishedContentModel;
     }
 }

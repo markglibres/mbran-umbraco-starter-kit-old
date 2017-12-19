@@ -248,6 +248,9 @@
       <HintPath>..\..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RJP.MultiUrlPicker, Version=2.1.0.38344, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\RJP.UmbracoMultiUrlPicker.2.1.0\lib\net45\RJP.MultiUrlPicker.dll</HintPath>
+    </Reference>
     <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
       <Private>True</Private>
@@ -385,6 +388,8 @@
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
+    <Content Include="App_Plugins\RJP.MultiUrlPicker\MultiUrlPicker.html" />
+    <Content Include="App_Plugins\RJP.MultiUrlPicker\MultiUrlPicker.js" />
     <Content Include="App_Plugins\uSync\uSyncDashboard.css" />
     <Content Include="App_Plugins\uSync\uSyncDashboard.html" />
     <Content Include="App_Plugins\uSync\uSyncDashboardController.js" />
@@ -458,6 +463,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\MetaTitle\MetaTitle.cshtml" />
     <Content Include="Views\Components\Defaults\MetaTitle.cshtml" />
+    <Content Include="Views\Components\Defaults\NavigationHeader.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -490,6 +496,10 @@
     <ProjectReference Include="..\..\Components\MBran.Components.ErrorPage\MBran.Components.ErrorPage.csproj">
       <Project>{f8fe4bf5-5036-45ee-ba87-39f3e37d4ea3}</Project>
       <Name>MBran.Components.ErrorPage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Components\MBran.Components.Navigation\MBran.Components.Navigation.csproj">
+      <Project>{4a0aed46-b651-44cd-8fe1-de23fe59add2}</Project>
+      <Name>MBran.Components.Navigation</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Components\MBran.Components.Sitemap\MBran.Components.Sitemap.csproj">
       <Project>{fd5eca2f-70d0-4f88-bcbd-c0aba9868699}</Project>

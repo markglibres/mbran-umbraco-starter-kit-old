@@ -4,16 +4,16 @@ namespace MBran.Core
 {
     public class PageService : IPageService
     {
-        private readonly IPageHelper _pageHelper;
-        public PageService(IPageHelper pageHelper)
+        private readonly IContentHelper _contentHelper;
+        public PageService(IContentHelper contentHelper)
         {
-            _pageHelper = pageHelper;
+            _contentHelper = contentHelper;
         }
-        public string Title => _pageHelper.CurrentPage<ContentHeader>().ContentTitle;
+        public string Title => _contentHelper.CurrentPage<ContentHeader>().ContentTitle;
 
-        public string Summary => _pageHelper.CurrentPage<ContentHeader>().ContentSummary;
+        public string Summary => _contentHelper.CurrentPage<ContentHeader>().ContentSummary;
 
-        public Image Image => _pageHelper.CurrentPage<ContentImageFile>()?.ContentImage?.As<Image>();
+        public Image Image => _contentHelper.CurrentPage<ContentImageFile>()?.ContentImage?.As<Image>();
         
     }
 }

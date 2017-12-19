@@ -7,18 +7,18 @@ namespace MBran.Components.MetaHeader.Service
 {
     public class MetaService : IMetaService
     {
-        private readonly IPageHelper _pageHelper;
+        private readonly IContentHelper _contentHelper;
         private readonly IPageService _pageService;
 
-        public MetaService(IPageHelper pageHelper, IPageService pageService)
+        public MetaService(IContentHelper contentHelper, IPageService pageService)
         {
-            _pageHelper = pageHelper;
+            _contentHelper = contentHelper;
             _pageService = pageService;
         }
        
         public MetaTitle GetHeader(IPublishedContent node = null)
         {
-            var page = node == null ? _pageHelper.CurrentPage<MetaTagHeader>() : node.As<MetaTagHeader>();
+            var page = node == null ? _contentHelper.CurrentPage<MetaTagHeader>() : node.As<MetaTagHeader>();
             
             var model = new MetaTitle
             {
@@ -35,7 +35,7 @@ namespace MBran.Components.MetaHeader.Service
         public Image GetImage(IPublishedContent node = null)
         {
             var image = (node == null 
-                            ? _pageHelper.CurrentPage<MetaTagImage>()?.MetaImage?.As<Image>() 
+                            ? _contentHelper.CurrentPage<MetaTagImage>()?.MetaImage?.As<Image>() 
                             : node.As<MetaTagImage>()?.MetaImage?.As<Image>()) ?? _pageService.Image;
 
             return image;
