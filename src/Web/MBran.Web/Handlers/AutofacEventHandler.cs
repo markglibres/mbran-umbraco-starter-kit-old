@@ -12,8 +12,6 @@ namespace MBran.Umbraco.Web
         public void OnApplicationInitialized(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
             var builder = IoCBuilder.Instance.GetBuilder(applicationContext);
-            //builder.RegisterControllers(typeof(AutofacEventHandler).Assembly);
-            
             builder.BuildContainer();
         }
 
