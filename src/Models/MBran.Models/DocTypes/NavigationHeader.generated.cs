@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Models
 {
-	// Mixin content Type 1106 with alias "navigationHeader"
+	// Mixin content Type 1109 with alias "navigationHeader"
 	/// <summary>_Navigation Header</summary>
 	public partial interface INavigationHeader : IPublishedContent
 	{

@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Models
 {
-	// Mixin content Type 1104 with alias "page"
+	// Mixin content Type 1114 with alias "page"
 	/// <summary>_Page</summary>
 	public partial interface IPage : IPublishedContent
 	{
