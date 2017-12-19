@@ -1,6 +1,7 @@
 ﻿using System;
+using MBran.Components.Sitemap.Enums;
 
-namespace MBran.Components.Sitemap
+namespace MBran.Components.Sitemap.Models
 {
     public interface ISitemapXmlItem
     {

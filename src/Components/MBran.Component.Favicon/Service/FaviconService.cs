@@ -1,9 +1,10 @@
-﻿using MBran.Core;
+﻿using MBran.Components.Favicon.Models;
+using MBran.Core;
 using MBran.Core.Models;
 using MBran.Models;
 using Umbraco.Core.Models;
 
-namespace MBran.Components.Favicon
+namespace MBran.Components.Favicon.Service
 {
     public class FaviconService : IFaviconService
     {
@@ -22,27 +23,21 @@ namespace MBran.Components.Favicon
                 model = _siteService.GetSite();
             }
 
-            Image favicon = this.GetFaviconImage(model);
-            FaviconViewModel viewModel = new FaviconViewModel();
+            var favicon = GetFaviconImage(model);
+            var viewModel = new FaviconViewModel();
 
-            if (favicon != null)
-            {
-                viewModel.MimeType = favicon.GetMimeType();
-                viewModel.Url = favicon.Url;
-            }
-            
+            if (favicon == null) return viewModel;
+
+            viewModel.MimeType = favicon.GetMimeType();
+            viewModel.Url = favicon.Url;
+
             return viewModel;
         }
 
         private Image GetFaviconImage(IPublishedContent node)
         {
-            ImageFavicon favicon = node.As<ImageFavicon>();
-            if (favicon.Favicon == null)
-            {
-                return null;
-            }
-
-            return _mediaHelper.GetMedia(favicon.Favicon.Id);
+            var favicon = node.As<ImageFavicon>();
+            return favicon.Favicon == null ? null : _mediaHelper.GetMedia(favicon.Favicon.Id);
         }
     }
 }

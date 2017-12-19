@@ -8,7 +8,7 @@ namespace MBran.Core
         {
             get
             {
-                string conn = ConfigurationManager.AppSettings[UmbracoConstants.Config.DATABASE_KEY];
+                var conn = ConfigurationManager.AppSettings[UmbracoConstants.Config.DatabaseKey];
                 return conn;
             }
         }

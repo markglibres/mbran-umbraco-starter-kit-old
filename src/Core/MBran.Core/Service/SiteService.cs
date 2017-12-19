@@ -1,8 +1,6 @@
 ﻿using MBran.Models;
-using System;
 using System.Web;
 using Umbraco.Core;
-using Umbraco.Core.Models;
 
 namespace MBran.Core
 {
@@ -11,11 +9,11 @@ namespace MBran.Core
         private readonly IContentHelper _contentHelper;
         private readonly HttpContext _httpContext;
 
-        private SiteConfig _siteConfig;
-        private Error404 _errorPage;
         private Home _home;
         private int _domainNodeId;
         private string _domain;
+
+        private SiteConfig SiteConfig { get; set; }
 
         public SiteService(IContentHelper contentHelper,
             HttpContextBase httpContext)
@@ -26,42 +24,35 @@ namespace MBran.Core
 
         public SiteConfig GetSite()
         {
-            if (_siteConfig == null)
+            if (SiteConfig == null)
             {
-                _siteConfig = _contentHelper
+                SiteConfig = _contentHelper
                     .GetAncestorOrSelf<SiteConfig>(GetDomainNodeId());
             };
 
-            return _siteConfig;
+            return SiteConfig;
         }
 
         public Home GetHome()
         {
-            if (_home == null)
-            {
-                _home = _contentHelper
-                    .GetDescendantOrSelf<Home>(GetDomainNodeId());
-            }
-
-            return _home;
+            return _home ?? (_home = _contentHelper
+                       .GetDescendantOrSelf<Home>(GetDomainNodeId()));
         }
 
         public int GetDomainNodeId()
         {
-            if (_domainNodeId == 0)
-            {
-                IDomain domainNode = ApplicationContext.Current.Services.DomainService.GetByName(GetDomain());
-                if (domainNode != null)
-                {
-                    _domainNodeId = (int)domainNode.RootContentId;
-                }
-                else
-                {
-                    Home home = _contentHelper
-                        .GetDescendantOrSelf<Home>(_contentHelper.GetRoot().Id);
-                    _domainNodeId = home.Id;
-                }
+            if (_domainNodeId != 0) return _domainNodeId;
 
+            var domainNode = ApplicationContext.Current.Services.DomainService.GetByName(GetDomain());
+            if (domainNode?.RootContentId != null)
+            {
+                _domainNodeId = (int) domainNode.RootContentId;
+            }
+            else
+            {
+                var home = _contentHelper
+                    .GetDescendantOrSelf<Home>(_contentHelper.GetRoot().Id);
+                _domainNodeId = home.Id;
             }
 
             return _domainNodeId;
@@ -69,7 +60,7 @@ namespace MBran.Core
 
         public string GetDomain()
         {
-            if (String.IsNullOrEmpty(_domain))
+            if (string.IsNullOrEmpty(_domain))
             {
                 _domain = _httpContext.GetCurrentDomain();
             }

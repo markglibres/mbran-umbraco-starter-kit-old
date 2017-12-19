@@ -21,13 +21,8 @@ namespace MBran.Core
                 node = _siteService.GetSite();
             }
 
-            ImageLogo logo = node.As<ImageLogo>();
-            if (logo.Logo == null)
-            {
-                return null;
-            }
-
-            return _mediaHelper.GetMedia(logo.Logo.Id);
+            var logo = node.As<ImageLogo>();
+            return logo.Logo == null ? null : _mediaHelper.GetMedia(logo.Logo.Id);
         }
     }
 }

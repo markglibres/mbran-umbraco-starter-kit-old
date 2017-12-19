@@ -1,7 +1,7 @@
 ﻿using Umbraco.Core;
 using Umbraco.Web.Routing;
 
-namespace MBran.Components.ErrorPage
+namespace MBran.Components.ErrorPage.Handlers
 {
     public class MBranApplicationEventHandler : IApplicationEventHandler
     {

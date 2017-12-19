@@ -2,7 +2,7 @@
 using System.Web.Routing;
 using Umbraco.Core;
 
-namespace MBran.Core
+namespace MBran.Components.Sitemap.Handlers
 {
     public class SitemapEventHandler : IApplicationEventHandler
     {

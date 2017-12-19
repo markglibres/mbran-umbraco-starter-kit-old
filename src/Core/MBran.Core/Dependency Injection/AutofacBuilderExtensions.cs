@@ -37,6 +37,7 @@ namespace MBran.Core
 
             builder.RegisterAssemblyTypes(executingAssembly)
                 .Where(c => c.Name.EndsWith("Controller", StringComparison.CurrentCultureIgnoreCase))
+                .AsImplementedInterfaces()
                 .InstancePerRequest();
             return builder;
         }

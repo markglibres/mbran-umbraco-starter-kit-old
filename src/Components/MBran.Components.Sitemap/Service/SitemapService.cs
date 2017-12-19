@@ -1,14 +1,15 @@
-﻿using MBran.Core;
-using MBran.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using MBran.Components.Sitemap.Extensions;
+using MBran.Components.Sitemap.Models;
+using MBran.Core;
+using MBran.Models;
 using Umbraco.Web;
 
-namespace MBran.Components.Sitemap
+namespace MBran.Components.Sitemap.Service
 {
     public class SiteMapService : ISitemapService
     {
-        private readonly ISiteService _siteService;
         private readonly IXmlSerializerService _xmlSerializer;
         private readonly IContentHelper _contentHelper;
         private readonly int _startId;
@@ -16,15 +17,14 @@ namespace MBran.Components.Sitemap
             IContentHelper contentHelper,
             IXmlSerializerService xmlSerializer)
         {
-            _siteService = siteService;
             _xmlSerializer = xmlSerializer;
             _contentHelper = contentHelper;
-            _startId = _siteService.GetHome().Id;
+            _startId = siteService.GetHome().Id;
         }
 
         public SitemapXml GetSiteMap()
         {
-            IEnumerable<SiteMapXmlItem> pages = GetSiteMapPages()
+            var pages = GetSiteMapPages()
                 .Select(page => new SiteMapXmlItem
                 {
                     Location = page.UrlAbsolute(),
@@ -43,13 +43,13 @@ namespace MBran.Components.Sitemap
 
         public string GetSiteMapAsXml()
         {
-            SitemapXml siteMap = GetSiteMap();
+            var siteMap = GetSiteMap();
             return _xmlSerializer.ToXmlString(siteMap);
         }
 
         public IEnumerable<ISitemapSettings> GetSiteMapPages()
         {
-            IEnumerable<ISitemapSettings> pages = _contentHelper
+            var pages = _contentHelper
                 .GetDescendantsOrSelf<ISitemapSettings>(_startId)
                 .Where(page => !page.UmbracoNaviHide);
 

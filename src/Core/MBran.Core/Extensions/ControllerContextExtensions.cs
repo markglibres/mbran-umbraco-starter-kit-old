@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Web.Mvc;
 
 namespace MBran.Core
@@ -11,7 +10,7 @@ namespace MBran.Core
             object model = null,
             bool partial = false)
         {
-            ViewEngineResult viewEngine = context.GetViewEngine(viewPath, partial);
+            var viewEngine = context.GetViewEngine(viewPath, partial);
             if (viewEngine == null)
             {
                 throw new FileNotFoundException("View cannot be found", viewPath);
@@ -20,7 +19,7 @@ namespace MBran.Core
             context.SetViewEngineModel(model);
             var view = viewEngine.View;
 
-            string result = String.Empty;
+            string result;
             using (var streamWriter = new StringWriter())
             {
                 var viewContext = new ViewContext(context, view,
@@ -39,11 +38,7 @@ namespace MBran.Core
         public static ViewEngineResult GetViewEngine(this ControllerContext context, 
             string viewPath, bool partial = false)
         {
-            if(partial)
-            {
-                return ViewEngines.Engines.FindPartialView(context, viewPath);
-            }
-            return ViewEngines.Engines.FindView(context, viewPath, null);
+            return partial ? ViewEngines.Engines.FindPartialView(context, viewPath) : ViewEngines.Engines.FindView(context, viewPath, null);
         }
 
         public static ControllerContext SetViewEngineModel(this ControllerContext context, object model)

@@ -15,7 +15,7 @@ namespace MBran.Core
         }
         public IEnumerable<T> GetDescendants<T>(int startId) where T : class, IPublishedContent
         {
-            IPublishedContent startNode = _umbracoHelper.TypedContent(startId);
+            var startNode = _umbracoHelper.TypedContent(startId);
             if (startNode == null || startNode.Id <= 0)
             {
                 return new List<T>();
@@ -29,7 +29,7 @@ namespace MBran.Core
 
         public IEnumerable<T> GetDescendantsOrSelf<T>(int startId) where T : class, IPublishedContent
         {
-            IPublishedContent startNode = _umbracoHelper.TypedContent(startId);
+            var startNode = _umbracoHelper.TypedContent(startId);
             if (startNode == null || startNode.Id <= 0)
             {
                 return new List<T>();
@@ -41,7 +41,7 @@ namespace MBran.Core
 
         public T GetDescendant<T>(int startId) where T : class, IPublishedContent
         {
-            IPublishedContent startNode = _umbracoHelper.TypedContent(startId);
+            var startNode = _umbracoHelper.TypedContent(startId);
             if (startNode == null || startNode.Id <= 0)
             {
                 return default(T);
@@ -54,7 +54,7 @@ namespace MBran.Core
 
         public T GetDescendantOrSelf<T>(int startId) where T : class, IPublishedContent
         {
-            IPublishedContent startNode = _umbracoHelper.TypedContent(startId);
+            var startNode = _umbracoHelper.TypedContent(startId);
             if (startNode == null || startNode.Id <= 0)
             {
                 return default(T);
@@ -66,7 +66,7 @@ namespace MBran.Core
 
         public IEnumerable<T> GetAncestors<T>(int startId) where T : class, IPublishedContent
         {
-            IPublishedContent startNode = _umbracoHelper.TypedContent(startId);
+            var startNode = _umbracoHelper.TypedContent(startId);
             if (startNode == null || startNode.Id <= 0)
             {
                 return new List<T>();
@@ -80,7 +80,7 @@ namespace MBran.Core
 
         public IEnumerable<T> GetAncestorsOrSelf<T>(int startId) where T : class, IPublishedContent
         {
-            IPublishedContent startNode = _umbracoHelper.TypedContent(startId);
+            var startNode = _umbracoHelper.TypedContent(startId);
             if (startNode == null || startNode.Id <= 0)
             {
                 return new List<T>();
@@ -92,7 +92,7 @@ namespace MBran.Core
 
         public T GetAncestor<T>(int startId) where T : class, IPublishedContent
         {
-            IPublishedContent startNode = _umbracoHelper.TypedContent(startId);
+            var startNode = _umbracoHelper.TypedContent(startId);
             if (startNode == null || startNode.Id <= 0)
             {
                 return default(T);
@@ -105,7 +105,7 @@ namespace MBran.Core
 
         public T GetAncestorOrSelf<T>(int startId) where T : class, IPublishedContent
         {
-            IPublishedContent startNode = _umbracoHelper.TypedContent(startId);
+            var startNode = _umbracoHelper.TypedContent(startId);
             if (startNode == null || startNode.Id <= 0)
             {
                 return default(T);
@@ -117,13 +117,13 @@ namespace MBran.Core
        
         public T GetContent<T>(int nodeId) where T : PublishedContentModel
         {
-            T node = _umbracoHelper.TypedContent(nodeId)?.As<T>();
+            var node = _umbracoHelper.TypedContent(nodeId)?.As<T>();
             return node;
         }
 
         public IPublishedContent GetRoot()
         {
-            IPublishedContent root = _umbracoHelper.TypedContentAtRoot().First();
+            var root = _umbracoHelper.TypedContentAtRoot().First();
             return root;
         }
     }

@@ -4,7 +4,7 @@
     {
         public static class Config
         {
-            public const string DATABASE_KEY = "umbracoDbDSN";
+            public const string DatabaseKey = "umbracoDbDSN";
         }
     }
 }

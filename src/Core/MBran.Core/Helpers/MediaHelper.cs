@@ -1,5 +1,4 @@
 ﻿using MBran.Models;
-using Umbraco.Core.Models;
 using Umbraco.Web;
 
 namespace MBran.Core
@@ -13,8 +12,8 @@ namespace MBran.Core
         }
         public Image GetMedia(int nodeId)
         {
-            IPublishedContent media = _umbracoHelper.TypedMedia(nodeId);
-            Image image = new Image(media);
+            var media = _umbracoHelper.TypedMedia(nodeId);
+            var image = new Image(media);
             return image;
         }
     }

@@ -1,8 +1,9 @@
-﻿using MBran.Core;
+﻿using MBran.Components.Sitemap.Service;
+using MBran.Core;
 using System.Web.Mvc;
 using Umbraco.Web.Mvc;
 
-namespace MBran.Components.Sitemap
+namespace MBran.Components.Sitemap.Controller
 {
     [RoutePrefix("")]
     public class SiteMapController : RenderMvcController
@@ -18,7 +19,7 @@ namespace MBran.Components.Sitemap
         [OutputCache(NoStore = true, Duration = 3600, VaryByParam = "none")]
         public virtual ActionResult Index()
         {
-            SitemapXml viewModel = _siteMapService.GetSiteMap();
+            var viewModel = _siteMapService.GetSiteMap();
             return Content(_xmlSerializer.ToXmlString(viewModel), "text/xml");
         }
     }

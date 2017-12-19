@@ -2,7 +2,7 @@
 
 namespace MBran.Core
 {
-    public interface IHomeService<T>
+    public interface IHomeService<out T>
         where T: class, IPublishedContent
     {
         T GetHome();

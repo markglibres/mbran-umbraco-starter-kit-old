@@ -2,15 +2,15 @@
 {
     public struct ComponentConstants
     {
-        public const string VIEW_PATH_KEY = "viewPath";
-        public const string COMPONENT_KEY = "component";
-        public const string MODEL_KEY = "model";
+        public const string ViewPathKey = "viewPath";
+        public const string ComponentKey = "component";
+        public const string ModelKey = "model";
 
         public struct Folders
         {
             public struct Views
             {
-                public const string DEFAULT = "Defaults";
+                public const string Default = "Defaults";
             }
         }
 

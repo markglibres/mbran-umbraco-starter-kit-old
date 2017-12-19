@@ -47,13 +47,13 @@ namespace MBran.Core
 
         public static string GetCurrentFullDomain(this HttpContext context)
         {
-            Uri uri = context.Request.Url;
-            return string.Format("{0}://{1}", uri.Scheme, uri.Authority);
+            var uri = context.Request.Url;
+            return $"{uri.Scheme}://{uri.Authority}";
         }
 
         public static string GetCurrentDomain(this HttpContext context)
         {
-            Uri uri = context.Request.Url;
+            var uri = context.Request.Url;
             return uri.Authority;
         }
 

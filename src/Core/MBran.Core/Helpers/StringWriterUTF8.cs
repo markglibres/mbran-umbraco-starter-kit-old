@@ -3,11 +3,8 @@ using System.Text;
 
 namespace MBran.Core
 {
-    public class StringWriterUTF8 : StringWriter
+    public class StringWriterUtf8 : StringWriter
     {
-        public override Encoding Encoding
-        {
-            get { return Encoding.UTF8; }
-        }
+        public override Encoding Encoding => Encoding.UTF8;
     }
 }

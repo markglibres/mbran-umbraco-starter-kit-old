@@ -1,4 +1,6 @@
-﻿using MBran.Core;
+﻿using MBran.Components.MetaHeader.Models;
+using MBran.Components.MetaHeader.Service;
+using MBran.Core;
 using MBran.Core.Components;
 using MBran.Core.Models;
 
@@ -17,8 +19,8 @@ namespace MBran.Components.MetaHeader
 
         public override object GetViewModel()
         {
-            MetaTitle dataModel = _metaService.GetHeader(PublishedContent);
-            MetaTitleViewModel viewModel = dataModel.Map<MetaTitleViewModel>();
+            var dataModel = _metaService.GetHeader(PublishedContent);
+            var viewModel = dataModel.Map<MetaTitleViewModel>();
             return viewModel;
         }
     }

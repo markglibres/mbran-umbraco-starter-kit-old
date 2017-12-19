@@ -1,5 +1,4 @@
 ﻿using Humanizer;
-using System;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
@@ -19,35 +18,35 @@ namespace MBran.Core.Components
         
         private readonly IPageHelper _pageHelper;
 
-        public Component(IPageHelper pageHelper)
+        protected Component(IPageHelper pageHelper)
         {
             _pageHelper = pageHelper;
-            _componentName = this.GetType().UnderlyingSystemType.Name;
+            _componentName = GetType().UnderlyingSystemType.Name;
         }
         private string GetControllerName()
         {
-            return Regex.Replace(ControllerName, "Controller$", String.Empty);
+            return Regex.Replace(ControllerName, "Controller$", string.Empty);
         }
         
         public MvcHtmlString Render(object model, RouteValueDictionary options)
         {
-            return Render(String.Empty, model, options);
+            return Render(string.Empty, model, options);
         }
 
         public MvcHtmlString Render(string viewPath, object model, RouteValueDictionary options)
         {
-            var _options = options ?? new RouteValueDictionary();
-            _options.Remove(ComponentConstants.MODEL_KEY);
-            _options.Add(ComponentConstants.MODEL_KEY, model);
-            _options.Add(ComponentConstants.COMPONENT_KEY, _componentName);
-            _options[ComponentConstants.VIEW_PATH_KEY] = viewPath;
+            var routeOptions = options ?? new RouteValueDictionary();
+            routeOptions.Remove(ComponentConstants.ModelKey);
+            routeOptions.Add(ComponentConstants.ModelKey, model);
+            routeOptions.Add(ComponentConstants.ComponentKey, _componentName);
+            routeOptions[ComponentConstants.ViewPathKey] = viewPath;
             
-            return _htmlHelper.Action(RenderAction, GetControllerName(), _options);
+            return _htmlHelper.Action(RenderAction, GetControllerName(), routeOptions);
         }
 
         public virtual MvcHtmlString Render()
         {
-            return Render(String.Empty, GetViewModel(), GetOptions());
+            return Render(string.Empty, GetViewModel(), GetOptions());
         }
 
         public virtual RouteValueDictionary GetOptions()

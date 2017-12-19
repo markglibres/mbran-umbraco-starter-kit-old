@@ -1,4 +1,5 @@
-﻿using MBran.Core;
+﻿using MBran.Components.Favicon.Service;
+using MBran.Core;
 using MBran.Core.Components;
 
 namespace MBran.Components.Favicon

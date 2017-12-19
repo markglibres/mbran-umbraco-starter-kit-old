@@ -1,13 +1,13 @@
-﻿using MBran.Models;
-using System;
+﻿using MBran.Components.Sitemap.Enums;
+using MBran.Models;
 
-namespace MBran.Components.Sitemap
+namespace MBran.Components.Sitemap.Extensions
 {
     public static class SitemapExtensions
     {
         public static SitemapChangeFrequency GetChangeFrequency(this ISitemapSettings sitemapSettings)
         {
-            int intValue = Decimal.ToInt32(sitemapSettings.SitemapChangeFrequency);
+            var intValue = decimal.ToInt32(sitemapSettings.SitemapChangeFrequency);
             return (SitemapChangeFrequency)intValue;
         }
     }

@@ -1,9 +1,9 @@
-﻿using MBran.Core;
+﻿using MBran.Components.MetaHeader.Models;
+using MBran.Core;
 using MBran.Models;
-using System;
 using Umbraco.Core.Models;
 
-namespace MBran.Components.MetaHeader
+namespace MBran.Components.MetaHeader.Service
 {
     public class MetaService : IMetaService
     {
@@ -18,21 +18,13 @@ namespace MBran.Components.MetaHeader
        
         public MetaTitle GetHeader(IPublishedContent node = null)
         {
-            MetaTagHeader page;
-            if (node == null)
-            {
-                page = _pageHelper.CurrentPage<MetaTagHeader>();
-            }
-            else
-            {
-                page = node.As<MetaTagHeader>();
-            }
+            var page = node == null ? _pageHelper.CurrentPage<MetaTagHeader>() : node.As<MetaTagHeader>();
             
             var model = new MetaTitle
             {
-                Title = !String.IsNullOrEmpty(page.MetaTitle) ? 
+                Title = !string.IsNullOrEmpty(page.MetaTitle) ? 
                     page.MetaTitle : _pageService.Title,
-                Description = !String.IsNullOrEmpty(page.MetaDescription) ? 
+                Description = !string.IsNullOrEmpty(page.MetaDescription) ? 
                     page.MetaDescription : _pageService.Summary
 
             };
@@ -42,20 +34,10 @@ namespace MBran.Components.MetaHeader
 
         public Image GetImage(IPublishedContent node = null)
         {
-            Image image;
-            if (node == null)
-            {
-                image = _pageHelper.CurrentPage<MetaTagImage>()?.MetaImage?.As<Image>();
-            }
-            else
-            {
-                image = node.As<MetaTagImage>()?.MetaImage?.As<Image>();
-            }
-            
-            if(image == null)
-            {
-                image = _pageService.Image;
-            }
+            var image = (node == null 
+                            ? _pageHelper.CurrentPage<MetaTagImage>()?.MetaImage?.As<Image>() 
+                            : node.As<MetaTagImage>()?.MetaImage?.As<Image>()) ?? _pageService.Image;
+
             return image;
 
            

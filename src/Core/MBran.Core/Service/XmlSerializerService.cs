@@ -10,11 +10,11 @@ namespace MBran.Core
         }
         public string ToXmlString(object objectToSerialize)
         {
-            string xmlString = string.Empty;
+            string xmlString;
 
-            XmlSerializer xmlSerializer = new XmlSerializer(objectToSerialize.GetType());
+            var xmlSerializer = new XmlSerializer(objectToSerialize.GetType());
 
-            using (StringWriterUTF8 textWriter = new StringWriterUTF8())
+            using (var textWriter = new StringWriterUtf8())
             {
                 xmlSerializer.Serialize(textWriter, objectToSerialize);
                 xmlString = textWriter.ToString();

@@ -1,4 +1,6 @@
-﻿namespace MBran.Components.MetaHeader
+﻿using MBran.Components.MetaHeader.Models;
+
+namespace MBran.Components.MetaHeader.Mapper
 {
     public static class AutoMapperEvents
     {

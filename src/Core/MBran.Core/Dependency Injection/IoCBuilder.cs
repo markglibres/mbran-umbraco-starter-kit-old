@@ -1,7 +1,5 @@
 ﻿using Autofac;
-using Autofac.Integration.Mvc;
 using System;
-using System.Reflection;
 using Umbraco.Core;
 using Umbraco.Core.Services;
 

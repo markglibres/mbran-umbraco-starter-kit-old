@@ -1,5 +1,4 @@
 ﻿using MBran.Models;
-using System;
 using System.Web;
 
 namespace MBran.Core.Models
@@ -10,7 +9,7 @@ namespace MBran.Core.Models
         {
             if(image == null)
             {
-                return String.Empty;
+                return string.Empty;
             }
             return MimeMapping.GetMimeMapping(image.Path);
         }

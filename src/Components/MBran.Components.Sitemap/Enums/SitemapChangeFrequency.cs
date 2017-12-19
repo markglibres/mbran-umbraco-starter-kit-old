@@ -1,13 +1,13 @@
-﻿namespace MBran.Components.Sitemap
+﻿namespace MBran.Components.Sitemap.Enums
 {
     public enum SitemapChangeFrequency
     {
-        always = 1,
-        hourly = 2,
-        daily = 3,
-        weekly = 4,
-        monthly = 5,
-        yearly = 6,
-        never = 7
+        Always = 1,
+        Hourly = 2,
+        Daily = 3,
+        Weekly = 4,
+        Monthly = 5,
+        Yearly = 6,
+        Never = 7
     }
 }

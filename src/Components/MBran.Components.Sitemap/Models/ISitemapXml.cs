@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MBran.Components.Sitemap
+namespace MBran.Components.Sitemap.Models
 {
     public interface ISitemapXml<T>
         where T : ISitemapXmlItem

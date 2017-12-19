@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
-using System;
 using Umbraco.Core;
 using Umbraco.Core.Persistence;
 using Umbraco.Web;
@@ -12,7 +11,7 @@ namespace MBran.Core
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterModule(new AutofacWebTypesModule());
-            if (!String.IsNullOrEmpty(ConfigurationHelper.ConnectionString))
+            if (!string.IsNullOrEmpty(ConfigurationHelper.ConnectionString))
             {
                 builder.RegisterInstance(ApplicationContext.Current.DatabaseContext.Database)
                 .As<UmbracoDatabase>();

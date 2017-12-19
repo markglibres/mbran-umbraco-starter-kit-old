@@ -1,8 +1,8 @@
-﻿using MBran.Core;
+﻿using System.Web;
+using MBran.Core;
 using MBran.Models;
-using System.Web;
 
-namespace MBran.Components.ErrorPage
+namespace MBran.Components.ErrorPage.Service
 {
     public class ErrorPageService : IErrorPageService
     {
@@ -25,13 +25,8 @@ namespace MBran.Components.ErrorPage
         
         public Error404 GetErrorPage()
         {
-            if (_errorPage == null)
-            {
-                _errorPage = _contentHelper
-                    .GetDescendantOrSelf<Error404>(_siteService.GetDomainNodeId());
-            }
-
-            return _errorPage;
+            return _errorPage ?? (_errorPage = _contentHelper
+                       .GetDescendantOrSelf<Error404>(_siteService.GetDomainNodeId()));
         }
     }
 }

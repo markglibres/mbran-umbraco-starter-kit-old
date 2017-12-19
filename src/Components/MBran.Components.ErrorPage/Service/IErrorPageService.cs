@@ -1,6 +1,6 @@
 ﻿using MBran.Models;
 
-namespace MBran.Components.ErrorPage
+namespace MBran.Components.ErrorPage.Service
 {
     public interface IErrorPageService
     {

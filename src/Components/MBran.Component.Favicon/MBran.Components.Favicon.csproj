@@ -213,8 +213,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Component\FaviconComponent.cs" />
-    <Compile Include="Models\Favicon.cs" />
+    <Compile Include="FaviconComponent.cs" />
     <Compile Include="Models\FaviconViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\FaviconService.cs" />

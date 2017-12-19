@@ -1,4 +1,4 @@
-﻿namespace MBran.Components.Favicon
+﻿namespace MBran.Components.Favicon.Models
 {
     public class FaviconViewModel
     {

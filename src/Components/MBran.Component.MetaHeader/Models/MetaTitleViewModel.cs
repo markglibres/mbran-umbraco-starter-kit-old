@@ -1,4 +1,4 @@
-﻿namespace MBran.Components.MetaHeader
+﻿namespace MBran.Components.MetaHeader.Models
 {
     public partial class MetaTitleViewModel
     {
