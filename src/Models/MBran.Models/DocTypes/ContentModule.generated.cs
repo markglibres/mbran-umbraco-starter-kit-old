@@ -20,24 +20,24 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Models
 {
-	// Mixin content Type 1106 with alias "navigationHeader"
-	/// <summary>_Navigation Header</summary>
-	public partial interface INavigationHeader : IPublishedContent
+	// Mixin content Type 1120 with alias "contentModule"
+	/// <summary>Content Module</summary>
+	public partial interface IContentModule : IPublishedContent
 	{
-		/// <summary>Header</summary>
-		IEnumerable<IPublishedContent> NavigationListHeader { get; }
+		/// <summary>Content</summary>
+		IEnumerable<IPublishedContent> Content { get; }
 	}
 
-	/// <summary>_Navigation Header</summary>
-	[PublishedContentModel("navigationHeader")]
-	public partial class NavigationHeader : PublishedContentModel, INavigationHeader
+	/// <summary>Content Module</summary>
+	[PublishedContentModel("contentModule")]
+	public partial class ContentModule : PublishedContentModel, IContentModule
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "navigationHeader";
+		public new const string ModelTypeAlias = "contentModule";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public NavigationHeader(IPublishedContent content)
+		public ContentModule(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -48,21 +48,21 @@ namespace MBran.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NavigationHeader, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentModule, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Header
+		/// Content
 		///</summary>
-		[ImplementPropertyType("navigationListHeader")]
-		public IEnumerable<IPublishedContent> NavigationListHeader
+		[ImplementPropertyType("content")]
+		public IEnumerable<IPublishedContent> Content
 		{
-			get { return GetNavigationListHeader(this); }
+			get { return GetContent(this); }
 		}
 
-		/// <summary>Static getter for Header</summary>
-		public static IEnumerable<IPublishedContent> GetNavigationListHeader(INavigationHeader that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("navigationListHeader"); }
+		/// <summary>Static getter for Content</summary>
+		public static IEnumerable<IPublishedContent> GetContent(IContentModule that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("content"); }
 	}
 }

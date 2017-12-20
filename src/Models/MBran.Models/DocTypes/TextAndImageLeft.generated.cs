@@ -20,24 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Models
 {
-	// Mixin content Type 1106 with alias "navigationHeader"
-	/// <summary>_Navigation Header</summary>
-	public partial interface INavigationHeader : IPublishedContent
-	{
-		/// <summary>Header</summary>
-		IEnumerable<IPublishedContent> NavigationListHeader { get; }
-	}
-
-	/// <summary>_Navigation Header</summary>
-	[PublishedContentModel("navigationHeader")]
-	public partial class NavigationHeader : PublishedContentModel, INavigationHeader
+	/// <summary>Text And Image Left</summary>
+	[PublishedContentModel("textAndImageLeft")]
+	public partial class TextAndImageLeft : PublishedContentModel, IContentHeader, IContentImageFile
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "navigationHeader";
+		public new const string ModelTypeAlias = "textAndImageLeft";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public NavigationHeader(IPublishedContent content)
+		public TextAndImageLeft(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -48,21 +40,36 @@ namespace MBran.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NavigationHeader, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TextAndImageLeft, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Header
+		/// Summary
 		///</summary>
-		[ImplementPropertyType("navigationListHeader")]
-		public IEnumerable<IPublishedContent> NavigationListHeader
+		[ImplementPropertyType("contentSummary")]
+		public string ContentSummary
 		{
-			get { return GetNavigationListHeader(this); }
+			get { return MBran.Models.ContentHeader.GetContentSummary(this); }
 		}
 
-		/// <summary>Static getter for Header</summary>
-		public static IEnumerable<IPublishedContent> GetNavigationListHeader(INavigationHeader that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("navigationListHeader"); }
+		///<summary>
+		/// Title
+		///</summary>
+		[ImplementPropertyType("contentTitle")]
+		public string ContentTitle
+		{
+			get { return MBran.Models.ContentHeader.GetContentTitle(this); }
+		}
+
+		///<summary>
+		/// Image
+		///</summary>
+		[ImplementPropertyType("contentImage")]
+		public IPublishedContent ContentImage
+		{
+			get { return MBran.Models.ContentImageFile.GetContentImage(this); }
+		}
 	}
 }

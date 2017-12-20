@@ -22,7 +22,7 @@ namespace MBran.Models
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, IContentHeader, IContentImageFile, IMetaTagHeader, IMetaTagImage, IPage, ISitemapSettings
+	public partial class Home : PublishedContentModel, IContentHeader, IContentImageFile, IContentModule, IMetaTagHeader, IMetaTagImage, IPage, ISitemapSettings
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -70,6 +70,15 @@ namespace MBran.Models
 		public IPublishedContent ContentImage
 		{
 			get { return MBran.Models.ContentImageFile.GetContentImage(this); }
+		}
+
+		///<summary>
+		/// Content
+		///</summary>
+		[ImplementPropertyType("content")]
+		public IEnumerable<IPublishedContent> Content
+		{
+			get { return MBran.Models.ContentModule.GetContent(this); }
 		}
 
 		///<summary>

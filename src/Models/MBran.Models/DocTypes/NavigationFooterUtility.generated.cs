@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Models
 {
-	// Mixin content Type 1108 with alias "navigationFooterUtility"
+	// Mixin content Type 1109 with alias "navigationFooterUtility"
 	/// <summary>_Navigation Footer Utility</summary>
 	public partial interface INavigationFooterUtility : IPublishedContent
 	{

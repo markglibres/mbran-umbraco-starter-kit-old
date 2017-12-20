@@ -7,15 +7,17 @@ using Umbraco.Core.Models;
 
 namespace MBran.Core.Components
 {
-    public abstract class Component : IComponent, IComponentRender
+    public abstract class Component : IComponent
     {
         private readonly string _componentName;
         public virtual string Name => _componentName.Humanize();
         private string RenderAction => nameof(IComponentController.RenderModel);
         private string ControllerName => nameof(ComponentsController);
         private HtmlHelper _htmlHelper;
-        public IPublishedContent PublishedContent => _contentHelper.CurrentPage();
-        
+        private IPublishedContent _content;
+        private RouteValueDictionary _options;
+        public IPublishedContent PublishedContent => _content ??  _contentHelper.CurrentPage();
+        public RouteValueDictionary Options => _options ?? new RouteValueDictionary();
         private readonly IContentHelper _contentHelper;
 
         protected Component(IContentHelper contentHelper)
@@ -35,7 +37,7 @@ namespace MBran.Core.Components
 
         public MvcHtmlString Render(string viewPath, object model, RouteValueDictionary options)
         {
-            var routeOptions = options ?? new RouteValueDictionary();
+            var routeOptions = options ?? Options;
             routeOptions.Remove(ComponentConstants.ModelKey);
             routeOptions.Add(ComponentConstants.ModelKey, model);
             routeOptions.Add(ComponentConstants.ComponentKey, _componentName);
@@ -46,19 +48,25 @@ namespace MBran.Core.Components
 
         public virtual MvcHtmlString Render()
         {
-            return Render(string.Empty, GetViewModel(), GetOptions());
+            return Render(string.Empty, GetViewModel(), Options);
         }
-
-        public virtual RouteValueDictionary GetOptions()
-        {
-            return new RouteValueDictionary();
-        }
+        
         
         public abstract object GetViewModel();
 
         public void SetHtmlHelper(HtmlHelper helper)
         {
             _htmlHelper = helper;
+        }
+
+        public void SetPublishedContent(IPublishedContent content)
+        {
+            _content = content;
+        }
+
+        public void SetRouteOptions(RouteValueDictionary options)
+        {
+            _options = options;
         }
     }
 }
