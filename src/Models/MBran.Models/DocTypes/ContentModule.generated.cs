@@ -20,12 +20,12 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace MBran.Models
 {
-	// Mixin content Type 1120 with alias "contentModule"
+	// Mixin content Type 1121 with alias "contentModule"
 	/// <summary>Content Module</summary>
 	public partial interface IContentModule : IPublishedContent
 	{
 		/// <summary>Content</summary>
-		IEnumerable<IPublishedContent> Content { get; }
+		IEnumerable<IPublishedContent> ContentModuleComponents { get; }
 	}
 
 	/// <summary>Content Module</summary>
@@ -56,13 +56,13 @@ namespace MBran.Models
 		///<summary>
 		/// Content
 		///</summary>
-		[ImplementPropertyType("content")]
-		public IEnumerable<IPublishedContent> Content
+		[ImplementPropertyType("contentModuleComponents")]
+		public IEnumerable<IPublishedContent> ContentModuleComponents
 		{
-			get { return GetContent(this); }
+			get { return GetContentModuleComponents(this); }
 		}
 
 		/// <summary>Static getter for Content</summary>
-		public static IEnumerable<IPublishedContent> GetContent(IContentModule that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("content"); }
+		public static IEnumerable<IPublishedContent> GetContentModuleComponents(IContentModule that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("contentModuleComponents"); }
 	}
 }

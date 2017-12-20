@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Configurations", "0. Configurations", "{7818C4BA-83CC-480A-A582-900C29A915DE}"
 	ProjectSection(SolutionItems) = preProject
@@ -10,9 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Configurations", "0. Con
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Web", "1. Web", "{4569035A-6DBB-494D-99ED-E7935692DF9B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Components", "2. Components", "{D2B21739-8A41-4F46-9A69-C6B055B44BCA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Components", "3. Components", "{D2B21739-8A41-4F46-9A69-C6B055B44BCA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Core", "3. Core", "{07AD1199-4563-41C5-A842-1CD83C851A9E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Core", "4. Core", "{07AD1199-4563-41C5-A842-1CD83C851A9E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Core", "src\Core\MBran.Core\MBran.Core.csproj", "{D57CAEC8-913C-42DD-AAB7-543013859FEF}"
 EndProject
@@ -24,7 +24,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Web", "src\Web\MBran.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Core.Models", "src\Core\MBran.Core.Models\MBran.Core.Models.csproj", "{E7424A33-1E39-45FD-8320-1D85EE80A67F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Models", "4. Models", "{1F78990A-1460-4B75-B693-AB0A5CA1B630}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Models", "5. Models", "{1F78990A-1460-4B75-B693-AB0A5CA1B630}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Models", "src\Models\MBran.Models\MBran.Models.csproj", "{BD011D1F-EB0E-4594-B3A9-B5F7F2D91DD8}"
 EndProject
@@ -35,6 +35,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Components.ErrorPage", "src\Components\MBran.Components.ErrorPage\MBran.Components.ErrorPage.csproj", "{F8FE4BF5-5036-45EE-BA87-39F3E37D4EA3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Components.Navigation", "src\Components\MBran.Components.Navigation\MBran.Components.Navigation.csproj", "{4A0AED46-B651-44CD-8FE1-DE23FE59ADD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Core.Modules", "src\Core\MBran.Core.Modules\MBran.Core.Modules.csproj", "{3FB15CDF-1873-4659-A297-B067D9BBE2B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Modules", "2. Modules", "{59E54211-C58A-450E-99DB-96FE4AF2D83F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Modules.Content", "src\Modules\MBran.Modules.Content\MBran.Modules.Content.csproj", "{00275B29-734B-44A2-8FC0-B84E9A08828C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,6 +88,14 @@ Global
 		{4A0AED46-B651-44CD-8FE1-DE23FE59ADD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A0AED46-B651-44CD-8FE1-DE23FE59ADD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A0AED46-B651-44CD-8FE1-DE23FE59ADD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB15CDF-1873-4659-A297-B067D9BBE2B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB15CDF-1873-4659-A297-B067D9BBE2B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB15CDF-1873-4659-A297-B067D9BBE2B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB15CDF-1873-4659-A297-B067D9BBE2B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00275B29-734B-44A2-8FC0-B84E9A08828C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00275B29-734B-44A2-8FC0-B84E9A08828C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00275B29-734B-44A2-8FC0-B84E9A08828C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00275B29-734B-44A2-8FC0-B84E9A08828C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +111,8 @@ Global
 		{FD5ECA2F-70D0-4F88-BCBD-C0ABA9868699} = {D2B21739-8A41-4F46-9A69-C6B055B44BCA}
 		{F8FE4BF5-5036-45EE-BA87-39F3E37D4EA3} = {D2B21739-8A41-4F46-9A69-C6B055B44BCA}
 		{4A0AED46-B651-44CD-8FE1-DE23FE59ADD2} = {D2B21739-8A41-4F46-9A69-C6B055B44BCA}
+		{3FB15CDF-1873-4659-A297-B067D9BBE2B3} = {07AD1199-4563-41C5-A842-1CD83C851A9E}
+		{00275B29-734B-44A2-8FC0-B84E9A08828C} = {59E54211-C58A-450E-99DB-96FE4AF2D83F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E35E41F-4754-4440-95C8-E09DF00D2AC7}

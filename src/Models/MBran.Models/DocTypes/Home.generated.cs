@@ -75,10 +75,10 @@ namespace MBran.Models
 		///<summary>
 		/// Content
 		///</summary>
-		[ImplementPropertyType("content")]
-		public IEnumerable<IPublishedContent> Content
+		[ImplementPropertyType("contentModuleComponents")]
+		public IEnumerable<IPublishedContent> ContentModuleComponents
 		{
-			get { return MBran.Models.ContentModule.GetContent(this); }
+			get { return MBran.Models.ContentModule.GetContentModuleComponents(this); }
 		}
 
 		///<summary>

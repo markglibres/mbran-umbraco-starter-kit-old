@@ -15,5 +15,6 @@ namespace MBran.Core.Components
         void SetHtmlHelper(HtmlHelper helper);
         void SetPublishedContent(IPublishedContent content);
         void SetRouteOptions(RouteValueDictionary options);
+        object GetViewModel();
     }
 }

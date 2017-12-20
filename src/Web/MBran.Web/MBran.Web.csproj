@@ -514,6 +514,10 @@
       <Project>{e7424a33-1e39-45fd-8320-1d85ee80a67f}</Project>
       <Name>MBran.Core.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Core\MBran.Core.Modules\MBran.Core.Modules.csproj">
+      <Project>{3fb15cdf-1873-4659-a297-b067d9bbe2b3}</Project>
+      <Name>MBran.Core.Modules</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Core\MBran.Core\MBran.Core.csproj">
       <Project>{d57caec8-913c-42dd-aab7-543013859fef}</Project>
       <Name>MBran.Core</Name>
@@ -521,6 +525,10 @@
     <ProjectReference Include="..\..\Models\MBran.Models\MBran.Models.csproj">
       <Project>{bd011d1f-eb0e-4594-b3a9-b5f7f2d91dd8}</Project>
       <Name>MBran.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Modules\MBran.Modules.Content\MBran.Modules.Content.csproj">
+      <Project>{00275b29-734b-44a2-8fc0-b84e9a08828c}</Project>
+      <Name>MBran.Modules.Content</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
