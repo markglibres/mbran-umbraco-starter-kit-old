@@ -10,6 +10,7 @@ namespace MBran.Core.Modules.Controllers
     {
         public int PageId => _contentHelper.CurrentPageId();
         private readonly IContentHelper _contentHelper;
+        private const string DefaultViewName = "Index";
 
         public ModulesController(IContentHelper contentHelper)
         {
@@ -66,7 +67,7 @@ namespace MBran.Core.Modules.Controllers
         {
             var viewName = GetViewName();
             var view = string.IsNullOrEmpty(viewPath)
-                ? PageModuleViewHelper.GetFullPath(viewName, viewName)
+                ? PageModuleViewHelper.GetFullPath(viewName, DefaultViewName)
                 : viewPath;
             return PartialView(view, model);
         }

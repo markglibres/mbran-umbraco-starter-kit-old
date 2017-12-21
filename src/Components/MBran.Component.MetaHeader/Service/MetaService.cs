@@ -1,5 +1,6 @@
 ﻿using MBran.Components.MetaHeader.Models;
 using MBran.Core;
+using MBran.Core.Models;
 using MBran.Models;
 using Umbraco.Core.Models;
 

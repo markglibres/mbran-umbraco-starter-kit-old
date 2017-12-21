@@ -11,8 +11,8 @@ namespace MBran.Core.Components
     {
         private readonly string _componentName;
         public virtual string Name => _componentName.Humanize();
-        public string ControllerName => Regex.Replace(nameof(ComponentsController), "Controller$", string.Empty);
-        public string RenderAction => nameof(IComponentController.RenderModel);
+        public string ControllerName => ComponentConstants.ControllerName;
+        public string RenderAction => ComponentConstants.RenderModelAction;
         private HtmlHelper _htmlHelper;
         private IPublishedContent _content;
         private RouteValueDictionary _options;

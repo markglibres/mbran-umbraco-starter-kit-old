@@ -1,5 +1,9 @@
-﻿using System.Text.RegularExpressions;
+﻿using MBran.Core.Models;
+using MBran.Models;
+using System;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using Umbraco.Core.Models;
 using Umbraco.Web.Mvc;
 
 namespace MBran.Core.Components
@@ -70,6 +74,12 @@ namespace MBran.Core.Components
                 : viewPath;
             return PartialView(view, model);
         }
-        
+
+        public virtual PartialViewResult RenderContent(IPublishedContent content)
+        {
+            var docType = content.GetDocumentType();
+            var model = content.As(docType);
+            return PartialView(docType.Name, model);
+        }
     }
 }

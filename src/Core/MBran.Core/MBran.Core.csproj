@@ -284,7 +284,6 @@
     <Compile Include="Extensions\ControllerContextExtensions.cs" />
     <Compile Include="Extensions\ControllerExtensions.cs" />
     <Compile Include="Extensions\HttpContextExtensions.cs" />
-    <Compile Include="Extensions\PublishedContentExtensions.cs" />
     <Compile Include="Extensions\ViewEngineResultExtensions.cs" />
     <Compile Include="Helpers\ConfigurationHelper.cs" />
     <Compile Include="Helpers\ContentHelper.cs" />

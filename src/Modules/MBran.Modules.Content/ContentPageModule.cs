@@ -1,4 +1,5 @@
 ﻿using MBran.Core;
+using MBran.Core.Models;
 using MBran.Core.Modules;
 using MBran.Core.Modules.Models;
 using MBran.Models;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
+using System.Web.Mvc.Html;
 using System.Web.Routing;
 using Umbraco.Core.Models;
 
@@ -18,11 +19,10 @@ namespace MBran.Core.Components
 
         public static MvcHtmlString Component(this HtmlHelper helper, IPublishedContent content, RouteValueDictionary options = null)
         {
-            var docType = content.DocumentTypeAlias;
-            var componentType = Type.GetType(docType + "Component");
+            var componentType = GetComponentType(content);
             if (componentType == null)
             {
-                return new MvcHtmlString(string.Empty);    
+                return helper.RenderContent(content, options);
             }
 
             if (!(DependencyResolver.Current.GetService(componentType) is IComponent component))
@@ -33,6 +33,21 @@ namespace MBran.Core.Components
             component.SetHtmlHelper(helper);
             component.SetPublishedContent(content);
             return component.Render();
+        }
+
+        private static MvcHtmlString RenderContent(this HtmlHelper helper, 
+            IPublishedContent content, RouteValueDictionary options = null)
+        {
+            var routeOptions = options ?? new RouteValueDictionary();
+            routeOptions.Remove(ComponentConstants.ContentKey);
+            routeOptions.Add(ComponentConstants.ContentKey, content);
+            return helper.Action(ComponentConstants.RenderContentAction, ComponentConstants.ControllerName, routeOptions);
+        }
+
+        private static Type GetComponentType(IPublishedContent content)
+        {
+            var docType = content.DocumentTypeAlias;
+            return Type.GetType(docType + "Component");
         }
 
     }

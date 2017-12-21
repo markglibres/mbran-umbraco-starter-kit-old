@@ -289,9 +289,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\AutoMapperExtensions.cs" />
-    <Compile Include="Extensions\ImageExtensions.cs" />
+    <Compile Include="AutoMapperExtensions.cs" />
+    <Compile Include="ImageExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublishedContentExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
