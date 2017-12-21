@@ -16,7 +16,7 @@ namespace MBran.Core.Components
             return component.Render();
         }
 
-        public static MvcHtmlString Component(this HtmlHelper helper, IPublishedContent content, RouteValueDictionary options)
+        public static MvcHtmlString Component(this HtmlHelper helper, IPublishedContent content, RouteValueDictionary options = null)
         {
             var docType = content.DocumentTypeAlias;
             var componentType = Type.GetType(docType + "Component");

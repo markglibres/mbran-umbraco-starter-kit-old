@@ -11,8 +11,8 @@ namespace MBran.Core.Components
     {
         private readonly string _componentName;
         public virtual string Name => _componentName.Humanize();
-        private string RenderAction => nameof(IComponentController.RenderModel);
-        private string ControllerName => nameof(ComponentsController);
+        public string ControllerName => Regex.Replace(nameof(ComponentsController), "Controller$", string.Empty);
+        public string RenderAction => nameof(IComponentController.RenderModel);
         private HtmlHelper _htmlHelper;
         private IPublishedContent _content;
         private RouteValueDictionary _options;
@@ -24,10 +24,6 @@ namespace MBran.Core.Components
         {
             _contentHelper = contentHelper;
             _componentName = GetType().UnderlyingSystemType.Name;
-        }
-        private string GetControllerName()
-        {
-            return Regex.Replace(ControllerName, "Controller$", string.Empty);
         }
         
         public MvcHtmlString Render(object model, RouteValueDictionary options)
@@ -43,16 +39,16 @@ namespace MBran.Core.Components
             routeOptions.Add(ComponentConstants.ComponentKey, _componentName);
             routeOptions[ComponentConstants.ViewPathKey] = viewPath;
             
-            return _htmlHelper.Action(RenderAction, GetControllerName(), routeOptions);
+            return _htmlHelper.Action(RenderAction, ControllerName, routeOptions);
         }
 
         public virtual MvcHtmlString Render()
         {
-            return Render(string.Empty, GetViewModel(), Options);
+            return Render(string.Empty, GetModel(), Options);
         }
         
         
-        public abstract object GetViewModel();
+        public abstract object GetModel();
 
         public void SetHtmlHelper(HtmlHelper helper)
         {

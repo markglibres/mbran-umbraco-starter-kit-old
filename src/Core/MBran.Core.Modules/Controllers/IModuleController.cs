@@ -1,8 +1,8 @@
 ﻿using System.Web.Mvc;
 
-namespace MBran.Core.Components
+namespace MBran.Core.Modules.Controllers
 {
-    public interface IComponentController
+    public interface IModuleController
     {
         int PageId { get; }
         PartialViewResult RenderModel(object model);

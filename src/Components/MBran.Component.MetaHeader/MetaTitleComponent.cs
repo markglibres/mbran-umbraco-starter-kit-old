@@ -17,7 +17,7 @@ namespace MBran.Components.MetaHeader
             _metaService = metaService;
         }
 
-        public override object GetViewModel()
+        public override object GetModel()
         {
             var dataModel = _metaService.GetHeader(PublishedContent);
             var viewModel = dataModel.Map<MetaTitleViewModel>();

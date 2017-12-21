@@ -17,5 +17,7 @@ namespace MBran.Core.Modules
         MvcHtmlString Render(object model, RouteValueDictionary options);
         MvcHtmlString Render(string viewPath, object model, RouteValueDictionary options);
         MvcHtmlString Render();
+        string ControllerName { get; }
+        string RenderAction { get; }
     }
 }

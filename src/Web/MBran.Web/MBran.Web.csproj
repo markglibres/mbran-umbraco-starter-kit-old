@@ -465,6 +465,7 @@
     <Content Include="Views\Components\Defaults\MetaTitle.cshtml" />
     <Content Include="Views\Components\Defaults\NavigationHeader.cshtml" />
     <Content Include="Views\Components\Defaults\NavigationFooter.cshtml" />
+    <Content Include="Views\Modules\Content\Content.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -531,6 +532,7 @@
       <Name>MBran.Modules.Content</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

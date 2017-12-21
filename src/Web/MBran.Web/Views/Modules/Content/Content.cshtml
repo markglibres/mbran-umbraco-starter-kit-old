@@ -1,0 +1,7 @@
+﻿@using MBran.Core.Components
+@model MBran.Modules.Content.ContentPageModuleModel
+    
+@foreach (var component in Model.Components)
+{
+    @Html.Component(component)
+}
