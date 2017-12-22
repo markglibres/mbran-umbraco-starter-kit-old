@@ -76,7 +76,7 @@ namespace MBran.Core.Components
         public PartialViewResult GetView(object model, string viewPath = "")
         {
             var view = string.IsNullOrEmpty(viewPath)
-                ? ComponentViewHelper.GetFullPath(ComponentConstants.Folders.Views.Default, GetViewName())
+                ? ComponentViewHelper.GetFullPath(GetViewName())
                 : viewPath;
             return PartialView(view, model);
         }

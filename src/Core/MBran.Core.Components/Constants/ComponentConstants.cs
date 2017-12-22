@@ -14,14 +14,6 @@ namespace MBran.Core.Components
         public static string RenderModelAction = nameof(IComponentController.RenderModel);
         public static string RenderAction = nameof(IComponentController.Render);
         public static string RenderContentAction = nameof(IComponentController.RenderContent);
-
-        public static class Folders
-        {
-            public static class Views
-            {
-                public const string Default = "Defaults";
-            }
-        }
-
+        
     }
 }

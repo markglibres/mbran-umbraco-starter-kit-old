@@ -6,9 +6,9 @@ namespace MBran.Core.Components
     {
         public const string ViewPath = "~/Views/Components/";
         private const string ViewExtension = ".cshtml";
-        public static string GetFullPath(string folder, string viewName)
+        public static string GetFullPath(string viewName)
         {
-            return Path.Combine(ViewPath,folder,viewName).Replace('\\', '/') + ViewExtension;
+            return Path.Combine(ViewPath,viewName).Replace('\\', '/') + ViewExtension;
         }
     }
 }
