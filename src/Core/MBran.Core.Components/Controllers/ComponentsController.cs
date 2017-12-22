@@ -1,6 +1,9 @@
 ﻿using MBran.Core.Models;
 using MBran.Models;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Umbraco.Core.Models;
@@ -40,9 +43,13 @@ namespace MBran.Core.Components
 
         public string GetViewPath()
         {
-            return ControllerContext.RequestContext.RouteData
+            var viewPath = ControllerContext.RequestContext.RouteData
                 ?.Values[ComponentConstants.ViewPathKey]
                 ?.ToString();
+
+            return string.IsNullOrEmpty(viewPath)
+                ? this.GetValidCustomViewLocation(GetViewName())
+                : viewPath;
         }
 
         public string GetViewName()
@@ -68,9 +75,8 @@ namespace MBran.Core.Components
 
         public PartialViewResult GetView(object model, string viewPath = "")
         {
-            var component = GetViewName();
             var view = string.IsNullOrEmpty(viewPath)
-                ? ComponentViewHelper.GetFullPath(ComponentConstants.Folders.Views.Default, component)
+                ? ComponentViewHelper.GetFullPath(ComponentConstants.Folders.Views.Default, GetViewName())
                 : viewPath;
             return PartialView(view, model);
         }
@@ -79,7 +85,32 @@ namespace MBran.Core.Components
         {
             var docType = content.GetDocumentType();
             var model = content.As(docType);
-            return PartialView(docType.Name, model);
+            var viewPath = this.GetValidCustomViewLocation(docType.Name);
+            viewPath = string.IsNullOrEmpty(viewPath) ? docType.Name : viewPath;
+
+            return PartialView(viewPath, model);
+        }
+
+        public virtual string GetValidCustomViewLocation(string viewName)
+        {
+            if(!(ControllerContext.RequestContext.RouteData
+                .Values[ComponentConstants.ViewLocations] is List<string> viewLocations))
+            {
+                return string.Empty;
+            }
+            
+            foreach(var viewPath in viewLocations)
+            {
+                var view = Path.Combine(viewPath, viewName + ".cshtml");
+                var viewEngine = this.GetViewEngine(view, true);
+                if(viewEngine?.View != null)
+                {
+                    return view;
+                }
+            }
+
+            return string.Empty;
+
         }
     }
 }

@@ -466,8 +466,8 @@
     <Content Include="Views\Components\Defaults\NavigationHeader.cshtml" />
     <Content Include="Views\Components\Defaults\NavigationFooter.cshtml" />
     <Content Include="Views\Modules\Content\Index.cshtml" />
-    <Content Include="Views\Components\TextAndImageLeft.cshtml" />
     <Content Include="Views\Components\TextAndImageRight.cshtml" />
+    <Content Include="Views\Components\TextAndImageLeft.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

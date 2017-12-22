@@ -5,6 +5,7 @@ namespace MBran.Core.Components
     public static class ComponentConstants
     {
         public const string ViewPathKey = "viewPath";
+        public const string ViewLocations = "viewLocations";
         public const string ComponentKey = "component";
         public const string ContentKey = "content";
         public const string ModelKey = "model";
