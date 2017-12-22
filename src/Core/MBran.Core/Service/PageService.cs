@@ -1,4 +1,5 @@
-﻿using MBran.Models;
+﻿using MBran.Core.Models;
+using MBran.Models;
 
 namespace MBran.Core
 {

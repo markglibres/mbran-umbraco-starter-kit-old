@@ -15,7 +15,7 @@ namespace MBran.Components.Navigation
             _navigationService = navigationService;
         }
 
-        public override object GetViewModel()
+        public override object GetModel()
         {
             return _navigationService.GetFooter();
         }

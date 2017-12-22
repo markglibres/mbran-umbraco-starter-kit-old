@@ -7,25 +7,23 @@ using Umbraco.Core.Models;
 
 namespace MBran.Core.Components
 {
-    public abstract class Component : IComponent, IComponentRender
+    public abstract class Component : IComponent
     {
         private readonly string _componentName;
         public virtual string Name => _componentName.Humanize();
-        private string RenderAction => nameof(IComponentController.RenderModel);
-        private string ControllerName => nameof(ComponentsController);
+        public string ControllerName => ComponentConstants.ControllerName;
+        public string RenderAction => ComponentConstants.RenderModelAction;
         private HtmlHelper _htmlHelper;
-        public IPublishedContent PublishedContent => _contentHelper.CurrentPage();
-        
+        private IPublishedContent _content;
+        private RouteValueDictionary _options;
+        public IPublishedContent PublishedContent => _content ??  _contentHelper.CurrentPage();
+        public RouteValueDictionary Options => _options ?? new RouteValueDictionary();
         private readonly IContentHelper _contentHelper;
 
         protected Component(IContentHelper contentHelper)
         {
             _contentHelper = contentHelper;
             _componentName = GetType().UnderlyingSystemType.Name;
-        }
-        private string GetControllerName()
-        {
-            return Regex.Replace(ControllerName, "Controller$", string.Empty);
         }
         
         public MvcHtmlString Render(object model, RouteValueDictionary options)
@@ -35,30 +33,36 @@ namespace MBran.Core.Components
 
         public MvcHtmlString Render(string viewPath, object model, RouteValueDictionary options)
         {
-            var routeOptions = options ?? new RouteValueDictionary();
+            var routeOptions = options ?? Options;
             routeOptions.Remove(ComponentConstants.ModelKey);
             routeOptions.Add(ComponentConstants.ModelKey, model);
             routeOptions.Add(ComponentConstants.ComponentKey, _componentName);
             routeOptions[ComponentConstants.ViewPathKey] = viewPath;
             
-            return _htmlHelper.Action(RenderAction, GetControllerName(), routeOptions);
+            return _htmlHelper.Action(RenderAction, ControllerName, routeOptions);
         }
 
         public virtual MvcHtmlString Render()
         {
-            return Render(string.Empty, GetViewModel(), GetOptions());
-        }
-
-        public virtual RouteValueDictionary GetOptions()
-        {
-            return new RouteValueDictionary();
+            return Render(string.Empty, GetModel(), Options);
         }
         
-        public abstract object GetViewModel();
+        
+        public abstract object GetModel();
 
         public void SetHtmlHelper(HtmlHelper helper)
         {
             _htmlHelper = helper;
+        }
+
+        public void SetPublishedContent(IPublishedContent content)
+        {
+            _content = content;
+        }
+
+        public void SetRouteOptions(RouteValueDictionary options)
+        {
+            _options = options;
         }
     }
 }

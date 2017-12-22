@@ -22,6 +22,7 @@ namespace MBran.Core
                 builder.RegisterApiControllers(assembly);
                 builder.RegisterCustomControllers(assembly)
                     .RegisterComponents(assembly)
+                    .RegisterPageModules(assembly)
                     .RegisterServices(assembly)
                     .RegisterRepositories(assembly);
                 builder.RegisterAssemblyModules(assembly);
@@ -46,6 +47,14 @@ namespace MBran.Core
         {
             builder.RegisterAssemblyTypes(executingAssembly)
                 .Where(c => c.Name.EndsWith("Component",StringComparison.CurrentCultureIgnoreCase))
+                .InstancePerRequest();
+            return builder;
+        }
+
+        public static ContainerBuilder RegisterPageModules(this ContainerBuilder builder, Assembly executingAssembly)
+        {
+            builder.RegisterAssemblyTypes(executingAssembly)
+                .Where(c => c.Name.EndsWith("PageModule", StringComparison.CurrentCultureIgnoreCase))
                 .InstancePerRequest();
             return builder;
         }

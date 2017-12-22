@@ -235,6 +235,7 @@
     <Compile Include="DocTypes\BusinessTimingsNested.generated.cs" />
     <Compile Include="DocTypes\ContentHeader.generated.cs" />
     <Compile Include="DocTypes\ContentImageFile.generated.cs" />
+    <Compile Include="DocTypes\ContentModule.generated.cs" />
     <Compile Include="DocTypes\Error404.generated.cs" />
     <Compile Include="DocTypes\File.generated.cs" />
     <Compile Include="DocTypes\Folder.generated.cs" />
@@ -253,6 +254,8 @@
     <Compile Include="DocTypes\Page.generated.cs" />
     <Compile Include="DocTypes\SiteConfig.generated.cs" />
     <Compile Include="DocTypes\SitemapSettings.generated.cs" />
+    <Compile Include="DocTypes\TextAndImageLeft.generated.cs" />
+    <Compile Include="DocTypes\TextAndImageRight.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

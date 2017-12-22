@@ -12,7 +12,7 @@ namespace MBran.Components.Favicon
         {
             _faviconService = faviconService;
         }
-        public override object GetViewModel()
+        public override object GetModel()
         {
             var viewModel = _faviconService.GetFavicon();
             return viewModel;
