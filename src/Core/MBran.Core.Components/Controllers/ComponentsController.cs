@@ -1,9 +1,6 @@
 ﻿using MBran.Core.Models;
-using MBran.Models;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Umbraco.Core.Models;
@@ -25,19 +22,28 @@ namespace MBran.Core.Components
 
         public virtual PartialViewResult RenderModel(object model)
         {
-            var customViewPath = GetViewPath();
-            PartialViewResult partialView = null;
-
-            if (string.IsNullOrEmpty(customViewPath))
+            var viewPath = GetViewPath();
+           
+            if (string.IsNullOrEmpty(viewPath))
             {
-                partialView = GetMvcView(model);
+                viewPath = GetViewName();
             }
 
-            return partialView ?? (GetView(model, customViewPath));
+            return PartialView(viewPath, model);
         }
 
         public virtual PartialViewResult Render(string viewPath, object model)
         {
+            return PartialView(viewPath, model);
+        }
+
+        public virtual PartialViewResult RenderContent(IPublishedContent content)
+        {
+            var docType = content.GetDocumentType();
+            var model = content.As(docType);
+            var viewPath = this.GetValidCustomViewLocation(docType.Name);
+            viewPath = string.IsNullOrEmpty(viewPath) ? docType.Name : viewPath;
+
             return PartialView(viewPath, model);
         }
 
@@ -62,35 +68,7 @@ namespace MBran.Core.Components
                 ? ControllerContext.ExecutingViewName() 
                 : Regex.Replace(component, "component$", string.Empty, RegexOptions.IgnoreCase);
         }
-
-        public PartialViewResult GetMvcView(object model)
-        {
-            var viewEngine = this.GetViewEngine(GetViewName(), true);
-
-            if (viewEngine?.View == null) return null;
-
-            ControllerContext.RouteData.Values["action"] = GetViewName();
-            return viewEngine.GetPartialView(ControllerContext, model);
-        }
-
-        public PartialViewResult GetView(object model, string viewPath = "")
-        {
-            var view = string.IsNullOrEmpty(viewPath)
-                ? ComponentViewHelper.GetFullPath(GetViewName())
-                : viewPath;
-            return PartialView(view, model);
-        }
-
-        public virtual PartialViewResult RenderContent(IPublishedContent content)
-        {
-            var docType = content.GetDocumentType();
-            var model = content.As(docType);
-            var viewPath = this.GetValidCustomViewLocation(docType.Name);
-            viewPath = string.IsNullOrEmpty(viewPath) ? docType.Name : viewPath;
-
-            return PartialView(viewPath, model);
-        }
-
+        
         public virtual string GetValidCustomViewLocation(string viewName)
         {
             if(!(ControllerContext.RequestContext.RouteData

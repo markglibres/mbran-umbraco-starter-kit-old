@@ -461,13 +461,13 @@
     <Content Include="uSync\**" />
     <Content Include="static\**" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\MetaTitle\MetaTitle.cshtml" />
     <Content Include="Views\Components\MetaTitle.cshtml" />
     <Content Include="Views\Components\NavigationHeader.cshtml" />
     <Content Include="Views\Components\NavigationFooter.cshtml" />
     <Content Include="Views\Modules\Content\Index.cshtml" />
     <Content Include="Views\Components\TextAndImageRight.cshtml" />
     <Content Include="Views\Components\TextAndImageLeft.cshtml" />
+    <Content Include="Views\Modules\Content\TextAndImageLeft.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
