@@ -10,7 +10,7 @@ namespace MBran.Core.Components
         PartialViewResult RenderModel(object model);
         PartialViewResult Render(string viewName, object model);
         string GetViewPath();
-        string GetViewName();
+        string GetComponentName();
        
     }
 }

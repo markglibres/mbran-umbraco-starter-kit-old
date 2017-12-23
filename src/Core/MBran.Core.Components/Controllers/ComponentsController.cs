@@ -26,7 +26,7 @@ namespace MBran.Core.Components
            
             if (string.IsNullOrEmpty(viewPath))
             {
-                viewPath = GetViewName();
+                viewPath = GetComponentName();
             }
 
             return PartialView(viewPath, model);
@@ -54,11 +54,11 @@ namespace MBran.Core.Components
                 ?.ToString();
 
             return string.IsNullOrEmpty(viewPath)
-                ? this.GetValidCustomViewLocation(GetViewName())
+                ? this.GetValidCustomViewLocation(GetComponentName())
                 : viewPath;
         }
 
-        public string GetViewName()
+        public string GetComponentName()
         {
             var component = ControllerContext.RequestContext.RouteData
                 ?.Values[ComponentConstants.ComponentKey]

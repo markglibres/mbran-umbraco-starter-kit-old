@@ -10,16 +10,17 @@ namespace MBran.Core.Components
     public abstract class Component : IComponent
     {
         private readonly string _componentName;
-        public virtual string Name => _componentName.Humanize();
-        public string ControllerName => ComponentConstants.ControllerName;
-        public string RenderAction => ComponentConstants.RenderModelAction;
         private HtmlHelper _htmlHelper;
         private IPublishedContent _content;
         private RouteValueDictionary _options;
-        public IPublishedContent PublishedContent => _content ??  _contentHelper.CurrentPage();
-        public RouteValueDictionary Options => _options ?? new RouteValueDictionary();
         private readonly IContentHelper _contentHelper;
 
+        public IPublishedContent PublishedContent => _content ??  _contentHelper.CurrentPage();
+        public RouteValueDictionary Options => _options ?? new RouteValueDictionary();
+        public virtual string Name => _componentName.Humanize();
+        public string ControllerName => ComponentConstants.ControllerName;
+        public string RenderAction => ComponentConstants.RenderModelAction;
+        
         protected Component(IContentHelper contentHelper)
         {
             _contentHelper = contentHelper;

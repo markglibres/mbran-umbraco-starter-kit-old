@@ -274,8 +274,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\Component.cs" />
-    <Compile Include="Components\IComponent.cs" />
+    <Compile Include="Component.cs" />
+    <Compile Include="IComponent.cs" />
     <Compile Include="Constants\ComponentConstants.cs" />
     <Compile Include="Controllers\ComponentsController.cs" />
     <Compile Include="Controllers\Interface\IComponentController.cs" />

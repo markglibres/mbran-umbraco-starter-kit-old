@@ -1,5 +1,4 @@
-﻿using MBran.Core.Modules.Helpers;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Umbraco.Web.Mvc;
 
@@ -24,15 +23,14 @@ namespace MBran.Core.Modules.Controllers
 
         public PartialViewResult RenderModel(object model)
         {
-            var customViewPath = GetViewPath();
-            PartialViewResult partialView = null;
-
-            if (string.IsNullOrEmpty(customViewPath))
+            var viewPath = GetViewPath();
+        
+            if (string.IsNullOrEmpty(viewPath))
             {
-                partialView = GetMvcView(model);
+                viewPath = GetModuleName() + "/" + DefaultViewName;
             }
 
-            return partialView ?? (GetView(model, customViewPath));
+            return PartialView(viewPath, model);
         }
 
         public string GetViewPath()
@@ -42,7 +40,7 @@ namespace MBran.Core.Modules.Controllers
                 ?.ToString();
         }
 
-        public string GetViewName()
+        public string GetModuleName()
         {
             var component = ControllerContext.RequestContext.RouteData
                 ?.Values[ModuleConstants.ModuleKey]
@@ -52,24 +50,6 @@ namespace MBran.Core.Modules.Controllers
                 ? ControllerContext.ExecutingViewName()
                 : Regex.Replace(component, "pagemodule$", string.Empty, RegexOptions.IgnoreCase);
         }
-
-        public PartialViewResult GetMvcView(object model)
-        {
-            var viewEngine = this.GetViewEngine(GetViewName(), true);
-
-            if (viewEngine?.View == null) return null;
-
-            ControllerContext.RouteData.Values["action"] = GetViewName();
-            return viewEngine.GetPartialView(ControllerContext, model);
-        }
-
-        public PartialViewResult GetView(object model, string viewPath = "")
-        {
-            var viewName = GetViewName();
-            var view = string.IsNullOrEmpty(viewPath)
-                ? PageModuleViewHelper.GetFullPath(viewName, DefaultViewName)
-                : viewPath;
-            return PartialView(view, model);
-        }
+        
     }
 }

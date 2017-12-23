@@ -8,8 +8,7 @@ namespace MBran.Core.Modules.Controllers
         PartialViewResult RenderModel(object model);
         PartialViewResult Render(string viewName, object model);
         string GetViewPath();
-        string GetViewName();
-        PartialViewResult GetMvcView(object model);
-        PartialViewResult GetView(object model, string viewPath = "");
+        string GetModuleName();
+       
     }
 }

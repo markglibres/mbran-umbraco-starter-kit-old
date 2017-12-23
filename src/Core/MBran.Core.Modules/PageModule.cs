@@ -13,16 +13,17 @@ namespace MBran.Core.Modules
     public abstract class PageModule : IPageModule
     {
         private readonly string _moduleName;
-        public string Name => _moduleName.Humanize(); 
         private IPublishedContent _content;
-        public IPublishedContent PublishedContent => _content ?? _contentHelper.CurrentPage();
         private RouteValueDictionary _options;
-        public RouteValueDictionary Options => _options ?? new RouteValueDictionary();
-        public string ControllerName => Regex.Replace(nameof(ModulesController), "Controller$", string.Empty);
-        public string RenderAction => nameof(IModuleController.RenderModel);
+        public string Name => _moduleName.Humanize();
         private readonly IContentHelper _contentHelper;
         private HtmlHelper _htmlHelper;
 
+        public IPublishedContent PublishedContent => _content ?? _contentHelper.CurrentPage();
+        public RouteValueDictionary Options => _options ?? new RouteValueDictionary();
+        public string ControllerName => Regex.Replace(nameof(ModulesController), "Controller$", string.Empty);
+        public string RenderAction => nameof(IModuleController.RenderModel);
+        
         protected PageModule(IContentHelper contentHelper)
         {
             _contentHelper = contentHelper;
