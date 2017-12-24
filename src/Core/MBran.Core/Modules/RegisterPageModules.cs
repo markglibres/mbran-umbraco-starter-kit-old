@@ -3,7 +3,7 @@ using MBran.Core.Modules.Controllers;
 
 namespace MBran.Core.Modules
 {
-    public class MBranPageModule : Module
+    public class RegisterPageModules : Module
     {
         protected override void Load(ContainerBuilder builder)
         {

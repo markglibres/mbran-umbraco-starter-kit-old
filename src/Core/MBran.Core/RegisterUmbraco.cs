@@ -6,7 +6,7 @@ using Umbraco.Web;
 
 namespace MBran.Core
 {
-    public class MBranCoreModule : Module
+    public class RegisterUmbraco : Module
     {
         protected override void Load(ContainerBuilder builder)
         {

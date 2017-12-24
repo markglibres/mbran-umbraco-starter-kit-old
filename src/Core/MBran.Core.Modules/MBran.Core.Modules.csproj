@@ -217,15 +217,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\IModuleController.cs" />
-    <Compile Include="Controllers\ModulesController.cs" />
-    <Compile Include="Helpers\PageModuleViewHelper.cs" />
-    <Compile Include="MBranPageModule.cs" />
-    <Compile Include="ModuleConstants.cs" />
-    <Compile Include="HtmlHelperModuleExtensions.cs" />
-    <Compile Include="IPageModule.cs" />
-    <Compile Include="Models\IPageModuleModel.cs" />
-    <Compile Include="PageModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
