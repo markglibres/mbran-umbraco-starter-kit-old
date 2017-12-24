@@ -2,7 +2,7 @@
 
 namespace MBran.Core.Components
 {
-    public class MBranComponentsModule : Module
+    public class RegisterComponents : Module
     {
         protected override void Load(ContainerBuilder builder)
         {

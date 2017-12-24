@@ -222,14 +222,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\MBran.Core.Components\MBran.Core.Components.csproj">
-      <Project>{2a327f31-6a57-40a0-b27d-d175c16496b5}</Project>
-      <Name>MBran.Core.Components</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Core\MBran.Core.Models\MBran.Core.Models.csproj">
-      <Project>{e7424a33-1e39-45fd-8320-1d85ee80a67f}</Project>
-      <Name>MBran.Core.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Core\MBran.Core\MBran.Core.csproj">
       <Project>{d57caec8-913c-42dd-aab7-543013859fef}</Project>
       <Name>MBran.Core</Name>
