@@ -36,6 +36,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Modules", "2. Modules", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Modules.Content", "src\Modules\MBran.Modules.Content\MBran.Modules.Content.csproj", "{00275B29-734B-44A2-8FC0-B84E9A08828C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.Components.Contact", "src\Components\MBran.Components.Contact\MBran.Components.Contact.csproj", "{2C92DE79-A3FD-4A0B-8498-ABE8B31C7F7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,10 @@ Global
 		{00275B29-734B-44A2-8FC0-B84E9A08828C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00275B29-734B-44A2-8FC0-B84E9A08828C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00275B29-734B-44A2-8FC0-B84E9A08828C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C92DE79-A3FD-4A0B-8498-ABE8B31C7F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C92DE79-A3FD-4A0B-8498-ABE8B31C7F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C92DE79-A3FD-4A0B-8498-ABE8B31C7F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C92DE79-A3FD-4A0B-8498-ABE8B31C7F7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +98,7 @@ Global
 		{F8FE4BF5-5036-45EE-BA87-39F3E37D4EA3} = {D2B21739-8A41-4F46-9A69-C6B055B44BCA}
 		{4A0AED46-B651-44CD-8FE1-DE23FE59ADD2} = {D2B21739-8A41-4F46-9A69-C6B055B44BCA}
 		{00275B29-734B-44A2-8FC0-B84E9A08828C} = {59E54211-C58A-450E-99DB-96FE4AF2D83F}
+		{2C92DE79-A3FD-4A0B-8498-ABE8B31C7F7B} = {D2B21739-8A41-4F46-9A69-C6B055B44BCA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E35E41F-4754-4440-95C8-E09DF00D2AC7}

@@ -2,6 +2,7 @@
 @using MBran.Components.Favicon
 @using MBran.Components.Navigation
 @using MBran.Modules.Content
+@using MBran.Components.Contact
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +15,7 @@
     <div>
         @(Html.Module<ContentPageModule>())
         @RenderBody()
+        @(Html.Component<ContactDetailsComponent>())
     </div>
     <div>@(Html.Component<NavigationFooterComponent>())</div>
 </body>

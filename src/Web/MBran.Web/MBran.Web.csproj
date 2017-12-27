@@ -469,6 +469,7 @@
     <Content Include="Views\Components\TextAndImageLeft.cshtml" />
     <Content Include="Views\Modules\Content\TextAndImageLeft.cshtml" />
     <None Include="Properties\PublishProfiles\nowon - Web Deploy.pubxml" />
+    <Content Include="Views\Components\ContactDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -497,6 +498,10 @@
     <ProjectReference Include="..\..\Components\MBran.Component.MetaHeader\MBran.Components.MetaHeader.csproj">
       <Project>{314176fb-578a-464b-b7d0-4dc8871181b2}</Project>
       <Name>MBran.Components.MetaHeader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Components\MBran.Components.Contact\MBran.Components.Contact.csproj">
+      <Project>{2c92de79-a3fd-4a0b-8498-abe8b31c7f7b}</Project>
+      <Name>MBran.Components.Contact</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Components\MBran.Components.ErrorPage\MBran.Components.ErrorPage.csproj">
       <Project>{f8fe4bf5-5036-45ee-ba87-39f3e37d4ea3}</Project>

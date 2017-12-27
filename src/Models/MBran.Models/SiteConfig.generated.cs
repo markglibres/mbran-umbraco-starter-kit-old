@@ -22,7 +22,7 @@ namespace MBran.Models
 {
 	/// <summary>Site Config</summary>
 	[PublishedContentModel("siteConfig")]
-	public partial class SiteConfig : PublishedContentModel, IBusinessAddress, IBusinessTimingsNested, IImageFavicon, IImageLogo, INavigationFooter, INavigationFooterUtility, INavigationHeader, INavigationHeaderUtility
+	public partial class SiteConfig : PublishedContentModel, IBusinessAddress, IBusinessTimingsNested, IContactPerson, IImageFavicon, IImageLogo, INavigationFooter, INavigationFooterUtility, INavigationHeader, INavigationHeaderUtility
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "siteConfig";
@@ -106,6 +106,51 @@ namespace MBran.Models
 		public IEnumerable<IPublishedContent> BusinessTimings
 		{
 			get { return MBran.Models.BusinessTimingsNested.GetBusinessTimings(this); }
+		}
+
+		///<summary>
+		/// Email
+		///</summary>
+		[ImplementPropertyType("contactEmail")]
+		public string ContactEmail
+		{
+			get { return MBran.Models.ContactPerson.GetContactEmail(this); }
+		}
+
+		///<summary>
+		/// Fax
+		///</summary>
+		[ImplementPropertyType("contactFax")]
+		public string ContactFax
+		{
+			get { return MBran.Models.ContactPerson.GetContactFax(this); }
+		}
+
+		///<summary>
+		/// Mobile
+		///</summary>
+		[ImplementPropertyType("contactMobile")]
+		public string ContactMobile
+		{
+			get { return MBran.Models.ContactPerson.GetContactMobile(this); }
+		}
+
+		///<summary>
+		/// Name
+		///</summary>
+		[ImplementPropertyType("contactName")]
+		public string ContactName
+		{
+			get { return MBran.Models.ContactPerson.GetContactName(this); }
+		}
+
+		///<summary>
+		/// Phone
+		///</summary>
+		[ImplementPropertyType("contactPhone")]
+		public string ContactPhone
+		{
+			get { return MBran.Models.ContactPerson.GetContactPhone(this); }
 		}
 
 		///<summary>
