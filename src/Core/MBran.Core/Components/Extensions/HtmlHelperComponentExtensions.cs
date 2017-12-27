@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MBran.Core.Components.Extensions;
+using MBran.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
@@ -94,8 +96,8 @@ namespace MBran.Core.Components
 
         private static Type GetComponentType(IPublishedContent content)
         {
-            var docType = content.DocumentTypeAlias;
-            return Type.GetType(docType + "Component");
+            var componentType = content.GetDocumentTypeAlias() + "Component";
+            return AppDomain.CurrentDomain.FindComponent(componentType);
         }
 
         public static string GetExecutingModulePath(this HtmlHelper helper)

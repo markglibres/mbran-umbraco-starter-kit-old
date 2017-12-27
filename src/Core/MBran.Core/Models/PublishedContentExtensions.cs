@@ -36,11 +36,18 @@ namespace MBran.Core.Models
 
         public static Type GetDocumentType(this IPublishedContent content)
         {
-            var docType = content.DocumentTypeAlias;
-            var modelTypeName = Char.ToUpperInvariant(docType[0]) + docType.Substring(1);
+
+            var modelTypeName = content.GetDocumentTypeAlias();
             var modelsAssemblyNamespace = typeof(SiteConfig).Namespace;
             var modelsAssembly = typeof(SiteConfig).Assembly;
             return modelsAssembly.GetType($"{modelsAssemblyNamespace}.{modelTypeName}");
+        }
+
+        public static string GetDocumentTypeAlias(this IPublishedContent content)
+        {
+            var docType = content.DocumentTypeAlias;
+            return Char.ToUpperInvariant(docType[0]) + docType.Substring(1);
+            
         }
     }
 }

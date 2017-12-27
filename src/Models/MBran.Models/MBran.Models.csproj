@@ -233,6 +233,7 @@
     <Compile Include="BusinessAddress.generated.cs" />
     <Compile Include="BusinessTiming.generated.cs" />
     <Compile Include="BusinessTimingsNested.generated.cs" />
+    <Compile Include="ContactDetails.generated.cs" />
     <Compile Include="ContactPerson.generated.cs" />
     <Compile Include="ContentHeader.generated.cs" />
     <Compile Include="ContentImageFile.generated.cs" />

@@ -1,6 +1,7 @@
 ﻿using MBran.Core;
 using MBran.Core.Models;
 using MBran.Models;
+using Umbraco.Core.Models;
 
 namespace MBran.Components.Contact.Service
 {
@@ -11,9 +12,11 @@ namespace MBran.Components.Contact.Service
         {
             _siteService = siteService;
         }
-        public ContactPerson GetContact()
+        
+        public ContactPerson GetContact(IPublishedContent content = null)
         {
-            return _siteService.GetSite()?.As<ContactPerson>();
+            var node = content ?? _siteService.GetSite();
+            return node?.As<ContactPerson>();
         }
     }
 }

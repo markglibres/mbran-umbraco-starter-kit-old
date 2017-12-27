@@ -285,6 +285,7 @@
     <Compile Include="Components\Constants\ComponentConstants.cs" />
     <Compile Include="Components\Controllers\ComponentsController.cs" />
     <Compile Include="Components\Controllers\Interface\IComponentController.cs" />
+    <Compile Include="Components\Extensions\ComponentAssemblyExtensions.cs" />
     <Compile Include="Components\Extensions\HtmlHelperComponentExtensions.cs" />
     <Compile Include="Components\Helpers\ComponentViewHelper.cs" />
     <Compile Include="Components\IComponent.cs" />
@@ -292,6 +293,7 @@
     <Compile Include="Constants\UmbracoConstants.cs" />
     <Compile Include="Dependency Injection\AutofacBuilderExtensions.cs" />
     <Compile Include="Dependency Injection\IoCBuilder.cs" />
+    <Compile Include="Extensions\AssemblyExtensions.cs" />
     <Compile Include="Extensions\ControllerContextExtensions.cs" />
     <Compile Include="Extensions\ControllerExtensions.cs" />
     <Compile Include="Extensions\HttpContextExtensions.cs" />

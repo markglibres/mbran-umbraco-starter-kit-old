@@ -1,6 +1,8 @@
 ﻿using MBran.Components.Contact.Service;
 using MBran.Core;
 using MBran.Core.Components;
+using MBran.Core.Models;
+using MBran.Models;
 
 namespace MBran.Components.Contact
 {
@@ -16,7 +18,8 @@ namespace MBran.Components.Contact
 
         public override object GetModel()
         {
-            return _contactService.GetContact();
+            var content = PublishedContent.As<ContactDetails>()?.ContactDetailsPage;
+            return _contactService.GetContact(content);
         }
     }
 }
