@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using System.Web.UI;
 using Umbraco.Core.Models;
 using Umbraco.Web.Mvc;
 
 namespace MBran.Core.Components
 {
+    [OutputCache(NoStore = true, Duration = 0, Location = OutputCacheLocation.None, VaryByParam = "*")]
     public class ComponentsController : SurfaceController,
         IComponentController
     {

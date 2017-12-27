@@ -1,9 +1,11 @@
 ﻿using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using System.Web.UI;
 using Umbraco.Web.Mvc;
 
 namespace MBran.Core.Modules.Controllers
 {
+    [OutputCache(NoStore = true, Duration = 0, Location = OutputCacheLocation.None, VaryByParam = "*")]
     public class ModulesController : SurfaceController,
         IModuleController
     {
@@ -15,7 +17,7 @@ namespace MBran.Core.Modules.Controllers
         {
             _contentHelper = contentHelper;
         }
-
+               
         public PartialViewResult Render(string viewName, object model)
         {
             return PartialView(viewName, model);
