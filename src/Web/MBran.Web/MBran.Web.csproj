@@ -468,6 +468,7 @@
     <Content Include="Views\Components\TextAndImageRight.cshtml" />
     <Content Include="Views\Components\TextAndImageLeft.cshtml" />
     <Content Include="Views\Modules\Content\TextAndImageLeft.cshtml" />
+    <None Include="Properties\PublishProfiles\nowon - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
