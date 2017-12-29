@@ -420,7 +420,9 @@
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
@@ -464,12 +466,11 @@
     <Content Include="Views\Components\MetaTitle.cshtml" />
     <Content Include="Views\Components\NavigationHeader.cshtml" />
     <Content Include="Views\Components\NavigationFooter.cshtml" />
-    <Content Include="Views\Modules\Content\Index.cshtml" />
     <Content Include="Views\Components\TextAndImageRight.cshtml" />
     <Content Include="Views\Components\TextAndImageLeft.cshtml" />
-    <Content Include="Views\Modules\Content\TextAndImageLeft.cshtml" />
     <None Include="Properties\PublishProfiles\nowon - Web Deploy.pubxml" />
     <Content Include="Views\Components\ContactDetails.cshtml" />
+    <Content Include="Views\Components\MetaTagHeader.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -495,17 +496,13 @@
       <Project>{96a66068-7ae4-49a9-a5ce-da1a65f048aa}</Project>
       <Name>MBran.Components</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Core\MBran.Core\MBran.Core.csproj">
-      <Project>{d57caec8-913c-42dd-aab7-543013859fef}</Project>
+    <ProjectReference Include="..\..\..\..\mbran-umbraco-core\src\MBran.Core\MBran.Core.csproj">
+      <Project>{14d73a1d-62f8-4428-9fd8-547aa6562c90}</Project>
       <Name>MBran.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Models\MBran.Models\MBran.Models.csproj">
       <Project>{bd011d1f-eb0e-4594-b3a9-b5f7f2d91dd8}</Project>
       <Name>MBran.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Modules\MBran.Modules.Content\MBran.Modules.Content.csproj">
-      <Project>{00275b29-734b-44a2-8fc0-b84e9a08828c}</Project>
-      <Name>MBran.Modules.Content</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

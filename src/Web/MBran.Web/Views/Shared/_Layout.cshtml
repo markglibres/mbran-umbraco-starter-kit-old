@@ -4,12 +4,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-
+    @(Html.Component<MetaTagHeader>())
 </head>
 <body>
     <div></div>
     <div>
-        @(Html.Component<MetaTagHeader>())
+        @RenderBody()
         @*@(Html.Component<MetaTagHeader>(Model))
         @(Html.Component<MetaTagHeader>("~/Views/Components/Meta.cshtml"))
         @(Html.Component<MetaTagHeader>("~/Views/Components/Meta.cshtml", Model))

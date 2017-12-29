@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MBran.Core")]
+[assembly: AssemblyTitle("MBran.Components")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MBran.Core")]
+[assembly: AssemblyProduct("MBran.Components")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("14d73a1d-62f8-4428-9fd8-547aa6562c90")]
+[assembly: Guid("96a66068-7ae4-49a9-a5ce-da1a65f048aa")]
 
 // Version information for an assembly consists of the following four values:
 //

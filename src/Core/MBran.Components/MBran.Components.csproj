@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{14D73A1D-62F8-4428-9FD8-547AA6562C90}</ProjectGuid>
+    <ProjectGuid>{96A66068-7AE4-49A9-A5CE-DA1A65F048AA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MBran.Core</RootNamespace>
-    <AssemblyName>MBran.Core</AssemblyName>
+    <RootNamespace>MBran.Components</RootNamespace>
+    <AssemblyName>MBran.Components</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -147,6 +147,7 @@
     <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\..\mbran-umbraco-starter-kit\packages\System.Threading.Tasks.Dataflow.4.7.0\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\mbran-umbraco-starter-kit\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -206,14 +207,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\AssemblyExtensions.cs" />
-    <Compile Include="Extensions\PublishedContentExtensions.cs" />
-    <Compile Include="Helpers\ModelsHelper.cs" />
+    <Compile Include="Constants\RouteDataConstants.cs" />
+    <Compile Include="Controllers\ComponentsController.cs" />
+    <Compile Include="Controllers\IComponentsController.cs" />
+    <Compile Include="Extensions\HtmlHelperComponentExtensions.cs" />
+    <Compile Include="Helpers\ComponentsHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\mbran-umbraco-core\src\MBran.Core\MBran.Core.csproj">
+      <Project>{14d73a1d-62f8-4428-9fd8-547aa6562c90}</Project>
+      <Name>MBran.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\..\mbran-umbraco-starter-kit\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\..\..\mbran-umbraco-starter-kit\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />

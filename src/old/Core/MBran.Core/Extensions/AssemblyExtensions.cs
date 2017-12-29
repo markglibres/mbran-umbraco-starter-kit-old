@@ -7,7 +7,7 @@ namespace MBran.Core.Extensions
     public static class AssemblyExtensions
     {
         public static IEnumerable<Type> FindImplementations<T>(this AppDomain domain)
-            where T : class
+            where T: class
         {
             var findType = typeof(T);
             return domain.GetAssemblies()
