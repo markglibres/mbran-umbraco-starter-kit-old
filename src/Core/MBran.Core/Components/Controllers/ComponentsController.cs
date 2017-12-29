@@ -1,4 +1,5 @@
-﻿using MBran.Core.Models;
+﻿using MBran.Core.Helpers.Interface;
+using MBran.Core.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -12,14 +13,45 @@ namespace MBran.Core.Components
         IComponentController
     {
         private readonly IContentHelper _contentHelper;
+        private readonly IPublishedContentHelper _publishedContentHelper;
+
+        private IPublishedContent _model;
 
         public int PageId => _contentHelper.CurrentPageId();
-
-        public ComponentsController(IContentHelper contentHelper)
+        public IPublishedContent PublishedContent => _model ?? _contentHelper.CurrentPage();
+        
+        public ComponentsController(IContentHelper contentHelper,
+            IPublishedContentHelper publishedContentHelper)
         {
             _contentHelper = contentHelper;
+            _publishedContentHelper = publishedContentHelper;
+
+            _model = (IPublishedContent)ControllerContext.RequestContext.RouteData
+                ?.Values[ComponentConstants.ModelKey];
         }
 
+        protected virtual object GetModel()
+        {
+            var doctypeName = Regex.Replace(this.GetType().UnderlyingSystemType.Name, "Controller$", string.Empty);
+            var baseClassName = Regex.Replace(this.GetType().Name, "Controller$", string.Empty);
+            if(doctypeName == baseClassName)
+            {
+                doctypeName = ControllerContext.RequestContext.RouteData
+                    ?.Values[ComponentConstants.ModelTypeKey]
+                    ?.ToString();
+            }
+
+            var modelType = _publishedContentHelper.GetModelType(doctypeName);
+            return PublishedContent.As(modelType);
+        }
+
+        [ChildActionOnly]
+        public virtual PartialViewResult Render()
+        {
+            return RenderModel(GetModel());
+        }
+
+        [ChildActionOnly]
         public virtual PartialViewResult RenderModel(object model)
         {
             var viewPath = GetViewPath();
@@ -32,11 +64,13 @@ namespace MBran.Core.Components
             return PartialView(viewPath, model);
         }
 
+        [ChildActionOnly]
         public virtual PartialViewResult Render(string viewPath, object model)
         {
             return PartialView(viewPath, model);
         }
 
+        [ChildActionOnly]
         public virtual PartialViewResult RenderContent(IPublishedContent content)
         {
             var docType = content.GetDocumentType();
@@ -47,7 +81,7 @@ namespace MBran.Core.Components
             return PartialView(viewPath, model);
         }
 
-        public string GetViewPath()
+        protected virtual string GetViewPath()
         {
             var viewPath = ControllerContext.RequestContext.RouteData
                 ?.Values[ComponentConstants.ViewPathKey]
@@ -58,7 +92,7 @@ namespace MBran.Core.Components
                 : viewPath;
         }
 
-        public string GetComponentName()
+        protected virtual string GetComponentName()
         {
             var component = ControllerContext.RequestContext.RouteData
                 ?.Values[ComponentConstants.ComponentKey]
@@ -68,8 +102,8 @@ namespace MBran.Core.Components
                 ? ControllerContext.ExecutingViewName() 
                 : Regex.Replace(component, "component$", string.Empty, RegexOptions.IgnoreCase);
         }
-        
-        public virtual string GetValidCustomViewLocation(string viewName)
+
+        protected virtual string GetValidCustomViewLocation(string viewName)
         {
             if(!(ControllerContext.RequestContext.RouteData
                 .Values[ComponentConstants.ViewLocations] is List<string> viewLocations))
@@ -88,7 +122,7 @@ namespace MBran.Core.Components
             }
 
             return string.Empty;
-
         }
+        
     }
 }

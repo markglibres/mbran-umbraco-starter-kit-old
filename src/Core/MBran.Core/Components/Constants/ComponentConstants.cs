@@ -9,6 +9,7 @@ namespace MBran.Core.Components
         public const string ComponentKey = "component";
         public const string ContentKey = "content";
         public const string ModelKey = "model";
+        public const string ModelTypeKey = "modelType";
 
         public static string ControllerName = Regex.Replace(nameof(ComponentsController), "Controller$", string.Empty);
         public static string RenderModelAction = nameof(IComponentController.RenderModel);

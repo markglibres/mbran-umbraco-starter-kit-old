@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using MBran.Core.Helpers;
+using MBran.Core.Helpers.Interface;
 
 namespace MBran.Core
 {
@@ -11,6 +13,9 @@ namespace MBran.Core
                 .SingleInstance();
             builder.RegisterType<MediaHelper>()
                 .As<IMediaHelper>()
+                .SingleInstance();
+            builder.RegisterType<PublishedContentHelper>()
+                .As<IPublishedContentHelper>()
                 .SingleInstance();
         }
     }

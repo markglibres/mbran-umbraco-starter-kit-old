@@ -6,11 +6,11 @@ namespace MBran.Core.Components
     public interface IComponentController
     {
         int PageId { get; }
+        IPublishedContent PublishedContent { get; }
         PartialViewResult RenderContent(IPublishedContent content);
+        PartialViewResult Render();
         PartialViewResult RenderModel(object model);
         PartialViewResult Render(string viewName, object model);
-        string GetViewPath();
-        string GetComponentName();
        
     }
 }

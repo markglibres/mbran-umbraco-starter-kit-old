@@ -267,6 +267,7 @@
   <ItemGroup>
     <Compile Include="Mapper\AutoMapperEventHandler.cs" />
     <Compile Include="Mapper\AutoMapperEvents.cs" />
+    <Compile Include="MetaTitleController.cs" />
     <Compile Include="MetaTitleComponent.cs" />
     <Compile Include="Models\IMetaTitle.cs" />
     <Compile Include="Models\MetaTitle.cs" />

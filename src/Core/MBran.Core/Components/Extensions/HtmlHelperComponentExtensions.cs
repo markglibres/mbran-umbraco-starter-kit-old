@@ -7,20 +7,31 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 using Umbraco.Core.Models;
+using Umbraco.Core.Models.PublishedContent;
 
 namespace MBran.Core.Components
 {
     public static class HtmlHelperComponentExtensions
     {
         public static MvcHtmlString Component<T>(this HtmlHelper helper,
-            IPublishedContent content = null, 
+            IPublishedContent content = null,
             RouteValueDictionary options = null)
-            where T : IComponent
+            where T : PublishedContentModel
         {
 
             IComponent component = DependencyResolver.Current.GetService<T>();
             return helper.Render(component, content, options);
         }
+
+        //public static MvcHtmlString Component<T>(this HtmlHelper helper,
+        //    IPublishedContent content = null, 
+        //    RouteValueDictionary options = null)
+        //    where T : IComponent
+        //{
+
+        //    IComponent component = DependencyResolver.Current.GetService<T>();
+        //    return helper.Render(component, content, options);
+        //}
 
         public static MvcHtmlString Component(this HtmlHelper helper, 
             IPublishedContent content, RouteValueDictionary options = null)

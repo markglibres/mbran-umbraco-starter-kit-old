@@ -1,22 +1,21 @@
-﻿@using MBran.Components.MetaHeader
-@using MBran.Components.Favicon
-@using MBran.Components.Navigation
-@using MBran.Modules.Content
-@using MBran.Components.Contact
+﻿@using MBran.Models
+@using MBran.Components.Extensions
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    @(Html.Component<FaviconComponent>())
-    @(Html.Component<MetaTitleComponent>())
+
 </head>
 <body>
-    <div>@(Html.Component<NavigationHeaderComponent>())</div>
+    <div></div>
     <div>
-        @(Html.Module<ContentPageModule>())
-        @RenderBody()
-        @(Html.Component<ContactDetailsComponent>())
+        @(Html.Component<MetaTagHeader>())
+        @*@(Html.Component<MetaTagHeader>(Model))
+        @(Html.Component<MetaTagHeader>("~/Views/Components/Meta.cshtml"))
+        @(Html.Component<MetaTagHeader>("~/Views/Components/Meta.cshtml", Model))
+        @(Html.Component(Model))
+        @(Html.Component(Model, "~/Views/Components/Meta.cshtml"))*@
     </div>
-    <div>@(Html.Component<NavigationFooterComponent>())</div>
+    <div></div>
 </body>
 </html>

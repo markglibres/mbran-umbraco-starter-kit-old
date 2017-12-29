@@ -491,29 +491,9 @@
     <Analyzer Include="..\..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Components\MBran.Component.Favicon\MBran.Components.Favicon.csproj">
-      <Project>{8309c9c1-45e8-4cc1-a38c-b43245d98dc8}</Project>
-      <Name>MBran.Components.Favicon</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Components\MBran.Component.MetaHeader\MBran.Components.MetaHeader.csproj">
-      <Project>{314176fb-578a-464b-b7d0-4dc8871181b2}</Project>
-      <Name>MBran.Components.MetaHeader</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Components\MBran.Components.Contact\MBran.Components.Contact.csproj">
-      <Project>{2c92de79-a3fd-4a0b-8498-abe8b31c7f7b}</Project>
-      <Name>MBran.Components.Contact</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Components\MBran.Components.ErrorPage\MBran.Components.ErrorPage.csproj">
-      <Project>{f8fe4bf5-5036-45ee-ba87-39f3e37d4ea3}</Project>
-      <Name>MBran.Components.ErrorPage</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Components\MBran.Components.Navigation\MBran.Components.Navigation.csproj">
-      <Project>{4a0aed46-b651-44cd-8fe1-de23fe59add2}</Project>
-      <Name>MBran.Components.Navigation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Components\MBran.Components.Sitemap\MBran.Components.Sitemap.csproj">
-      <Project>{fd5eca2f-70d0-4f88-bcbd-c0aba9868699}</Project>
-      <Name>MBran.Components.Sitemap</Name>
+    <ProjectReference Include="..\..\..\..\mbran-umbraco-components\src\MBran.Components\MBran.Components.csproj">
+      <Project>{96a66068-7ae4-49a9-a5ce-da1a65f048aa}</Project>
+      <Name>MBran.Components</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Core\MBran.Core\MBran.Core.csproj">
       <Project>{d57caec8-913c-42dd-aab7-543013859fef}</Project>
