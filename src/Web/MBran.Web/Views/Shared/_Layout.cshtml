@@ -7,7 +7,12 @@
     @(Html.Component<MetaTagHeader>())
 </head>
 <body>
-    <div></div>
+    <div>
+        @(Html.Component<ContentHeader>())
+    </div>
+    <div>
+        @(Html.Component<ContentModule>())
+    </div>
     <div>
         @RenderBody()
         @*@(Html.Component<MetaTagHeader>(Model))

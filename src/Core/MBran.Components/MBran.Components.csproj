@@ -222,7 +222,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\mbran-umbraco-core\src\MBran.Core\MBran.Core.csproj">
+    <ProjectReference Include="..\MBran.Core\MBran.Core.csproj">
       <Project>{14d73a1d-62f8-4428-9fd8-547aa6562c90}</Project>
       <Name>MBran.Core</Name>
     </ProjectReference>

@@ -471,6 +471,8 @@
     <None Include="Properties\PublishProfiles\nowon - Web Deploy.pubxml" />
     <Content Include="Views\Components\ContactDetails.cshtml" />
     <Content Include="Views\Components\MetaTagHeader.cshtml" />
+    <Content Include="Views\Components\ContentHeader.cshtml" />
+    <Content Include="Views\Components\ContentModule.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -492,11 +494,15 @@
     <Analyzer Include="..\..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\mbran-umbraco-components\src\MBran.Components\MBran.Components.csproj">
+    <ProjectReference Include="..\..\Components\MBran.Components.MetaTag\MBran.Components.MetaTag.csproj">
+      <Project>{38ca4b4e-7f2b-4e93-8e45-75e69a9d1f0c}</Project>
+      <Name>MBran.Components.MetaTag</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\MBran.Components\MBran.Components.csproj">
       <Project>{96a66068-7ae4-49a9-a5ce-da1a65f048aa}</Project>
       <Name>MBran.Components</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\mbran-umbraco-core\src\MBran.Core\MBran.Core.csproj">
+    <ProjectReference Include="..\..\Core\MBran.Core\MBran.Core.csproj">
       <Project>{14d73a1d-62f8-4428-9fd8-547aa6562c90}</Project>
       <Name>MBran.Core</Name>
     </ProjectReference>
