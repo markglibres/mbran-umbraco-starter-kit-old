@@ -473,6 +473,7 @@
     <Content Include="Views\Components\MetaTagHeader.cshtml" />
     <Content Include="Views\Components\ContentHeader.cshtml" />
     <Content Include="Views\Components\ContentModule.cshtml" />
+    <Content Include="Views\ContactModule\ContactModule.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -498,6 +499,10 @@
       <Project>{38ca4b4e-7f2b-4e93-8e45-75e69a9d1f0c}</Project>
       <Name>MBran.Components.MetaTag</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Core\MBran.Autofac\MBran.Autofac.csproj">
+      <Project>{fa22ab5e-35b9-4390-b72c-4af98f80df85}</Project>
+      <Name>MBran.Autofac</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Core\MBran.Components\MBran.Components.csproj">
       <Project>{96a66068-7ae4-49a9-a5ce-da1a65f048aa}</Project>
       <Name>MBran.Components</Name>
@@ -509,6 +514,10 @@
     <ProjectReference Include="..\..\Models\MBran.Models\MBran.Models.csproj">
       <Project>{bd011d1f-eb0e-4594-b3a9-b5f7f2d91dd8}</Project>
       <Name>MBran.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Modules\MBran.Modules.Contact\MBran.Modules.Contact.csproj">
+      <Project>{48f36b50-d6b4-439e-9cb0-d112759d9c0e}</Project>
+      <Name>MBran.Modules.Contact</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

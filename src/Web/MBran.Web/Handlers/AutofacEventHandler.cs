@@ -1,9 +1,5 @@
-﻿using Autofac;
-using Autofac.Integration.Mvc;
-using MBran.Core;
-using System.Reflection;
+﻿using MBran.Autofac;
 using Umbraco.Core;
-using Umbraco.Core.Services;
 
 namespace MBran.Umbraco.Web
 {
@@ -11,8 +7,8 @@ namespace MBran.Umbraco.Web
     {
         public void OnApplicationInitialized(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
-            //var builder = IoCBuilder.Instance.GetBuilder(applicationContext);
-            //builder.BuildContainer();
+            var builder = IoCBuilder.Instance.GetBuilder(applicationContext);
+            builder.BuildContainer();
         }
 
         public void OnApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)

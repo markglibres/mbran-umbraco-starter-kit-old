@@ -1,5 +1,6 @@
 ﻿@using MBran.Models
 @using MBran.Components.Extensions
+@using MBran.Modules.Contact
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +13,9 @@
     </div>
     <div>
         @(Html.Component<ContentModule>())
+    </div>
+    <div>
+        @(Html.Module<ContactModuleController>())
     </div>
     <div>
         @RenderBody()
