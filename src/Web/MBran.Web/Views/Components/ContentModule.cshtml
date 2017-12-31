@@ -1,8 +1,12 @@
 ﻿@model MBran.Models.ContentModule
 @using MBran.Components.Extensions
 
-<div>this is a content module</div>
-@foreach(var component in Model.ContentModuleComponents)
+@if (Model != null && Model.ContentModuleComponents != null)
 {
-    @Html.Component(component)
+    <div>this is a content module</div>
+    foreach (var component in Model.ContentModuleComponents)
+    {
+        @Html.Component(component)
+    }
 }
+
