@@ -1,6 +1,0 @@
-﻿@(Html.Component<MetaTagHeader>())
-@(Html.Component<MetaTagHeader>(Model))
-@(Html.Component<MetaTagHeader>("~/Views/Components/Meta.cshtml"))
-@(Html.Component<MetaTagHeader>("~/Views/Components/Meta.cshtml", Model))
-@(Html.Component(Model))
-@(Html.Component(Model, "~/Views/Components/Meta.cshtml"))

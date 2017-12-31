@@ -82,6 +82,12 @@
     <Reference Include="MarkdownSharp, Version=1.14.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Markdown.1.14.7\lib\net45\MarkdownSharp.dll</HintPath>
     </Reference>
+    <Reference Include="MBran.Components, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MBran.Components.0.1\lib\net46\MBran.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="MBran.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MBran.Core.0.1\lib\net46\MBran.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ApplicationBlocks.Data, Version=1.0.1559.20655, Culture=neutral">
       <HintPath>..\..\..\packages\UmbracoCms.Core.7.7.7\lib\net45\Microsoft.ApplicationBlocks.Data.dll</HintPath>
     </Reference>
@@ -214,14 +220,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\MBran.Components\MBran.Components.csproj">
-      <Project>{96a66068-7ae4-49a9-a5ce-da1a65f048aa}</Project>
-      <Name>MBran.Components</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Core\MBran.Core\MBran.Core.csproj">
-      <Project>{14d73a1d-62f8-4428-9fd8-547aa6562c90}</Project>
-      <Name>MBran.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Models\MBran.Models\MBran.Models.csproj">
       <Project>{bd011d1f-eb0e-4594-b3a9-b5f7f2d91dd8}</Project>
       <Name>MBran.Models</Name>

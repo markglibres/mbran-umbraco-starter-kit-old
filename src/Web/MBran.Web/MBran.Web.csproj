@@ -135,6 +135,15 @@
       <HintPath>..\..\..\packages\Markdown.1.14.7\lib\net45\MarkdownSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MBran.Autofac, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MBran.Autofac.0.1\lib\net46\MBran.Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="MBran.Components, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MBran.Components.0.1\lib\net46\MBran.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="MBran.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MBran.Core.0.1\lib\net46\MBran.Core.dll</HintPath>
+    </Reference>
     <Reference Include="MBran.CountryPicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\MBran.CountryPicker.0.2.2\lib\net452\MBran.CountryPicker.dll</HintPath>
       <Private>True</Private>
@@ -498,18 +507,6 @@
     <ProjectReference Include="..\..\Components\MBran.Components.MetaTag\MBran.Components.MetaTag.csproj">
       <Project>{38ca4b4e-7f2b-4e93-8e45-75e69a9d1f0c}</Project>
       <Name>MBran.Components.MetaTag</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Core\MBran.Autofac\MBran.Autofac.csproj">
-      <Project>{fa22ab5e-35b9-4390-b72c-4af98f80df85}</Project>
-      <Name>MBran.Autofac</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Core\MBran.Components\MBran.Components.csproj">
-      <Project>{96a66068-7ae4-49a9-a5ce-da1a65f048aa}</Project>
-      <Name>MBran.Components</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Core\MBran.Core\MBran.Core.csproj">
-      <Project>{14d73a1d-62f8-4428-9fd8-547aa6562c90}</Project>
-      <Name>MBran.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Models\MBran.Models\MBran.Models.csproj">
       <Project>{bd011d1f-eb0e-4594-b3a9-b5f7f2d91dd8}</Project>
